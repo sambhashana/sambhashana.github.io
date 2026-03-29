@@ -1,0 +1,241 @@
+# Team data for the Sambhashana Research Group.
+# Gravatar images are loaded automatically from the email address — no hash needed.
+# Team members can register at https://gravatar.com using their BITS email to set a photo.
+# If no Gravatar is registered, a default silhouette is shown.
+#
+# For student researchers:
+#   batch:      year of joining BITS (e.g. 2023) — year of study is computed automatically
+#   programme:  degree programme (e.g. "B.E. CS", "B.E. EIE")
+#   roll:       BITS roll number (not displayed on website, kept for records)
+
+faculty:
+  - name: Hrishikesh Terdalkar
+    role: Assistant Professor, BITS Pilani, Hyderabad Campus
+    description: Language technologies for low-resource and Indian languages, Sanskrit NLP, Knowledge Graphs, AI.
+    github: hrishikeshrt
+    scholar: k9aGwEgAAAAJ
+    orcid: 0000-0001-8343-424X
+    linkedin: hrishikeshrt
+    email: hrishikesh.rt@hyderabad.bits-pilani.ac.in
+    website: https://hrishikeshrt.github.io
+
+
+phd:
+  - name: Narendra Devireddy
+    github: narendra-devireddy
+    email: p20250504@hyderabad.bits-pilani.ac.in
+
+  - name: Anudeep J
+    github: AnudeepJ
+    email: p20250503@hyderabad.bits-pilani.ac.in
+
+masters:
+  - name: Lakshman Chinthala
+    roll: 2025H1030038H
+    github: Lakshman-Ch-maker
+    email: h20250038@hyderabad.bits-pilani.ac.in
+
+students:
+  - name: Aadi Parakh
+    project: Agentic Graph Repair
+    batch: 2023
+    programme: "B.E. CS"
+    roll: 2023A7PS0130H
+    github: adr1x19
+    email: f20230130@hyderabad.bits-pilani.ac.in
+
+  - name: Tathagat Rath
+    project: Agentic Graph Repair
+    batch: 2023
+    programme: "B.E. CS"
+    roll: 2023A7PS0109H
+    github: TathagatRath
+    email: f20230109@hyderabad.bits-pilani.ac.in
+
+  - name: Yash Vardhan Singh
+    project: Agentic Graph Repair
+    batch: 2023
+    programme: "B.E. ECE"
+    roll: 2023AAPS1111H
+    github: bigbugsmaller
+    email: f20231111@hyderabad.bits-pilani.ac.in
+
+  - name: Omm Aditya Behera
+    project: Hallucination (BHRAM-IL)
+    batch: 2023
+    programme: "B.E. EIE"
+    roll: 2023A8PS0434H
+    github: Omm-dev404
+    email: f20230434@hyderabad.bits-pilani.ac.in
+
+  - name: Parv Goyal
+    project: Explainability
+    batch: 2023
+    programme: "B.E. CS"
+    roll: 2023A7PS0151H
+    github: ParvG2005
+    email: f20230151@hyderabad.bits-pilani.ac.in
+
+  - name: Anshuman Sharma
+    project: Multi-turn Prompting
+    batch: 2023
+    programme: "B.E. EEE"
+    roll: 2023A3PS0404H
+    github: AnshumanSharma250
+    email: f20230404@hyderabad.bits-pilani.ac.in
+
+  - name: J Harish Rajeshwaran
+    project: Tamil GEC
+    batch: 2023
+    programme: "B.E. EEE"
+    roll: 2023A3PS0393H
+    github: jharishr
+    email: f20230393@hyderabad.bits-pilani.ac.in
+
+  - name: S Ashwin Arumugam
+    project: Tamil GEC
+    batch: 2023
+    programme: "B.E. ECE"
+    roll: 2023AAPS0227H
+    github: Ashwin-Arumugam
+    email: f20230227@hyderabad.bits-pilani.ac.in
+
+  - name: Anirudh Chaitanya
+    project: Multimodal GraphRAG
+    batch: 2023
+    programme: "B.E. EEE"
+    roll: 2023A3PS0369H
+    github: PossiblyNeptune
+    email: f20230369@hyderabad.bits-pilani.ac.in
+
+  - name: Anshumaan Prakash
+    project: Multimodal GraphRAG
+    batch: 2023
+    programme: "B.E. EEE"
+    roll: 2023A3PS0413H
+    github: prakashanshumaan2006-beep
+    email: f20230413@hyderabad.bits-pilani.ac.in
+
+  - name: Mudit Guraria
+    project: Ayurvedic QA Dataset Construction
+    batch: 2024
+    programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
+    roll: 2024B3A7PS0551H
+    github: DeadMouse-OS
+    email: f20240551@hyderabad.bits-pilani.ac.in
+
+  - name: Triyansh Agrawal
+    project: KG-Grounded Question Generation
+    batch: 2024
+    programme: "B.E. CS"
+    roll: 2024A7PS0147H
+    github: TA619
+    email: f20240147@hyderabad.bits-pilani.ac.in
+
+  - name: Ruchi Harge
+    project: Math and LLMs
+    batch: 2022
+    programme: "Dual Degree (M.Sc. Math + B.E. CS)"
+    roll: 2022B4A70942H
+    github: ruchiharge
+    email: f20220942@hyderabad.bits-pilani.ac.in
+
+  - name: Snehal Reddy
+    project: Math and LLMs
+    batch: 2022
+    programme: "B.E. CS"
+    roll: 2022A7PS0213H
+    github: Snehalreddy987
+    email: f20220213@hyderabad.bits-pilani.ac.in
+
+  - name: Asmit Mukherjee
+    project: Poetry Generation
+    batch: 2022
+    programme: "Dual Degree (M.Sc. Physics + B.E. CS)"
+    roll: 2022B5A70909H
+    github: asmit-mukherjee
+    email: f20220909@hyderabad.bits-pilani.ac.in
+
+  - name: Amol Agrawal
+    project: Security and LLMs
+    batch: 2022
+    programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
+    roll: 2022B3A70612H
+    github: Amol-Agrawal
+    email: f20220612@hyderabad.bits-pilani.ac.in
+
+  - name: Harshal Bhambhani
+    project: Legal GraphRAG
+    batch: 2022
+    programme: "B.E. EEE"
+    roll: 2022A3PS1809H
+    github: Harshaaalll
+    email: f20221809@hyderabad.bits-pilani.ac.in
+
+  - name: Rishabh Jangid
+    project: Legal GraphRAG
+    batch: 2022
+    programme: "B.E. EEE"
+    roll: 2022A3PS0485H
+    github: rishcx
+    email: f20220485@hyderabad.bits-pilani.ac.in
+
+past:
+  # SEM 1, 2025-26
+  - name: Kirtan Bhojani
+    project: BHRAM-IL
+    programme: "B.E. EEE"
+    roll: 2023A3PS0366H
+    period: "SEM 1, 2025-26"
+
+  - name: Aryan Dongare
+    project: BHRAM-IL
+    programme: "B.E. ECE"
+    roll: 2023AAPS0194H
+    period: "SEM 1, 2025-26"
+
+  - name: Sai Poorna Parikshit Dashetwar
+    project: Explainability
+    programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
+    roll: 2022B3A70492H
+    period: "SEM 1, 2025-26"
+
+  - name: Nayonika Shrivastava
+    programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
+    roll: 2022B3A70582H
+    period: "SEM 1, 2025-26"
+
+  - name: Saaketh Dataram
+    project: Natural Language Interface for Knowledge Graph Querying
+    programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
+    roll: 2022B3A70452H
+    period: "SEM 1, 2025-26"
+
+  - name: Prince
+    project: Agentic Graph Repair
+    programme: "B.E. CS"
+    roll: 2023A7PS0115H
+    github: prince721773
+    period: "SEM 1, 2025-26"
+
+interns:
+  - name: Nikhita Anjani Ravi
+    affiliation: IIIT Hyderabad
+    programme: "B. Tech. in Computer Science and MS in Computational Linguistics"
+    year: 2
+    email: nikhita.ravi@research.iiit.ac.in
+
+collaborators:
+  - name: Putrevu Venkata Sai Charan
+    url: https://sites.google.com/view/venkatasaicharanputrevu/home
+
+  - name: Arnab Bhattacharya
+    url: https://www.cse.iitk.ac.in/users/arnabb/
+
+  - name: Ganesh Ramkrishnan
+    url: https://www.cse.iitb.ac.in/~ganesh/
+
+  - name: Pawan Goyal
+    url: https://cse.iitkgp.ac.in/~pawang/
+
+  # Add more collaborators here. Each entry supports: name, affiliation, website.

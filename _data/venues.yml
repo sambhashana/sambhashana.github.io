@@ -1,0 +1,56 @@
+"ACL":
+  url: https://aclanthology.org/
+  color: "#1565c0"
+
+"EMNLP":
+  url: https://aclanthology.org/
+  color: "#1565c0"
+
+"COLING":
+  url: https://aclanthology.org/
+  color: "#1565c0"
+
+"BHASHA '25":
+  url: https://aclanthology.org/volumes/2025.bhasha-1/
+  color: "#2e7d32"
+
+"ACL '25":
+  url: https://aclanthology.org/2025.findings-acl/
+  color: "#1565c0"
+
+"NLP-OSS '23":
+  url: https://aclanthology.org/volumes/2023.nlposs-1/
+  color: "#455a64"
+
+"WSC '23":
+  url: https://aclanthology.org/volumes/2023.wsc-csdh/
+  color: "#6a1b9a"
+
+"PACLIC '24":
+  url: https://aclanthology.org/volumes/2024.paclic-1/
+  color: "#2e7d32"
+
+"GRADES-NDA '25":
+  url: https://sigmod.org/
+  color: "#c62828"
+
+"ESEC/FSE '21":
+  url: https://dl.acm.org/doi/proceedings/10.1145/3468264
+  color: "#c62828"
+
+"COLING '22":
+  url: https://aclanthology.org/volumes/2022.coling-1/
+  color: "#1565c0"
+
+"ISCLS '19":
+  url: https://aclanthology.org/volumes/W19-75/
+  color: "#6a1b9a"
+
+"NYCIKS '23":
+  color: "#2e7d32"
+
+"Book":
+  color: "#4e342e"
+
+"PhD":
+  color: "#37474f"

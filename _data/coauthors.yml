@@ -1,0 +1,48 @@
+# Co-author profiles for bibliography linking.
+# jekyll-scholar uses these to hyperlink author names in rendered citations.
+# Key is the last name (lowercase). List firstname variants to match different citation styles.
+
+# -----------------------------------------------------------------------
+# BITS Pilani / Group members (for linking student names in papers)
+# -----------------------------------------------------------------------
+
+"bhojani":
+  - firstname: ["Kirtan"]
+
+"dongare":
+  - firstname: ["Aryan"]
+
+"behera":
+  - firstname: ["Omm Aditya", "O. A.", "Omm"]
+
+"putrevu":
+  - firstname: ["Venkata Sai Charan", "V. S. C.", "Sai Charan"]
+    url: https://sites.google.com/view/venkatasaicharanputrevu/home
+
+# -----------------------------------------------------------------------
+# External collaborators
+# -----------------------------------------------------------------------
+
+"bhattacharya":
+  - firstname: ["Arnab", "A."]
+    url: https://www.cse.iitk.ac.in/users/arnabb/
+
+"bhattacharyya":
+  - firstname: ["Pramit", "P."]
+
+"ramakrishnan":
+  - firstname: ["Ganesh", "G."]
+    url: https://www.cse.iitb.ac.in/~ganesh/
+
+"goyal":
+  - firstname: ["Pawan", "P."]
+    url: https://cse.iitkgp.ac.in/~pawang/
+
+"akavarapu":
+  - firstname: ["V S D S Mahesh", "Mahesh"]
+
+"bonifati":
+  - firstname: ["Angela", "A."]
+
+"mauri":
+  - firstname: ["Andrea", "A."]

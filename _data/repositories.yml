@@ -1,0 +1,13 @@
+github_users:
+  - sambhashana
+  - hrishikeshrt
+
+repo_description_lines_max: 2
+
+github_repos:
+  - sambhashana/BHRAM-IL
+  - hrishikeshrt/sangrahaka
+  - hrishikeshrt/PyCDSL
+  - hrishikeshrt/vaiyyakarana
+  - hrishikeshrt/google_drive_ocr
+  - hrishikeshrt/requests_downloader
