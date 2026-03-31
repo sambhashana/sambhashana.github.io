@@ -58,7 +58,7 @@ page_class: page-about
 
         <h2>selected publications</h2>
         <hr>
-        <div class="publications">
+        <div class="publications publications-wide">
             {% bibliography --group_by none --query @*[selected=true]* %}
         </div>
         <p>see our <a href="{{ '/publications/' | relative_url }}">full list of publications</a>.</p>

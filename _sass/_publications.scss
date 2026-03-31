@@ -182,6 +182,20 @@
   }
 }
 
+@media (min-width: 576px) {
+  .publications-wide {
+    > ol.bibliography > li > .row > .abbr.col-sm-2 {
+      flex: 0 0 20%;
+      max-width: 20%;
+    }
+
+    > ol.bibliography > li > .row > [id].col-sm-8 {
+      flex: 0 0 80%;
+      max-width: 80%;
+    }
+  }
+}
+
 .prior-work-divider {
   display: flex;
   align-items: center;
