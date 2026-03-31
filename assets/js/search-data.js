@@ -9,7 +9,14 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-publications",
+  },{id: "nav-team",
+          title: "team",
+          description: "The people behind the research.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/team/";
+          },
+        },{id: "nav-publications",
           title: "publications",
           description: "Research publications by Hrishikesh Terdalkar and the Saṁbhāṣaṇa Research Group.",
           section: "Navigation",
@@ -22,13 +29,6 @@ ninja.data = [{
           section: "Navigation",
           handler: () => {
             window.location.href = "/research/";
-          },
-        },{id: "nav-team",
-          title: "team",
-          description: "The people behind the research.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/team/";
           },
         },{id: "nav-teaching",
           title: "teaching",
