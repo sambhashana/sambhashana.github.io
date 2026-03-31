@@ -179,8 +179,8 @@ ninja.data = [{
           description: "A web-based platform for annotating and querying knowledge graphs",
           section: "Projects",handler: () => {
               window.location.href = "/projects/sangrahaka/";
-            },},{id: "projects-sanskrit-amp-classical-nlp",
-          title: 'Sanskrit &amp;amp; Classical NLP',
+            },},{id: "projects-sanskrit-nlp",
+          title: 'Sanskrit NLP',
           description: "Language technologies for Sanskrit and classical Indian languages",
           section: "Projects",handler: () => {
               window.location.href = "/projects/sanskrit-nlp/";
