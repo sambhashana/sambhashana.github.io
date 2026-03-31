@@ -4,6 +4,7 @@ title: about
 permalink: /
 nav: false
 nav_order: 1
+hide_page_header: true
 ---
 
 <style>
@@ -22,7 +23,7 @@ nav_order: 1
     <div class="col-sm-8">
         <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
             <img src="{{ '/assets/img/logo.color.notext.svg' | relative_url }}" alt="Sambhashana Logo" style="height: 64px; width: auto;">
-            <h1 style="margin: 0; font-size: 1.75rem;">Saṁbhāṣaṇa Research Group</h1>
+            <h1 style="margin: 0; font-size: 2.25rem;">Saṁbhāṣaṇa Research Group</h1>
         </div>
         <p>Headed by <a href="https://hrishikeshrt.github.io" target="_blank"><strong>Hrishikesh Terdalkar</strong></a></p>
 

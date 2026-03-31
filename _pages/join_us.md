@@ -4,7 +4,8 @@ title: join us
 permalink: /join/
 description: Interested in working with us?
 nav: true
-nav_order: 5
+nav_order: 6
+discord_widget: true
 ---
 
 
@@ -67,7 +68,7 @@ The group uses a Discord server for day-to-day communication, announcements, and
   display: inline-flex; flex-direction: column; gap: 12px;
   background: #313338; color: #dbdee1; border-radius: 10px;
   padding: 16px 20px; width: 300px; font-family: sans-serif; font-size: 14px;
-">
+" data-widget-url="https://discord.com/api/guilds/1405232555443097733/widget.json">
   <div style="display: flex; align-items: center; gap: 10px;">
     <img src="/assets/img/logo.color.notext.svg" alt="Saṁbhāṣaṇa" style="width:48px;height:48px;border-radius:50%;background:#fff;padding:4px;object-fit:contain;" />
     <div>
@@ -79,19 +80,3 @@ The group uses a Discord server for day-to-day communication, announcements, and
     <span style="font-size: 12px; color: #949ba4;">Loading members…</span>
   </div>
 </div>
-
-<script>
-fetch('https://discord.com/api/guilds/1405232555443097733/widget.json')
-  .then(function(r) { return r.json(); })
-  .then(function(data) {
-    var container = document.getElementById('discord-members');
-    var avatars = data.members.map(function(m) {
-      return '<img src="' + m.avatar_url + '" title="' + m.username + '" style="width:32px;height:32px;border-radius:50%;border:2px solid #3b3d44;" />';
-    }).join('');
-    var count = '<span style="font-size:12px;color:#23a55a;font-weight:600;">● ' + data.presence_count + ' online</span>';
-    container.innerHTML = '<div style="display:flex;gap:4px;align-items:center;">' + avatars + '</div>' + count;
-  })
-  .catch(function() {
-    document.getElementById('discord-members').innerHTML = '<span style="font-size:12px;color:#949ba4;">Members online</span>';
-  });
-</script>

@@ -4,7 +4,7 @@ title: research
 permalink: /research/
 description: Research projects and software tools developed by the group.
 nav: true
-nav_order: 2
+nav_order: 4
 display_categories: [funded, research, past, tools]
 horizontal: false
 published: true
@@ -19,9 +19,9 @@ Our work spans Natural Language Processing, Knowledge Graphs, Information Retrie
   {% for category in page.display_categories %}
   {% assign categorized_projects = site.projects | where: "category", category %}
   {% if categorized_projects.size > 0 %}
-  <a id="{{ category }}" href=".#{{ category }}">
-    <h2 class="category">{{ category }}</h2>
-  </a>
+  <h2 id="{{ category }}" class="category">
+    <a href="#{{ category }}">{{ category }}</a>
+  </h2>
   {% assign sorted_projects = categorized_projects | sort: "importance" %}
   <!-- Generate cards for each project -->
   {% if page.horizontal %}

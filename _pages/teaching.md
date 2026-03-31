@@ -4,7 +4,7 @@ title: teaching
 permalink: /teaching/
 description: Courses offered at BITS Pilani, Hyderabad Campus and other institutions.
 nav: true
-nav_order: 4
+nav_order: 5
 ---
 
 {% include courses.liquid %}

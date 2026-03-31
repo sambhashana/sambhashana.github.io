@@ -5,6 +5,7 @@ description: Benchmarking hallucination recognition and assessment across Indian
 img:
 importance: 1
 category: research
+github: https://github.com/sambhashana/BHRAM-IL/
 tags: [LLMs, Evaluation, Indian Languages]
 related_publications: true
 ---
