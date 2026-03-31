@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Saṁbhāṣaṇa Research Group social preview card</title>
+  <desc id="desc">Social preview card with the Saṁbhāṣaṇa logo, group name, and research areas.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6f2ea"/>
+      <stop offset="100%" stop-color="#ebe5d8"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fc5618"/>
+      <stop offset="50%" stop-color="#21afa6"/>
+      <stop offset="100%" stop-color="#176b87"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0.1" cy="0.15" r="0.9">
+      <stop offset="0%" stop-color="#fc5618" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#fc5618" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0.92" cy="0.12" r="0.7">
+      <stop offset="0%" stop-color="#21afa6" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#21afa6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#173042" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glowA)"/>
+  <rect width="1200" height="630" fill="url(#glowB)"/>
+
+  <circle cx="1090" cy="100" r="120" fill="#ffffff" opacity="0.35"/>
+  <circle cx="1030" cy="520" r="150" fill="#ffffff" opacity="0.2"/>
+  <circle cx="170" cy="530" r="130" fill="#ffffff" opacity="0.22"/>
+
+  <rect x="72" y="68" width="325" height="34" rx="17" fill="#ffffff" opacity="0.88"/>
+  <text x="94" y="91" fill="#2c4c58" font-family="'Avenir Next', 'Helvetica Neue', sans-serif" font-size="19" font-weight="600" letter-spacing="0.3">BITS Pilani, Hyderabad Campus</text>
+
+  <rect x="72" y="144" width="186" height="186" rx="42" fill="#ffffff" filter="url(#softShadow)"/>
+  <rect x="72" y="144" width="186" height="186" rx="42" fill="none" stroke="#d9d0c1" stroke-width="2"/>
+  <image href="logo.color.notext.svg" x="103" y="175" width="124" height="124"/>
+
+  <text x="328" y="250" fill="#102433" font-family="'Iowan Old Style', 'Georgia', serif" font-size="72" font-weight="700">Saṁbhāṣaṇa</text>
+  <text x="328" y="306" fill="#234658" font-family="'Avenir Next', 'Helvetica Neue', sans-serif" font-size="40" font-weight="700" letter-spacing="0.2">Research Group</text>
+
+  <rect x="328" y="346" width="644" height="10" rx="5" fill="url(#accent)"/>
+
+  <text x="328" y="414" fill="#26485a" font-family="'Avenir Next', 'Helvetica Neue', sans-serif" font-size="28" font-weight="600">Natural language processing, computational linguistics,</text>
+  <text x="328" y="456" fill="#26485a" font-family="'Avenir Next', 'Helvetica Neue', sans-serif" font-size="28" font-weight="600">knowledge graphs, information retrieval, and Indian languages.</text>
+
+  <rect x="72" y="520" width="336" height="44" rx="22" fill="#173042"/>
+  <text x="96" y="549" fill="#f8f6f0" font-family="'Avenir Next', 'Helvetica Neue', sans-serif" font-size="24" font-weight="700" letter-spacing="0.5">sambhashana.github.io</text>
+
+  <text x="845" y="305" fill="#ffffff" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="214" font-weight="700" opacity="0.42">सं</text>
+  <text x="930" y="542" fill="#ffffff" font-family="'Noto Serif Devanagari', 'Kohinoor Devanagari', serif" font-size="132" font-weight="700" opacity="0.26">सं</text>
+</svg>
