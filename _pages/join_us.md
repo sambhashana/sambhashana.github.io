@@ -22,14 +22,14 @@ We are always looking for motivated students to join the Saṁbhāṣaṇa Resea
 
 ## Research Areas
 
-We are currently active in the following areas. See the [projects](/projects/) page for details.
+We are currently active in the following areas. Before applying, please go through the [[ research ]](/research/) page — familiarise yourself with our ongoing projects and identify areas that interest you.
 
-- Natural Language Processing for Indian languages (Sanskrit, Tamil, Hindi, and others)
-- Hallucination detection and evaluation in multilingual LLMs
-- Knowledge graph construction, querying, and repair
-- Information retrieval, search, RAG, and GraphRAG
-- Mathematical reasoning and LLM capabilities
-- Grammar error correction for low-resource languages
+- Large language models — evaluation, benchmarking, fine-tuning, explainability, and hallucination mitigation
+- Knowledge graphs — construction, repair, and knowledge-graph-based question answering
+- Computational linguistics for Indian languages — parsing, NER, GEC, and related tasks
+- Information retrieval, RAG, and GraphRAG
+- Creative text generation — poetry and constrained generation in Indian languages
+- NLP-oriented tool building — annotation tools, agentic systems, and Python libraries
 
 ## What is Expected
 
@@ -58,3 +58,40 @@ There are two steps — both are required:
 - Your CV attached
 
 Please complete both steps, lest your application be overlooked.
+
+## Group Community
+
+The group uses a Discord server for day-to-day communication, announcements, and discussions. Accepted members will be added to the server.
+
+<div id="discord-card" style="
+  display: inline-flex; flex-direction: column; gap: 12px;
+  background: #313338; color: #dbdee1; border-radius: 10px;
+  padding: 16px 20px; width: 300px; font-family: sans-serif; font-size: 14px;
+">
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <img src="/assets/img/logo.color.notext.svg" alt="Saṁbhāṣaṇa" style="width:48px;height:48px;border-radius:50%;background:#fff;padding:4px;object-fit:contain;" />
+    <div>
+      <div style="font-weight: 700; font-size: 15px; color: #f2f3f5;">Saṁbhāṣaṇa</div>
+      <div style="font-size: 12px; color: #949ba4;">Private Group Server</div>
+    </div>
+  </div>
+  <div id="discord-members" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+    <span style="font-size: 12px; color: #949ba4;">Loading members…</span>
+  </div>
+</div>
+
+<script>
+fetch('https://discord.com/api/guilds/1405232555443097733/widget.json')
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    var container = document.getElementById('discord-members');
+    var avatars = data.members.map(function(m) {
+      return '<img src="' + m.avatar_url + '" title="' + m.username + '" style="width:32px;height:32px;border-radius:50%;border:2px solid #3b3d44;" />';
+    }).join('');
+    var count = '<span style="font-size:12px;color:#23a55a;font-weight:600;">● ' + data.presence_count + ' online</span>';
+    container.innerHTML = '<div style="display:flex;gap:4px;align-items:center;">' + avatars + '</div>' + count;
+  })
+  .catch(function() {
+    document.getElementById('discord-members').innerHTML = '<span style="font-size:12px;color:#949ba4;">Members online</span>';
+  });
+</script>

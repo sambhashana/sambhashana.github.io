@@ -35,12 +35,12 @@ nav_order: 1
 
         <p>Active research areas include:</p>
         <ul>
-            <li>Low-resource and multilingual NLP for Indian languages</li>
-            <li>Knowledge graph construction, querying, and repair</li>
-            <li>Hallucination detection and LLM evaluation</li>
-            <li>LLM explainability and mechanistic interpretability</li>
-            <li>Information retrieval, search systems, and retrieval-augmented generation</li>
-            <li>Grammar error correction for Indian languages</li>
+            <li>Large language models — evaluation, explainability, and hallucination mitigation</li>
+            <li>Knowledge graphs — construction, repair, and question answering</li>
+            <li>Computational linguistics for Indian languages</li>
+            <li>Information retrieval, RAG, and GraphRAG</li>
+            <li>Creative text generation in Indian languages</li>
+            <li>NLP-oriented tool building and agentic systems</li>
             <li>Sanskrit and classical language computing</li>
         </ul>
 
