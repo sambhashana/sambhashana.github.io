@@ -5,6 +5,7 @@ description: LLM-based querying interface for Sangrahaka and Neo4j knowledge gra
 img:
 importance: 1
 category: past
+tags: [Knowledge Graphs, LLMs]
 related_publications: false
 ---
 

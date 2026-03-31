@@ -5,6 +5,7 @@ description: GEC and word generation for Tamil (IndicGEC / IndicWG shared tasks)
 img:
 importance: 4
 category: research
+tags: [NLP, Indian Languages]
 related_publications: true
 ---
 

@@ -111,6 +111,19 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+// Project tag badges
+.project-tags {
+  .badge {
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin-right: 0.2rem;
+    background-color: var(--global-theme-color) !important;
+    color: white !important;
+    opacity: 0.8;
+    border-radius: 4px;
+  }
+}
+
 .table-cv-map {
   background-color: transparent;
   border: none;

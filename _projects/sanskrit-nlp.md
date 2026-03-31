@@ -5,6 +5,7 @@ description: Language technologies for Sanskrit and classical Indian languages
 img:
 importance: 3
 category: research
+tags: [NLP, Indian Languages, Sanskrit]
 related_publications: false
 ---
 

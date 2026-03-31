@@ -61,7 +61,7 @@ students:
     email: f20231111@hyderabad.bits-pilani.ac.in
 
   - name: Omm Aditya Behera
-    project: Hallucination (BHRAM-IL)
+    project: Hallucination in Indian Languages
     batch: 2023
     programme: "B.E. EIE"
     roll: 2023A8PS0434H
@@ -77,7 +77,7 @@ students:
     email: f20230151@hyderabad.bits-pilani.ac.in
 
   - name: Anshuman Sharma
-    project: Multi-turn Prompting
+    project: Multi-turn LLM Evaluation
     batch: 2023
     programme: "B.E. EEE"
     roll: 2023A3PS0404H
@@ -85,7 +85,7 @@ students:
     email: f20230404@hyderabad.bits-pilani.ac.in
 
   - name: J Harish Rajeshwaran
-    project: Tamil GEC
+    project: Grammar Error Correction
     batch: 2023
     programme: "B.E. EEE"
     roll: 2023A3PS0393H
@@ -93,7 +93,7 @@ students:
     email: f20230393@hyderabad.bits-pilani.ac.in
 
   - name: S Ashwin Arumugam
-    project: Tamil GEC
+    project: Grammar Error Correction
     batch: 2023
     programme: "B.E. ECE"
     roll: 2023AAPS0227H
@@ -117,7 +117,7 @@ students:
     email: f20230413@hyderabad.bits-pilani.ac.in
 
   - name: Mudit Guraria
-    project: Ayurvedic QA Dataset Construction
+    project: KG-Grounded QA for Sanskrit
     batch: 2024
     programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
     roll: 2024B3A7PS0551H
@@ -125,7 +125,7 @@ students:
     email: f20240551@hyderabad.bits-pilani.ac.in
 
   - name: Triyansh Agrawal
-    project: KG-Grounded Question Generation
+    project: KG-Grounded QA for Sanskrit
     batch: 2024
     programme: "B.E. CS"
     roll: 2024A7PS0147H
@@ -133,7 +133,7 @@ students:
     email: f20240147@hyderabad.bits-pilani.ac.in
 
   - name: Ruchi Harge
-    project: Math and LLMs
+    project: Mathematical Reasoning in LLMs
     batch: 2022
     programme: "Dual Degree (M.Sc. Math + B.E. CS)"
     roll: 2022B4A70942H
@@ -141,7 +141,7 @@ students:
     email: f20220942@hyderabad.bits-pilani.ac.in
 
   - name: Snehal Reddy
-    project: Math and LLMs
+    project: Mathematical Reasoning in LLMs
     batch: 2022
     programme: "B.E. CS"
     roll: 2022A7PS0213H
@@ -149,7 +149,7 @@ students:
     email: f20220213@hyderabad.bits-pilani.ac.in
 
   - name: Asmit Mukherjee
-    project: Poetry Generation
+    project: Constrained Creative Generation
     batch: 2022
     programme: "Dual Degree (M.Sc. Physics + B.E. CS)"
     roll: 2022B5A70909H
@@ -157,7 +157,7 @@ students:
     email: f20220909@hyderabad.bits-pilani.ac.in
 
   - name: Amol Agrawal
-    project: Security and LLMs
+    project: Security and Robustness in LLMs
     batch: 2022
     programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
     roll: 2022B3A70612H

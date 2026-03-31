@@ -1,10 +1,11 @@
 ---
 layout: page
-title: Computational Poetry
+title: Constrained Creative Generation
 description: Computational generation of poetry in Indian languages
 img:
 importance: 7
 category: research
+tags: [NLP, Indian Languages]
 related_publications: false
 ---
 

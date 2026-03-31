@@ -5,6 +5,7 @@ description: Graph-based retrieval-augmented generation connecting visual and te
 img:
 importance: 8
 category: research
+tags: [Knowledge Graphs, Information Retrieval]
 related_publications: false
 ---
 

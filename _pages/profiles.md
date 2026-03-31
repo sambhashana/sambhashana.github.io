@@ -142,7 +142,12 @@ nav_order: 3
            alt="{{ member.name }}">
       <div class="team-card-body">
         <h4>{{ member.name }}</h4>
-        {% if member.project %}<p class="team-card-project">{{ member.project }}</p>{% endif %}
+        {% if member.project %}
+          <p class="team-card-project">
+            {%- assign _proj = site.projects | where: "title", member.project | first -%}
+            {%- if _proj -%}<a href="{{ _proj.url | relative_url }}">{{ member.project }}</a>{%- else -%}{{ member.project }}{%- endif -%}
+          </p>
+        {% endif %}
         <div class="team-card-links">
           {% if member.github and member.github != "" %}
             <a href="https://github.com/{{ member.github }}" target="_blank"><i class="fab fa-github"></i></a>
@@ -166,7 +171,12 @@ nav_order: 3
            alt="{{ member.name }}">
       <div class="team-card-body">
         <h4>{{ member.name }}</h4>
-        {% if member.project %}<p class="team-card-project">{{ member.project }}</p>{% endif %}
+        {% if member.project %}
+          <p class="team-card-project">
+            {%- assign _proj = site.projects | where: "title", member.project | first -%}
+            {%- if _proj -%}<a href="{{ _proj.url | relative_url }}">{{ member.project }}</a>{%- else -%}{{ member.project }}{%- endif -%}
+          </p>
+        {% endif %}
         <div class="team-card-links">
           {% if member.github and member.github != "" %}
             <a href="https://github.com/{{ member.github }}" target="_blank"><i class="fab fa-github"></i></a>
@@ -211,7 +221,12 @@ nav_order: 3
             {% if member.programme and member.programme != "" %}{{ member.programme }}{% endif %}
           </p>
         {% endif %}
-        {% if member.project %}<p class="team-card-project">{{ member.project }}</p>{% endif %}
+        {% if member.project %}
+          <p class="team-card-project">
+            {%- assign _proj = site.projects | where: "title", member.project | first -%}
+            {%- if _proj -%}<a href="{{ _proj.url | relative_url }}">{{ member.project }}</a>{%- else -%}{{ member.project }}{%- endif -%}
+          </p>
+        {% endif %}
         <div class="team-card-links">
           {% if member.github and member.github != "" %}
             <a href="https://github.com/{{ member.github }}" target="_blank"><i class="fab fa-github"></i></a>
@@ -251,7 +266,12 @@ nav_order: 3
             {%- if member.programme %}{{ member.programme }}{%- endif -%}
           </p>
         {% endif %}
-        {% if member.project %}<p class="team-card-project">{{ member.project }}</p>{% endif %}
+        {% if member.project %}
+          <p class="team-card-project">
+            {%- assign _proj = site.projects | where: "title", member.project | first -%}
+            {%- if _proj -%}<a href="{{ _proj.url | relative_url }}">{{ member.project }}</a>{%- else -%}{{ member.project }}{%- endif -%}
+          </p>
+        {% endif %}
         <div class="team-card-links">
           {% if member.github and member.github != "" %}
             <a href="https://github.com/{{ member.github }}" target="_blank"><i class="fab fa-github"></i></a>

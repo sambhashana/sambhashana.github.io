@@ -1,17 +1,20 @@
 ---
 layout: page
-title: KG-Grounded Question Generation
-description: Automatic question generation from Sanskrit and Ayurveda knowledge graphs for educational and retrieval settings
+title: KG-Grounded QA for Sanskrit
+description: Question generation and QA dataset construction from Sanskrit and Ayurveda knowledge graphs
 img:
-importance: 7
+importance: 6
 category: research
+tags: [Knowledge Graphs, Sanskrit, Ayurveda]
 related_publications: false
 ---
 
-This project develops an automated **question generation** pipeline grounded in a Sanskrit and Ayurveda knowledge graph. The aim is to transform verified graph triples into natural, domain-faithful Hindi questions that can support learning, retrieval, and assessment.
+Building question answering resources from classical Indian knowledge, grounded in an annotated Sanskrit and Ayurveda knowledge graph. The project has two components.
 
-The work explored multiple approaches, including local Ollama-hosted models with ontology-aware prompting, before converging on more controlled template-based generation for better grammatical precision and terminology preservation. A core motivation is to move beyond generic LLM generation toward graph-grounded systems that remain faithful to classical-domain structure.
+**Question Generation** develops an automated pipeline that transforms verified knowledge graph triples into natural, domain-faithful Hindi questions for learning, retrieval, and assessment. The work explored LLM-based approaches with ontology-aware prompting before converging on template-based generation for better grammatical precision and terminology preservation.
 
-Future directions include more complex multi-hop question generation over the graph and tighter integration with graph-based retrieval workflows.
+**QA Dataset Construction** builds a structured question-answer dataset from *Bhavaprakasha Nighantu*, preserving domain-critical terminology (*Rasa*, *Guna*, *Virya*, *Vipaka*) so the resulting dataset is faithful to the source material and useful for downstream NLP and educational applications.
 
-**Team:** Triyansh Agrawal
+Future directions include multi-hop question generation over the graph and tighter integration with graph-based retrieval.
+
+**Team:** Triyansh Agrawal (Question Generation), Mudit Guraria (QA Dataset)

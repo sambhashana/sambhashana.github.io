@@ -5,6 +5,7 @@ description: Benchmarking hallucination recognition and assessment across Indian
 img:
 importance: 1
 category: research
+tags: [LLMs, Evaluation, Indian Languages]
 related_publications: true
 ---
 

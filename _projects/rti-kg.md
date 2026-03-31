@@ -5,6 +5,7 @@ description: Automated pipeline for constructing a legal knowledge graph from Ri
 img:
 importance: 2
 category: past
+tags: [Knowledge Graphs, NLP, Legal]
 related_publications: false
 ---
 

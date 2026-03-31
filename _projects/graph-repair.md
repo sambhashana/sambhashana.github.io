@@ -1,10 +1,11 @@
 ---
 layout: page
-title: Knowledge Graph Repair
+title: Agentic Graph Repair
 description: LLM-driven agents for detecting and repairing inconsistencies in knowledge graphs
 img:
 importance: 2
 category: research
+tags: [Knowledge Graphs, LLMs]
 related_publications: false
 ---
 

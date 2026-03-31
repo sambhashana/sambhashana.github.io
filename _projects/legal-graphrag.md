@@ -5,6 +5,7 @@ description: Knowledge graph construction and GraphRAG querying over Right to In
 img:
 importance: 5
 category: research
+tags: [Knowledge Graphs, Information Retrieval, Legal]
 related_publications: false
 ---
 
