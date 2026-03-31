@@ -16,19 +16,19 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/team/";
           },
-        },{id: "nav-publications",
-          title: "publications",
-          description: "research publications by Hrishikesh Terdalkar and the research group",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/publications/";
-          },
         },{id: "nav-research",
           title: "research",
           description: "research projects and software tools developed by the group",
           section: "Navigation",
           handler: () => {
             window.location.href = "/research/";
+          },
+        },{id: "nav-publications",
+          title: "publications",
+          description: "research publications by Hrishikesh Terdalkar and the research group",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
           },
         },{id: "nav-teaching",
           title: "teaching",
