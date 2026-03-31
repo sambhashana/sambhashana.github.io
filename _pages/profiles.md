@@ -81,7 +81,7 @@ page_class: page-team
 <!-- MASTER STUDENTS -->
 {% if site.data.team.masters %}
 <div class="team-section">
-  <div class="team-section-title">masters students</div>
+  <div class="team-section-title">master students</div>
   <div class="team-grid-2col">
     {% for member in site.data.team.masters %}
     <div class="team-card">
