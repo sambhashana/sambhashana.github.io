@@ -18,7 +18,7 @@ We are always looking for motivated students to join the Saṁbhāṣaṇa Resea
 
 **Student Researchers** — BITS undergraduate and postgraduate students can join as student researchers (typically semester-long or year-long engagements). We expect a genuine interest in research and the ability to commit time consistently.
 
-**Visiting Students / Interns** — Students from other institutions interested in a research internship are also welcome to apply through the same process below.
+**Interns** — Students from other institutions interested in a research internship are also welcome to apply through the same process below.
 
 ## Research Areas
 

@@ -96,7 +96,7 @@ nav_order: 3
     {% for member in site.data.team.faculty %}
     <div class="team-card">
       <img src="https://placehold.co/200x200"
-           {% if member.email and member.email != "" %}data-email="{{ member.email }}"{% endif %}
+           {% if member.email and member.email != "" %}data-gravatar="{{ member.email | md5 }}"{% endif %}
            alt="{{ member.name }}">
       <div class="team-card-body">
         <h4>
@@ -121,6 +121,9 @@ nav_order: 3
           {% if member.github and member.github != "" %}
             <a href="https://github.com/{{ member.github }}" target="_blank"><i class="fab fa-github"></i></a>
           {% endif %}
+          {% if member.email and member.email != "" %}
+            <a href="mailto:{{ member.email }}"><i class="fas fa-envelope"></i></a>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -135,7 +138,7 @@ nav_order: 3
     {% for member in site.data.team.phd %}
     <div class="team-card">
       <img src="https://placehold.co/200x200"
-           {% if member.email and member.email != "" %}data-email="{{ member.email }}"{% endif %}
+           {% if member.email and member.email != "" %}data-gravatar="{{ member.email | md5 }}"{% endif %}
            alt="{{ member.name }}">
       <div class="team-card-body">
         <h4>{{ member.name }}</h4>
@@ -159,7 +162,7 @@ nav_order: 3
     {% for member in site.data.team.masters %}
     <div class="team-card">
       <img src="https://placehold.co/200x200"
-           {% if member.email and member.email != "" %}data-email="{{ member.email }}"{% endif %}
+           {% if member.email and member.email != "" %}data-gravatar="{{ member.email | md5 }}"{% endif %}
            alt="{{ member.name }}">
       <div class="team-card-body">
         <h4>{{ member.name }}</h4>
@@ -183,7 +186,7 @@ nav_order: 3
     {% for member in site.data.team.students %}
     <div class="team-card">
       <img src="https://placehold.co/200x200"
-           {% if member.email and member.email != "" %}data-email="{{ member.email }}"{% endif %}
+           {% if member.email and member.email != "" %}data-gravatar="{{ member.email | md5 }}"{% endif %}
            alt="{{ member.name }}">
       <div class="team-card-body">
         <h4>{{ member.name }}</h4>
@@ -228,7 +231,7 @@ nav_order: 3
     {% for member in site.data.team.interns %}
     <div class="team-card">
       <img src="https://placehold.co/200x200"
-           {% if member.email and member.email != "" %}data-email="{{ member.email }}"{% endif %}
+           {% if member.email and member.email != "" %}data-gravatar="{{ member.email | md5 }}"{% endif %}
            alt="{{ member.name }}">
       <div class="team-card-body">
         <h4>{{ member.name }}</h4>
