@@ -1,11 +1,14 @@
+@use "variables" as v;
+@use "sass:color";
+
 .page-about {
   .news-sidebar .news-title {
-    color: #1c789b;
+    color: v.$sambhashana-blue-color;
     text-decoration: none;
   }
 
   .news-sidebar .news-title:hover {
-    color: #155d79;
+    color: color.adjust(v.$sambhashana-blue-color, $lightness: -10%);
     text-decoration: underline;
   }
 
@@ -37,10 +40,10 @@
 
   .news-sidebar {
     padding: 1.1rem 1.15rem 0.45rem;
-    border: 1px solid rgba(23, 107, 135, 0.14);
+    border: 1px solid color.adjust(v.$sambhashana-blue-color, $alpha: -0.86);
     border-radius: 5px;
-    background: linear-gradient(180deg, rgba(23, 107, 135, 0.06), rgba(23, 107, 135, 0.015));
-    box-shadow: 0 10px 30px rgba(11, 37, 48, 0.05);
+    background: linear-gradient(180deg, color.adjust(v.$sambhashana-blue-color, $alpha: -0.94), color.adjust(v.$sambhashana-blue-color, $alpha: -0.985));
+    box-shadow: 0 10px 30px color.adjust(v.$logo-navy-color, $alpha: -0.95);
   }
 
   .about-news-date {

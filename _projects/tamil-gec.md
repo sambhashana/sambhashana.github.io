@@ -13,4 +13,4 @@ Grammatical error correction for Tamil is much harder than for English — agglu
 
 **Team:** J Harish Rajeshwaran, S Ashwin Arumugam
 
-{% cite bhattacharyya-etal-2025-findings %}
+{% nocite bhattacharyya-etal-2025-findings %}

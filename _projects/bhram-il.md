@@ -25,6 +25,4 @@ The dataset, code, and leaderboard are open-sourced.
 
 **Team:** Anudeep J, Omm Aditya Behera, Kirtan Bhojani (SEM 1), Aryan Dongare (SEM 1)
 
-**Links:** [GitHub](https://github.com/sambhashana/BHRAM-IL/) · [Paper](https://aclanthology.org/2025.bhasha-1.9/) · [arXiv](https://arxiv.org/abs/2512.01852)
-
-{% cite terdalkar-etal-2025-bhram %}
+{% nocite terdalkar-etal-2025-bhram %}

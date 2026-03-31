@@ -66,7 +66,7 @@ There are two steps — both are required:
 
 **Step 1.** Fill out the application form:
 
-<a href="https://forms.gle/PNtcR6qZGBPEKzYs6" target="_blank" class="btn btn-secondary rounded">
+<a href="https://forms.gle/PNtcR6qZGBPEKzYs6" target="_blank" class="btn btn-logo-teal rounded">
   <i class="fa-solid fa-arrow-up-right-from-square"></i> Fill out the Application Form
 </a>
 

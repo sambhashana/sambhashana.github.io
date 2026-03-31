@@ -1,6 +1,8 @@
 /*******************************************************************************
  * Reusable component styles: Cards, captions, profiles, etc.
  ******************************************************************************/
+@use "variables" as v;
+@use "sass:color";
 
 // Checklist
 
@@ -117,10 +119,50 @@ ul.task-list input[type="checkbox"] {
     font-size: 0.7rem;
     font-weight: 500;
     margin-right: 0.2rem;
-    background-color: var(--global-theme-color) !important;
+    background-color: #{v.$logo-teal-color} !important;
     color: white !important;
-    opacity: 0.8;
+    opacity: 0.85;
     border-radius: 4px;
+  }
+}
+
+// ------------------------------------------------------------------
+// Logo palette utility classes
+// ------------------------------------------------------------------
+// Usage: class="text-logo-orange"  / class="bg-logo-teal"  etc.
+@each $name, $col in (
+  "logo-orange":      v.$logo-orange-color,
+  "logo-amber":       v.$logo-amber-color,
+  "logo-teal":        v.$logo-teal-color,
+  "logo-blue-light":  v.$logo-blue-light-color,
+  "logo-blue-dark":   v.$logo-blue-dark-color,
+  "logo-navy":        v.$logo-navy-color,
+  "sambhashana-blue": v.$sambhashana-blue-color,
+) {
+  .text-#{$name}   { color: $col !important; }
+  .bg-#{$name}     { background-color: $col !important; }
+  .border-#{$name} { border-color: $col !important; }
+
+  .btn-#{$name} {
+    background-color: $col;
+    border-color: $col;
+    color: white;
+    &:hover, &:focus, &:active {
+      background-color: color.adjust($col, $lightness: -8%);
+      border-color: color.adjust($col, $lightness: -8%);
+      color: white;
+    }
+  }
+
+  .btn-outline-#{$name} {
+    background-color: transparent;
+    border: 1px solid $col;
+    color: $col;
+    &:hover, &:focus, &:active {
+      background-color: $col;
+      border-color: $col;
+      color: white;
+    }
   }
 }
 

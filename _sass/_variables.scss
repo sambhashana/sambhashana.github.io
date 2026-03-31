@@ -8,10 +8,21 @@
 // 1. FORCE THEME COLORS (Hard-coded Orange)
 // ------------------------------------------------------------------
 
-// We treat "Cyan" as your Orange because the theme uses this variable everywhere.
-$cyan-color: #FF6720; 
-$link-color: #FF6720;
-$link-hover-color: #d6510f; // A slightly darker orange for hover
+// Primary theme color
+$theme-color: #FC5618;
+$link-color: #FC5618;
+$link-hover-color: #d6510f;
+
+// ------------------------------------------------------------------
+// Logo palette (Saṁbhāṣaṇa)
+// ------------------------------------------------------------------
+$logo-orange-color:      #FC5618;   // Petal accent
+$logo-amber-color:       #FDA515;   // Orange gradient end
+$logo-teal-color:        #1A9AA0;   // Top petal
+$logo-blue-light-color:  #30A9CF;   // Blue petal highlight
+$logo-blue-dark-color:   #266199;   // Blue petal base
+$logo-navy-color:        #1E3A5F;   // Waveform accent
+$sambhashana-blue-color: #1C789B;   // Site accent blue (not in logo, but used on news sidebar)
 
 // ------------------------------------------------------------------
 // 2. STANDARD COLORS (Keep these normal for code syntax highlighting)
@@ -20,7 +31,7 @@ $link-hover-color: #d6510f; // A slightly darker orange for hover
 $red-color: #ff3636 !default;
 $red-color-dark: #b71c1c !default;
 $orange-color: #f29105 !default;
-$blue-color: #007bff !default; 
+$blue-color: #007bff !default;
 $blue-color-dark: #0056b3 !default;
 $green-color: #00ab37 !default;
 $green-color-lime: #b7d12a !default;
@@ -37,7 +48,7 @@ $yellow-color: #ffeb3b !default;
 // ------------------------------------------------------------------
 
 // This creates the faint background color for code/tags using your orange
-$light-cyan-color: rgba($cyan-color, 0.2); 
+$light-theme-color: rgba($theme-color, 0.2);
 $light-purple-color: color.adjust($purple-color, $lightness: 25%);
 
 $grey-color: #828282 !default;

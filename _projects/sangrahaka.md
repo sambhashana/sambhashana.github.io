@@ -14,6 +14,6 @@ related_publications: true
 The platform has been used for building and exploring Sanskrit and Ayurvedic knowledge graphs, and served as the basis for the [Natural Language Interface for Knowledge Graph Querying](/projects/kg-querying-interface/) project.
 
 
-{% cite terdalkar2021sangrahaka %}
-{% cite terdalkar2023semantic %}
-{% cite terdalkar2023ayurjnanam %}
+{% nocite terdalkar2021sangrahaka %}
+{% nocite terdalkar2023semantic %}
+{% nocite terdalkar2023ayurjnanam %}

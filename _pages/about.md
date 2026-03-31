@@ -92,7 +92,7 @@ page_class: page-about
         <div class="mt-5 p-3 rounded about-join-card">
             <h4>join the team!</h4>
             <p class="small">We are looking for motivated PhD, Master, and undergraduate students.</p>
-            <a href="{{ '/join/' | relative_url }}" class="btn btn-sm btn-outline-primary">More Info</a>
+            <a href="{{ '/join/' | relative_url }}" class="btn btn-sm btn-outline-sambhashana-blue">More Info</a>
         </div>
     </div>
 </div>
