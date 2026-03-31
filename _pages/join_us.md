@@ -7,26 +7,6 @@ nav: true
 nav_order: 5
 ---
 
-<style>
-  .email-obfuscated {
-    font-family: var(--bs-font-monospace, monospace);
-    white-space: nowrap;
-  }
-
-  .email-obfuscated .email-part {
-    color: var(--global-theme-color);
-  }
-
-  .email-obfuscated .at-marker {
-    color: var(--global-text-color);
-    font-weight: 500;
-  }
-
-  .email-obfuscated .dot-marker {
-    color: #1d4ed8;
-    font-weight: 500;
-  }
-</style>
 
 We are always looking for motivated students to join the Saṁbhāṣaṇa Research Group. We work on NLP, computational linguistics, knowledge graphs, and AI — with a focus on Indian and low-resource languages.
 
@@ -34,9 +14,11 @@ We are always looking for motivated students to join the Saṁbhāṣaṇa Resea
 
 **PhD Students** — We accept PhD students through the BITS Pilani admissions process. If you are interested in working with us, please apply through the official BITS PhD admissions portal and mention our group in your statement of purpose.
 
-**Master Students** — BITS ME students interested in research project or dissertation work with our group are welcome to reach out after reviewing our ongoing projects.
+**Master Students** — BITS Master students interested in dissertation or project work with our group are welcome to reach out after reviewing our ongoing projects.
 
 **Student Researchers** — BITS undergraduate and postgraduate students can join as student researchers (typically semester-long or year-long engagements). We expect a genuine interest in research and the ability to commit time consistently.
+
+**Visiting Students / Interns** — Students from other institutions interested in a research internship are also welcome to apply through the same process below.
 
 ## Research Areas
 
@@ -56,6 +38,8 @@ We are currently active in the following areas. See the [projects](/projects/) p
 - Clean, documented code and reproducible experiments
 - Honest communication about progress and blockers
 
+We also welcome students who come with their own ideas. If you have a research question or project in mind that aligns with our areas, feel free to propose it in your application.
+
 ## How to Apply
 
 **Please read this page in full before applying.**
@@ -64,13 +48,13 @@ There are two steps — both are required:
 
 **Step 1.** Fill out the application form:
 
-<a href="https://forms.gle/PNtcR6qZGBPEKzYs6" target="_blank" class="btn btn-primary">
+<a href="https://forms.gle/PNtcR6qZGBPEKzYs6" target="_blank" class="btn btn-secondary rounded">
   <i class="fa-solid fa-arrow-up-right-from-square"></i> Fill out the Application Form
 </a>
 
-**Step 2.** Send an email to <span class="email-obfuscated"><span class="email-part">hrishikesh</span> <span class="dot-marker">[dot]</span> <span class="email-part">rt</span> <span class="at-marker">[at]</span> <span class="email-part">hyderabad</span> <span class="dot-marker">[dot]</span> <span class="email-part">bits-pilani</span> <span class="dot-marker">[dot]</span> <span class="email-part">ac</span> <span class="dot-marker">[dot]</span> <span class="email-part">in</span></span> with:
-- Subject: `[Research Application] <Your Name> — <Area of Interest>`
+**Step 2.** Send an email to <a href="mailto:hrishikesh.rt@hyderabad.bits-pilani.ac.in">hrishikesh.rt@hyderabad.bits-pilani.ac.in</a> with:
+- Subject: `[Application] <Your Name>`
 - A brief note on why you want to work with us and which project area interests you
 - Your CV attached
 
-Applications without both steps completed may not be considered.
+Please complete both steps, lest your application be overlooked.

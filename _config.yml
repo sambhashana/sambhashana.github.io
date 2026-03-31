@@ -17,7 +17,7 @@ footer_text: >
   <a href="/brand/">Brand Assets</a>.
 keywords: NLP, Sanskrit, Indian languages, computational linguistics, knowledge graphs, information retrieval, BITS Pilani
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: logo.color.notext.svg # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: favicon.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 url: "https://sambhashana.github.io"
 baseurl: ""
 last_updated: false # set to true if you want to display last updated in the footer
