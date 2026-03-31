@@ -16,12 +16,12 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-projects",
-          title: "projects",
+        },{id: "nav-research",
+          title: "research",
           description: "Research projects and software tools developed by the group.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/projects/";
+            window.location.href = "/research/";
           },
         },{id: "nav-team",
           title: "team",
@@ -99,6 +99,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/website-live/";
+            },},{id: "projects-antarlekhaka",
+          title: 'Antarlekhaka',
+          description: "A web-based tool for multi-task natural language annotation",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/antarlekhaka/";
             },},{id: "projects-hallucination-in-indian-languages",
           title: 'Hallucination in Indian Languages',
           description: "Benchmarking hallucination recognition and assessment across Indian languages (BHRAM-IL)",
@@ -109,6 +114,11 @@ ninja.data = [{
           description: "LLM-driven agents for detecting and repairing inconsistencies in knowledge graphs",
           section: "Projects",handler: () => {
               window.location.href = "/projects/graph-repair/";
+            },},{id: "projects-jñānasaṅgraha",
+          title: 'Jñānasaṅgraha',
+          description: "A collection of computational applications for Sanskrit",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/jnanasangraha/";
             },},{id: "projects-kg-grounded-qa-for-sanskrit",
           title: 'KG-Grounded QA for Sanskrit',
           description: "Question generation and QA dataset construction from Sanskrit and Ayurveda knowledge graphs",
@@ -164,6 +174,11 @@ ninja.data = [{
           description: "Automated pipeline for constructing a legal knowledge graph from Right to Information Act documents (SEM 1, 2025–26)",
           section: "Projects",handler: () => {
               window.location.href = "/projects/rti-kg/";
+            },},{id: "projects-saṅgrāhaka",
+          title: 'Saṅgrāhaka',
+          description: "A web-based platform for annotating and querying knowledge graphs",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/sangrahaka/";
             },},{id: "projects-sanskrit-amp-classical-nlp",
           title: 'Sanskrit &amp;amp; Classical NLP',
           description: "Language technologies for Sanskrit and classical Indian languages",
@@ -174,6 +189,11 @@ ninja.data = [{
           description: "GEC and word generation for Tamil (IndicGEC / IndicWG shared tasks)",
           section: "Projects",handler: () => {
               window.location.href = "/projects/tamil-gec/";
+            },},{id: "projects-vaiyyākaraṇa",
+          title: 'Vaiyyākaraṇa',
+          description: "A Sanskrit grammar bot for Telegram",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/vaiyyakarana/";
             },},{id: "teachings-information-retrieval",
           title: 'Information Retrieval',
           description: "A comprehensive course on the principles, algorithms, and systems used to retrieve relevant information at scale, spanning classical lexical models, neural retrieval, Knowledge Graphs, and RAG systems.",
