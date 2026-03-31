@@ -79,8 +79,8 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/csa-talk/";
-            },},{id: "news-talks-at-gujarat-engineering-college-rajkot",
-          title: 'Talks at Gujarat Engineering College, Rajkot',
+            },},{id: "news-talks-at-sttp-gujarat-engineering-college-rajkot",
+          title: 'Talks at STTP, Gujarat Engineering College, Rajkot',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/rajkot-talks/";
