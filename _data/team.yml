@@ -224,6 +224,8 @@ interns:
     programme: "B. Tech. in Computer Science and MS in Computational Linguistics"
     year: 2
     email: nikhita.ravi@research.iiit.ac.in
+    project: Legal GraphRAG
+    github: n7khita-r
 
 collaborators:
   - name: Putrevu Venkata Sai Charan

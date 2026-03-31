@@ -278,11 +278,33 @@ nav[data-toggle="toc"] {
   margin-bottom: 20px;
 }
 
+.newsletter-form-container--spacious {
+  margin: 20px;
+}
+
 .newsletter-form {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
+}
+
+.newsletter-form-container--left .newsletter-form,
+.newsletter-form-container--left .newsletter-success,
+.newsletter-form-container--left .newsletter-error {
+  justify-content: flex-start;
+}
+
+.newsletter-form-container--center .newsletter-form,
+.newsletter-form-container--center .newsletter-success,
+.newsletter-form-container--center .newsletter-error {
+  justify-content: center;
+}
+
+.newsletter-form-container--right .newsletter-form,
+.newsletter-form-container--right .newsletter-success,
+.newsletter-form-container--right .newsletter-error {
+  justify-content: flex-end;
 }
 
 .newsletter-form-input,
@@ -370,6 +392,20 @@ nav[data-toggle="toc"] {
   background: transparent;
   border: none;
   cursor: pointer;
+}
+
+.newsletter-back-button:hover {
+  text-decoration: underline;
+}
+
+.calendar-wrapper-hidden {
+  display: none;
+}
+
+.calendar-iframe {
+  border: 0;
+  width: 100%;
+  height: 600px;
 }
 
 @media (max-width: 575px) {
@@ -501,6 +537,7 @@ figure.cover {
   margin: 0.5rem; /* adjust as needed */
 
   img {
+    height: 200px;
     vertical-align: bottom;
   }
 
@@ -566,6 +603,84 @@ figure.cover {
   /* mouse over link */
   a.cover-link:hover {
     color: #23212d !important;
+  }
+}
+
+.post-book-review {
+  .book-review-start-icon {
+    color: var(--global-tip-block) !important;
+  }
+
+  .book-review-finish-icon {
+    color: #e56565 !important;
+  }
+
+  figure {
+    float: none;
+    width: auto;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  figure > img {
+    vertical-align: top;
+    display: block;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0;
+  }
+
+  figure figcaption {
+    display: block;
+    caption-side: bottom;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 600px) {
+    .empty-review {
+      float: left;
+      display: block;
+      margin: 0;
+      padding: 0 0 0 20px;
+    }
+
+    .empty-review-caption {
+      caption-side: left;
+      text-align: left;
+    }
+
+    .empty-review-cover {
+      width: 250px;
+      vertical-align: top;
+      padding-right: 40px;
+    }
+
+    figure {
+      float: right;
+      display: inline-block;
+      margin: 0;
+      padding: 0 0 0 20px;
+    }
+
+    figure img {
+      width: 300px;
+      vertical-align: top;
+    }
+
+    figure figcaption {
+      text-align: left;
+    }
+
+    .mobile-break {
+      display: none;
+    }
+  }
+
+  blockquote {
+    position: relative;
+    display: table;
+    margin: 0;
   }
 }
 

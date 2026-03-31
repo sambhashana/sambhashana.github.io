@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
-description: Research publications by Hrishikesh Terdalkar and the Saṁbhāṣaṇa Research Group.
+description: research publications by Hrishikesh Terdalkar and the research group
 
 
 nav: true

@@ -5,27 +5,16 @@ permalink: /
 nav: false
 nav_order: 1
 hide_page_header: true
+page_class: page-about
 ---
-
-<style>
-    .news-sidebar .news-title {
-        color: #1C789B !important;
-        text-decoration: none;
-    }
-
-    .news-sidebar .news-title:hover {
-        color: #155d79 !important;
-        text-decoration: underline;
-    }
-</style>
 
 <div class="row">
     <div class="col-sm-8">
-        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
-            <img src="{{ '/assets/img/logo.color.notext.svg' | relative_url }}" alt="Sambhashana Logo" style="height: 64px; width: auto;">
-            <h1 style="margin: 0; font-size: 2.25rem;">Saṁbhāṣaṇa Research Group</h1>
+        <div class="about-hero">
+            <img src="{{ '/assets/img/logo.color.notext.svg' | relative_url }}" alt="Sambhashana Logo" class="about-hero-logo">
+            <h1 class="about-hero-title">saṁbhāṣaṇa research group</h1>
         </div>
-        <p>Headed by <a href="https://hrishikeshrt.github.io" target="_blank"><strong>Hrishikesh Terdalkar</strong></a></p>
+        <p class="text-muted">headed by <a href="https://hrishikeshrt.github.io" target="_blank"><strong>Hrishikesh Terdalkar</strong></a></p>
 
         <p>
             We work on natural language processing and computational linguistics, with a focus on
@@ -49,10 +38,10 @@ hide_page_header: true
             <div id="groupPhotoCarousel" class="carousel slide rounded z-depth-1" data-ride="carousel">
                 <div class="carousel-inner rounded">
                     <div class="carousel-item active">
-                        <img src="{{ '/assets/img/group/group_photo_2.jpg' | relative_url }}" class="d-block w-100" alt="Group Photo" style="object-fit: cover; max-height: 380px;">
+                        <img src="{{ '/assets/img/group/group_photo_2.jpg' | relative_url }}" class="d-block w-100 about-carousel-image" alt="Group Photo">
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ '/assets/img/group/group_photo.jpg' | relative_url }}" class="d-block w-100" alt="Group Photo" style="object-fit: cover; max-height: 380px;">
+                        <img src="{{ '/assets/img/group/group_photo.jpg' | relative_url }}" class="d-block w-100 about-carousel-image" alt="Group Photo">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#groupPhotoCarousel" role="button" data-slide="prev">
@@ -67,24 +56,25 @@ hide_page_header: true
             <p class="caption mt-1">The group at BITS Pilani, Hyderabad Campus.</p>
         </div>
 
-        <h3>Selected Publications</h3>
+        <h2>selected publications</h2>
+        <hr>
         <div class="publications">
-            {% bibliography --query @*[featured=true]* %}
+            {% bibliography --group_by none --query @*[selected=true]* %}
         </div>
-        <p>See our <a href="{{ '/publications/' | relative_url }}">full list of publications</a>.</p>
-        </div>
+        <p>see our <a href="{{ '/publications/' | relative_url }}">full list of publications</a>.</p>
+    </div>
 
     <div class="col-sm-4">
-        <h3 style="color: var(--global-theme-color);">News</h3>
+        <h2 class="about-news-heading">news</h2>
         <div class="news-sidebar">
             {% if site.news != blank -%}
                 {%- assign news = site.news | reverse -%}
                 {% for item in news limit:6 %}
                     <div class="news-item mb-3">
-                        <div style="font-size: 0.9rem; color: #888;">
+                        <div class="about-news-date">
                             {{ item.date | date: "%b %d, %Y" }}
                         </div>
-                        <div style="font-weight: 500;">
+                        <div class="about-news-title">
                            {% if item.inline -%}
                               {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
                            {%- else -%}
@@ -97,10 +87,10 @@ hide_page_header: true
                 <p>No news so far...</p>
             {%- endif %}
         </div>
-        <a href="{{ '/news/' | relative_url }}" style="font-size: 0.85rem;">See all news →</a>
+        <a href="{{ '/news/' | relative_url }}" class="about-news-link">see all news →</a>
 
-        <div class="mt-5 p-3 rounded" style="background-color: #f8f9fa; border: 1px solid #ddd;">
-            <h5>Join the Team!</h5>
+        <div class="mt-5 p-3 rounded about-join-card">
+            <h4>join the team!</h4>
             <p class="small">We are looking for motivated PhD, Master, and undergraduate students.</p>
             <a href="{{ '/join/' | relative_url }}" class="btn btn-sm btn-outline-primary">More Info</a>
         </div>

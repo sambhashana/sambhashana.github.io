@@ -2,15 +2,16 @@
 layout: page
 title: research
 permalink: /research/
-description: Research projects and software tools developed by the group.
+description: research projects and software tools developed by the group
 nav: true
 nav_order: 4
 display_categories: [funded, research, past, tools]
 horizontal: false
 published: true
+page_class: page-research
 ---
 
-Our work spans Natural Language Processing, Knowledge Graphs, Information Retrieval, and Computational Linguistics — with a focus on Indian and low-resource languages. For a broader picture of research directions and student opportunities, see our <a href="/assets/pdf/interests.pdf" target="_blank" style="white-space: nowrap;"><i class="fa-solid fa-file-pdf"></i>research interests</a>.
+Our work spans Natural Language Processing, Knowledge Graphs, Information Retrieval, and Computational Linguistics — with a focus on Indian and low-resource languages. For a broader picture of research directions and student opportunities, see our <a href="/assets/pdf/interests.pdf" target="_blank" class="research-interests-link"><i class="fa-solid fa-file-pdf"></i>research interests</a>.
 
 <!-- pages/research.md -->
 <div class="projects">

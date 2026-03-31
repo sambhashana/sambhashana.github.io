@@ -2,96 +2,15 @@
 layout: page
 title: team
 permalink: /team/
-description: The people behind the research.
+description: the people behind the research
 nav: true
 nav_order: 2
+page_class: page-team
 ---
-
-<style>
-  .team-section { margin-bottom: 2.8rem; }
-
-  .team-section-title {
-    font-size: 1.35rem;
-    font-weight: 600;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 0.45rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .team-grid-1col { display: flex; flex-direction: column; gap: 1rem; }
-  .team-grid-2col {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-  @media (max-width: 768px) {
-    .team-grid-2col { grid-template-columns: 1fr; }
-  }
-
-  .team-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.1rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    padding: 1.1rem 1.2rem;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-    transition: box-shadow 0.2s ease;
-  }
-  .team-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.09); }
-
-  .team-card img {
-    width: 90px;
-    height: 90px;
-    object-fit: cover;
-    border-radius: 8px;
-    flex-shrink: 0;
-  }
-
-  .team-card-body { flex: 1; min-width: 0; }
-
-  .team-card-body h4 {
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin: 0 0 0.15rem 0;
-  }
-
-  .team-card-role {
-    font-size: 0.85rem;
-    font-weight: 400;
-    opacity: 0.65;
-    margin: 0 0 0.1rem 0;
-  }
-
-  .team-card-meta {
-    font-size: 0.82rem;
-    opacity: 0.5;
-    margin: 0 0 0.3rem 0;
-  }
-
-  .team-card-project {
-    font-size: 0.82rem;
-    opacity: 0.55;
-    margin: 0;
-    font-weight: 400;
-  }
-
-  .team-card-links {
-    margin-top: 0.4rem;
-    font-size: 1.5rem;
-  }
-
-  .team-card-links a {
-    margin-right: 0.25rem;
-    opacity: 0.75;
-  }
-
-  .team-card-links a:hover { opacity: 1; }
-</style>
 
 <!-- FACULTY -->
 <div class="team-section">
-  <div class="team-section-title">Faculty</div>
+  <div class="team-section-title">faculty</div>
   <div class="team-grid-1col">
     {% for member in site.data.team.faculty %}
     <div class="team-card">
@@ -133,7 +52,7 @@ nav_order: 2
 
 <!-- PHD STUDENTS -->
 <div class="team-section">
-  <div class="team-section-title">PhD Students</div>
+  <div class="team-section-title">phd students</div>
   <div class="team-grid-2col">
     {% for member in site.data.team.phd %}
     <div class="team-card">
@@ -162,7 +81,7 @@ nav_order: 2
 <!-- MASTER STUDENTS -->
 {% if site.data.team.masters %}
 <div class="team-section">
-  <div class="team-section-title">Master Students</div>
+  <div class="team-section-title">masters students</div>
   <div class="team-grid-2col">
     {% for member in site.data.team.masters %}
     <div class="team-card">
@@ -191,7 +110,7 @@ nav_order: 2
 
 <!-- UNDERGRADUATE STUDENTS -->
 <div class="team-section">
-  <div class="team-section-title">Undergraduate Students</div>
+  <div class="team-section-title">undergraduate students</div>
   <div class="team-grid-2col">
     {% for member in site.data.team.students %}
     <div class="team-card">
@@ -241,7 +160,7 @@ nav_order: 2
 <!-- INTERNS -->
 {% if site.data.team.interns %}
 <div class="team-section">
-  <div class="team-section-title">Interns</div>
+  <div class="team-section-title">interns</div>
   <div class="team-grid-2col">
     {% for member in site.data.team.interns %}
     <div class="team-card">
@@ -287,27 +206,27 @@ nav_order: 2
 <!-- FORMER MEMBERS -->
 {% if site.data.team.past %}
 <div class="team-section">
-  <div class="team-section-title">Former Members</div>
-  <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem;">
+  <div class="team-section-title">former members</div>
+  <table class="former-members-table">
     <thead>
-      <tr style="border-bottom: 1px solid #ddd;">
-        <th style="text-align: left; padding: 0.3rem 0.6rem 0.3rem 0;">Name</th>
-        <th style="text-align: left; padding: 0.3rem 0.6rem;">Programme</th>
-        <th style="text-align: left; padding: 0.3rem 0 0.3rem 0.6rem;">Period</th>
+      <tr class="former-members-head-row">
+        <th class="former-members-name-head">name</th>
+        <th class="former-members-programme-head">programme</th>
+        <th class="former-members-period-head">period</th>
       </tr>
     </thead>
     <tbody>
       {% for member in site.data.team.past %}
-      <tr style="border-bottom: 1px solid #f0f0f0;">
-        <td style="padding: 0.3rem 0.6rem 0.3rem 0;">
+      <tr class="former-members-row">
+        <td class="former-members-name">
           {% if member.website and member.website != "" %}
             <a href="{{ member.website }}" target="_blank">{{ member.name }}</a>
           {% else %}
             {{ member.name }}
           {% endif %}
         </td>
-        <td style="padding: 0.3rem 0.6rem; opacity: 0.65;">{{ member.programme }}</td>
-        <td style="padding: 0.3rem 0 0.3rem 0.6rem; opacity: 0.5;">{{ member.period }}</td>
+        <td class="former-members-programme">{{ member.programme }}</td>
+        <td class="former-members-period">{{ member.period }}</td>
       </tr>
       {% endfor %}
     </tbody>

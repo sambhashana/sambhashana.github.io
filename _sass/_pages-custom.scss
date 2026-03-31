@@ -1,0 +1,309 @@
+.page-about {
+  .news-sidebar .news-title {
+    color: #1c789b;
+    text-decoration: none;
+  }
+
+  .news-sidebar .news-title:hover {
+    color: #155d79;
+    text-decoration: underline;
+  }
+
+  .about-hero {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .about-hero-logo {
+    height: 64px;
+    width: auto;
+  }
+
+  .about-hero-title {
+    margin: 0;
+    font-size: 2.25rem;
+  }
+
+  .about-carousel-image {
+    object-fit: cover;
+    max-height: 380px;
+  }
+
+  .about-news-heading {
+    color: var(--global-theme-color);
+  }
+
+  .news-sidebar {
+    padding: 1.1rem 1.15rem 0.45rem;
+    border: 1px solid rgba(23, 107, 135, 0.14);
+    border-radius: 5px;
+    background: linear-gradient(180deg, rgba(23, 107, 135, 0.06), rgba(23, 107, 135, 0.015));
+    box-shadow: 0 10px 30px rgba(11, 37, 48, 0.05);
+  }
+
+  .about-news-date {
+    font-size: 0.9rem;
+    color: #888;
+  }
+
+  .about-news-title {
+    font-weight: 500;
+  }
+
+  .about-news-link {
+    font-size: 0.85rem;
+  }
+
+  .about-join-card {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+  }
+}
+
+.page-brand {
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .logo-tile {
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .logo-tile.dark-bg {
+    background: #1a1a2e;
+    border-color: #333;
+  }
+
+  .logo-tile img {
+    max-height: 80px;
+    width: auto;
+  }
+
+  .logo-tile-label {
+    font-size: 0.82rem;
+    opacity: 0.6;
+    text-align: center;
+  }
+
+  .logo-tile a {
+    font-size: 0.82rem;
+  }
+}
+
+.page-join {
+  .discord-card {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #313338;
+    color: #dbdee1;
+    border-radius: 10px;
+    padding: 16px 20px;
+    width: 300px;
+    font-family: sans-serif;
+    font-size: 14px;
+  }
+
+  .discord-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .discord-card-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 4px;
+    object-fit: contain;
+  }
+
+  .discord-card-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: #f2f3f5;
+  }
+
+  .discord-card-subtitle {
+    font-size: 12px;
+    color: #949ba4;
+  }
+
+  .discord-members {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .discord-members-loading {
+    font-size: 12px;
+    color: #949ba4;
+  }
+}
+
+.page-team {
+  .team-section {
+    margin-bottom: 2.8rem;
+  }
+
+  .team-section-title {
+    font-size: 1.35rem;
+    font-weight: 500;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.45rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .team-grid-1col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .team-grid-2col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .team-grid-2col {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .team-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.1rem 1.2rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease;
+  }
+
+  .team-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.09);
+  }
+
+  .team-card img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .team-card-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .team-card-body h4 {
+    font-size: 1.05rem;
+    font-weight: 450;
+    margin: 0 0 0.15rem 0;
+  }
+
+  .team-card-role {
+    font-size: 0.85rem;
+    font-weight: 400;
+    opacity: 0.65;
+    margin: 0 0 0.1rem 0;
+  }
+
+  .team-card-meta {
+    font-size: 0.82rem;
+    opacity: 0.5;
+    margin: 0 0 0.3rem 0;
+  }
+
+  .team-card-project {
+    font-size: 0.82rem;
+    opacity: 0.55;
+    margin: 0;
+    font-weight: 400;
+  }
+
+  .team-card-links {
+    margin-top: 0.4rem;
+    font-size: 1.5rem;
+  }
+
+  .team-card-links a {
+    margin-right: 0.25rem;
+    opacity: 0.75;
+  }
+
+  .team-card-links a:hover {
+    opacity: 1;
+  }
+
+  .former-members-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+
+  .former-members-head-row {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .former-members-row {
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .former-members-name-head {
+    text-align: left;
+    padding: 0.3rem 0.6rem 0.3rem 0;
+  }
+
+  .former-members-programme-head {
+    text-align: left;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .former-members-period-head {
+    text-align: left;
+    padding: 0.3rem 0 0.3rem 0.6rem;
+  }
+
+  .former-members-name {
+    padding: 0.3rem 0.6rem 0.3rem 0;
+  }
+
+  .former-members-programme {
+    padding: 0.3rem 0.6rem;
+    opacity: 0.65;
+  }
+
+  .former-members-period {
+    padding: 0.3rem 0 0.3rem 0.6rem;
+    opacity: 0.5;
+  }
+}
+
+.page-research {
+  .research-interests-link {
+    white-space: nowrap;
+  }
+}
+
+.blog-card-image {
+  object-fit: cover;
+  height: 90%;
+}

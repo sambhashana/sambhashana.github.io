@@ -2,38 +2,10 @@
 layout: page
 title: brand assets
 permalink: /brand/
-description: Logos and brand assets for the Saṁbhāṣaṇa Research Group.
+description: logos and brand assets for the saṁbhāṣaṇa research group
 nav: false
+page_class: page-brand
 ---
-
-<style>
-  .logo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1.2rem;
-    margin-bottom: 2rem;
-  }
-  .logo-tile {
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-  }
-  .logo-tile.dark-bg {
-    background: #1a1a2e;
-    border-color: #333;
-  }
-  .logo-tile img { max-height: 80px; width: auto; }
-  .logo-tile-label {
-    font-size: 0.82rem;
-    opacity: 0.6;
-    text-align: center;
-  }
-  .logo-tile a { font-size: 0.82rem; }
-</style>
 
 ## Name
 

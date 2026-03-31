@@ -21,9 +21,12 @@
   publisher = "Association for Computational Linguistics",
   url       = "https://aclanthology.org/2025.bhasha-1.12/",
   pages     = "127--134",
+  pdf       = "https://aclanthology.org/2025.bhasha-1.12.pdf",
+  abstract  = "This overview paper presents the findings of the two shared tasks organized as part of the 1st Workshop on Benchmarks, Harmonization, Annotation, and Standardization for Human-Centric AI in Indian Languages (BHASHA) co-located with IJCNLP-AACL 2025. The shared tasks are: (1) Indic Grammar Error Correction (IndicGEC) and (2) Indic Word Grouping (IndicWG). For GEC, participants were tasked with producing grammatically correct sentences based on given input sentences in five Indian languages. For WG, participants were required to generate a word-grouped variant of a provided sentence in Hindi. The evaluation metric used for GEC was GLEU, while Exact Matching was employed for WG. A total of 14 teams participated in the final phase of the Shared Task 1; 2 teams participated in the final phase of Shared Task 2. The maximum GLEU scores obtained for Hindi, Bangla, Telugu, Tamil and Malayalam languages are respectively 85.69, 95.79, 88.17, 91.57 and 96.02 for the IndicGEC shared task. The highest exact matching score obtained for IndicWG shared task is 45.13{\%}.",
   abbr      = {BHASHA '25},
-  selected  = {true},
-  group_work = {true}
+  selected  = {false},
+  group_work = {true},
+  bibtex_show = {true}
 }
 
 @inproceedings{terdalkar-etal-2025-bhram,
@@ -39,10 +42,14 @@
   publisher = "Association for Computational Linguistics",
   url       = "https://aclanthology.org/2025.bhasha-1.9/",
   pages     = "102--116",
+  pdf       = "https://aclanthology.org/2025.bhasha-1.9.pdf",
+  arxiv     = "2512.01852",
+  code      = "https://github.com/sambhashana/BHRAM-IL/",
+  abstract  = "Large language models (LLMs) are increasingly deployed in multilingual applications but often generate plausible yet incorrect or misleading outputs, known as hallucinations. While hallucination detection has been studied extensively in English, under-resourced Indian languages remain largely unexplored. We present BHRAM-IL, a benchmark for hallucination recognition and assessment in multiple Indian languages, covering Hindi, Gujarati, Marathi, Odia, along with English. The benchmark comprises 36,047 curated questions across nine categories spanning factual, numerical, reasoning, and linguistic tasks. We evaluate 14 state-of-the-art multilingual LLMs on a benchmark subset of 10,265 questions, analyzing cross-lingual and factual hallucinations across languages, models, scales, categories, and domains using category-specific metrics normalized to (0,1) range. Aggregation over all categories and models yields a primary score of 0.23 and a language-corrected fuzzy score of 0.385, demonstrating the usefulness of BHRAM-IL for hallucination-focused evaluation. The dataset, and the code for generation and evaluation are available on GitHub (https://github.com/sambhashana/BHRAM-IL/) and HuggingFace (https://huggingface.co/datasets/sambhashana/BHRAM-IL/) to support future research in multilingual hallucination detection and mitigation.",
   abbr      = {BHASHA '25},
   selected  = {true},
-  featured  = {true},
-  group_work = {true}
+  group_work = {true},
+  bibtex_show = {true}
 }
 
 @inproceedings{akavarapu-etal-2025-case,
@@ -63,8 +70,13 @@
   url       = "https://aclanthology.org/2025.findings-acl.141/",
   doi       = "10.18653/v1/2025.findings-acl.141",
   pages     = "2745--2761",
+  pdf       = "https://aclanthology.org/2025.findings-acl.141.pdf",
+  arxiv     = "2505.13173",
+  code      = "https://github.com/mahesh-ak/SktQA/",
+  abstract  = "Large Language Models (LLMs) have demonstrated remarkable generalization capabilities across diverse tasks and languages. In this study, we focus on natural language understanding in three classical languages{---}Sanskrit, Ancient Greek and Latin{---}to investigate the factors affecting cross-lingual zero-shot generalization. First, we explore named entity recognition and machine translation into English. While LLMs perform equal to or better than fine-tuned baselines on out-of-domain data, smaller models often struggle, especially with niche or abstract entity types. In addition, we concentrate on Sanskrit by presenting a factoid question{--}answering (QA) dataset and show that incorporating context via retrieval-augmented generation approach significantly boosts performance. In contrast, we observe pronounced performance drops for smaller LLMs across these QA tasks. These results suggest model scale as an important factor influencing cross-lingual generalization. Assuming that models used such as GPT-4o and Llama-3.1 are not instruction fine-tuned on classical languages, our findings provide insights into how LLMs may generalize on these languages and their consequent utility in classical studies.",
   abbr      = {ACL '25},
-  selected  = {true}
+  selected  = {false},
+  bibtex_show = {true}
 }
 
 @inproceedings{terdalkar2025repair,
@@ -77,8 +89,13 @@
   doi       = "10.1145/3735546.3735859",
   pages     = "1--10",
   location  = "Berlin, Germany",
+  pdf       = "https://dl.acm.org/doi/pdf/10.1145/3735546.3735859",
+  arxiv     = "2507.03410",
+  code      = "https://github.com/hrishikeshrt/LLM-Graph-Repair/",
+  abstract  = "Property graphs are widely used in domains such as healthcare, finance, and social networks, but they often contain errors due to inconsistencies, missing data, or schema violations. Traditional rule-based and heuristic-driven graph repair methods are limited in their adaptability as they need to be tailored for each dataset. On the other hand, interactive human-in-the-loop approaches may become infeasible when dealing with large graphs, as the cost-both in terms of time and effort-of involving users becomes too high. Recent advancements in Large Language Models (LLMs) present new opportunities for automated graph repair by leveraging contextual reasoning and their access to real-world knowledge. We evaluate the effectiveness of six open-source LLMs in repairing property graphs. We assess repair quality, computational cost, and model-specific performance. Our experiments show that LLMs have the potential to detect and correct errors, with varying degrees of accuracy and efficiency. We discuss the strengths, limitations, and challenges of LLM-driven graph repair and outline future research directions for improving scalability and interpretability.",
   abbr      = {GRADES-NDA '25},
-  selected  = {true}
+  selected  = {false},
+  bibtex_show = {true}
 }
 
 % =============================================================================
@@ -100,7 +117,10 @@
   publisher = "Tokyo University of Foreign Studies",
   url       = "https://aclanthology.org/2024.paclic-1.81/",
   pages     = "838--852",
-  abbr      = {PACLIC '24}
+  pdf       = "https://aclanthology.org/2024.paclic-1.81.pdf",
+  abstract  = "In this work, we introduce a novel Grammar Question-Answering System (Aganittyam) and its associated corpus on the dravidian language Tamil. It is one of the oldest surviving languages, with a documented history spanning over 2,000 years. Tamil is a classical language and it is official in three countries including India and various diasporic communities around the world speak it. Learning Tamil Grammar is still challenging due to its Agglutination and Complex Morphology. We created a Tamil Grammar Corpus focusing all kinds of learners and manually annotated the corpus since automated tools are not efficient enough. This made us to create a ontology on entity types and relationship types for the same. We identified entities and relationships and store the resultant triplets (subject-predicate–object) as a Knowledge Graph (KG) consisting of 63,587 entities. We also developed a framework for templatized Question-Answering along with it. We performed bi-fold evaluation (Query metrics and Human-Centric based) with thorough experimentation and show that our QA system is robust, reliable and fun in answering various objective questions.",
+  abbr      = {PACLIC '24},
+  bibtex_show = {true}
 }
 
 @book{samanvaya2024,
@@ -119,7 +139,9 @@
   publisher = {Central Sanskrit University},
   address   = {India},
   isbn      = {978-93-48435-21-7},
-  abbr      = {Book}
+  abstract  = "Interlingua serves as a constructed bridge language, designed to simplify communication and analysis across diverse natural languages by identifying commonalities in structure and meaning. Samanvaya, our proposed interlingua for Indian languages, embodies this principle by unifying linguistic features shared across these languages, facilitating deeper linguistic analysis and cross-lingual understanding while preserving their unique cultural identities.",
+  abbr      = {Book},
+  bibtex_show = {true}
 }
 
 % =============================================================================
@@ -137,7 +159,13 @@
   url       = "https://aclanthology.org/2023.nlposs-1.23",
   doi       = "10.18653/v1/2023.nlposs-1.23",
   pages     = "199--211",
-  abbr      = {NLP-OSS '23}
+  pdf       = "https://aclanthology.org/2023.nlposs-1.23.pdf",
+  arxiv     = "2310.07826",
+  slides    = "https://hrishikeshrt.github.io/publication/nlposs2023/slide.pdf",
+  code      = "https://github.com/Antarlekhaka/code/",
+  abstract  = "One of the primary obstacles in the advancement of Natural Language Processing (NLP) technologies for low-resource languages is the lack of annotated datasets for training and testing machine learning models. In this paper, we present \\textit{Antarlekhaka}, a tool for manual annotation of a comprehensive set of tasks relevant to NLP. The tool is Unicode-compatible, language-agnostic, Web-deployable and supports distributed annotation by multiple simultaneous annotators. The system sports user-friendly interfaces for 8 categories of annotation tasks. These, in turn, enable the annotation of a considerably larger set of NLP tasks. The task categories include two linguistic tasks not handled by any other tool, namely, sentence boundary detection and deciding canonical word order, which are important tasks for text that is in the form of poetry. We propose the idea of \\textit{sequential annotation} based on small text units, where an annotator performs several tasks related to a single text unit before proceeding to the next unit. The research applications of the proposed mode of multi-task annotation are also discussed. Antarlekhaka outperforms other annotation tools in objective evaluation. It has been also used for two real-life annotation tasks on two different languages, namely, Sanskrit and Bengali. The tool is available at \\url{https://github.com/Antarlekhaka/code}",
+  abbr      = {NLP-OSS '23},
+  bibtex_show = {true}
 }
 
 @misc{terdalkar2023ayurjnanam,
@@ -146,7 +174,11 @@
   note   = "Presented at the National Youth Conference on Indian Knowledge Systems 2023",
   year   = "2023",
   url    = "https://sanskrit.iitk.ac.in/ayurveda/",
-  abbr   = {NYCIKS '23}
+  award  = "Best Poster Award",
+  award_name = "Best Poster Award",
+  abstract = "The Bṛhat-Trayī, consisting of Carakasaṃhitā, Suśrutasaṃhitā, and Aṣṭāṅgahṛdaya, is an encyclopaedic reference set in Āyurveda. However, the need for simpler texts led to the emergence of the Laghu-Trayī that includes Mādhavanidāna, Śārṅgadharasaṃhitā, and Bhāvaprakāśa. Authored by Ācārya Bhāvamiśra in the 16th century CE, Bhāvaprakāśa is a comprehensive work focused on medicine. The classification system of varga in its nighaṇṭu section, Bhāvaprakāśanighaṇṭu, categorizes substances based on type, origin, and medicinal properties. This valuable resource assists practitioners and researchers in Āyurveda. We present this information in an accessible manner to promote wider utilization of this knowledge. We create a robust ontology to capture the semantic information of medicinal substances, designing user-friendly interfaces for efficient annotation and curation, perform meticulous manual annotation on Bhāvaprakāśanighaṇṭu, and construct an accurate knowledge graph from three chapters of Bhāvaprakāśanighaṇṭu. The system is accessible at https://sanskrit.iitk.ac.in/ayurveda/.",
+  abbr   = {NYCIKS '23},
+  bibtex_show = {true}
 }
 
 @phdthesis{terdalkar2023sanskrit,
@@ -157,7 +189,11 @@
   month  = jun,
   type   = {PhD Thesis},
   note   = {Available at \url{https://etd.iitk.ac.in:8443/jspui/handle/123456789/21176}},
-  abbr   = {PhD}
+  pdf    = "https://hrishikeshrt.github.io/publication/phd/thesis.pdf",
+  slides = "https://hrishikeshrt.github.io/publication/phd/slides.pdf",
+  abstract = "We address the challenges and opportunities in the development of knowledge systems for Sanskrit, with a focus on question answering. By proposing a framework for the automated construction of knowledge graphs, introducing annotation tools for ontology-driven and general-purpose tasks, and offering a diverse collection of web-interfaces, tools, and software libraries, we have made significant contributions to the field of computational Sanskrit. These contributions not only enhance the accessibility and accuracy of Sanskrit text analysis but also pave the way for further advancements in knowledge representation and language processing. Ultimately, this research contributes to the preservation, understanding, and utilization of the rich linguistic information embodied in Sanskrit texts.",
+  abbr   = {PhD},
+  bibtex_show = {true}
 }
 
 @misc{terdalkar2023vaiyyakarana,
@@ -168,7 +204,11 @@
   year   = "2023",
   address = "The Australian National University, Canberra, Australia",
   url    = "https://t.me/vyakarana_bot",
-  abbr   = {WSC '23}
+  pdf    = "https://hrishikeshrt.github.io/publication/wsc2023demo_2/main.pdf",
+  code   = "https://github.com/hrishikeshrt/vaiyyakarana",
+  abstract = "\\textit{Vaiyyākaraṇaḥ} is a Telegram bot aimed towards helping the learners of Sanskrit grammar (vyākaraṇa). The salient features of \\textit{Vaiyyākaraṇaḥ} are: stem finder (prātipadikam), declension generation (subantāḥ), root finder (dhātuḥ), conjugation generation (tiṅantāḥ) and word segmentation (sandhisamāsau). State-of-the-art datasets, tools and technologies are used to offer these capabilities.",
+  abbr   = {WSC '23},
+  bibtex_show = {true}
 }
 
 @inproceedings{terdalkar2023semantic,
@@ -185,7 +225,12 @@
   publisher = "Association for Computational Linguistics",
   url       = "https://aclanthology.org/2023.wsc-csdh.11",
   pages     = "155--173",
-  abbr      = {WSC '23}
+  pdf       = "https://aclanthology.org/2023.wsc-csdh.11.pdf",
+  arxiv     = "2202.00216",
+  slides    = "https://hrishikeshrt.github.io/publication/wsc2023_1/slides.pdf",
+  abstract  = "Knowledge bases (KB) are an important resource in a number of natural language processing (NLP) and information retrieval (IR) tasks, such as semantic search, automated question-answering etc. They are also useful for researchers trying to gain information from a text. Unfortunately, however, the state-of-the-art in Sanskrit NLP does not yet allow automated construction of knowledge bases due to unavailability or lack of sufficient accuracy of tools and methods. Thus, in this work, we describe our efforts on manual annotation of Sanskrit text for the purpose of knowledge graph (KG) creation. We choose the chapter Dhānyavarga from Bhāvaprakāśanighaṇṭu of the Ayurvedic text Bhāvaprakāśa for annotation. The constructed knowledge graph contains 410 entities and 764 relationships. Since Bhāvaprakāśanighaṇṭu is a technical glossary text that describes various properties of different substances, we develop an elaborate ontology to capture the semantics of the entity and relationship types present in the text. To query the knowledge graph, we design 31 query templates that cover most of the common question patterns. For both manual annotation and querying, we customize the Sangrahaka framework previously developed by us. The entire system including the dataset is available from https://sanskrit.iitk.ac.in/ayurveda. We hope that the knowledge graph that we have created through manual annotation and subsequent curation will help in development and testing of NLP tools in future as well as studying of the Bhāvaprakāśanighaṇṭu text.",
+  abbr      = {WSC '23},
+  bibtex_show = {true}
 }
 
 @misc{terdalkar2023jnanasangraha,
@@ -196,7 +241,10 @@
   year    = "2023",
   address = "The Australian National University, Canberra, Australia",
   url     = "https://sanskrit.iitk.ac.in/jnanasangraha/",
-  abbr    = {WSC '23}
+  pdf     = "https://hrishikeshrt.github.io/publication/wsc2023demo_1/main.pdf",
+  abstract = "\\textit{Jñānasaṅgrahaḥ} is a web-based collection of several computational applications related to the Sanskrit language. The aim is to highlight the features of Sanskrit language in a way that is approachable for an enthusiastic user, even if she has a limited Sanskrit background.",
+  abbr    = {WSC '23},
+  bibtex_show = {true}
 }
 
 @misc{terdalkar2023pycdsl,
@@ -207,7 +255,11 @@
   year    = "2023",
   address = "The Australian National University, Canberra, Australia",
   url     = "https://pypi.org/project/PyCDSL/",
-  abbr    = {WSC '23}
+  pdf     = "https://hrishikeshrt.github.io/publication/wsc2023demo_3/main.pdf",
+  code    = "https://github.com/hrishikeshrt/PyCDSL",
+  abstract = "\\textit{PyCDSL} is a Python library that provides programmer friendly interface to Cologne Digital Sanskrit Dictionaries (CDSD). The library serves as a corpus management tool to download, update and access dictionaries from CDSD. The tool provides a command line interface for ease of search and a programmable interface for using CDSD in computational linguistic projects written in Python 3.",
+  abbr    = {WSC '23},
+  bibtex_show = {true}
 }
 
 @inproceedings{terdalkar2023chandojnanam,
@@ -220,7 +272,13 @@
   publisher = "Association for Computational Linguistics",
   url       = "https://aclanthology.org/2023.wsc-csdh.8",
   pages     = "113--127",
-  abbr      = {WSC '23}
+  pdf       = "https://aclanthology.org/2023.wsc-csdh.8.pdf",
+  arxiv     = "2209.14924",
+  slides    = "https://hrishikeshrt.github.io/publication/wsc2023_2/slides.pdf",
+  code      = "https://github.com/hrishikeshrt/chanda/",
+  abstract  = "We present \\textit{Chandojñānam}, a web-based Sanskrit meter (\\textit{Chanda}) identification and utilization system. In addition to the core functionality of identifying meters, it sports a friendly user interface to display the scansion, which is a graphical representation of the metrical pattern. The system supports identification of meters from uploaded images by using optical character recognition (OCR) engines in the backend. It is also able to process entire text files at a time. The text can be processed in two modes, either by treating it as a list of individual lines, or as a collection of verses. When a line or a verse does not correspond exactly to a known meter, \\textit{Chandojñānam} is capable of finding fuzzy (i.e., approximate and close) matches based on sequence matching. This opens up the scope of a meter based correction of erroneous digital corpora. The system is available for use at https://sanskrit.iitk.ac.in/jnanasangraha/chanda/, and the source code in the form of a Python library is made available at https://github.com/hrishikeshrt/chanda/.",
+  abbr      = {WSC '23},
+  bibtex_show = {true}
 }
 
 % =============================================================================
@@ -243,8 +301,13 @@
   publisher = "International Committee on Computational Linguistics",
   url       = "https://aclanthology.org/2022.coling-1.358",
   pages     = "4071--4083",
+  pdf       = "https://aclanthology.org/2022.coling-1.358.pdf",
+  arxiv     = "2208.10310",
+  code      = "https://github.com/ashishgupta2598/SaCTI",
+  abstract  = "The phenomenon of compounding is ubiquitous in Sanskrit. It serves for achieving brevity in expressing thoughts, while simultaneously enriching the lexical and structural formation of the language. In this work, we focus on the Sanskrit Compound Type Identification (SaCTI) task, where we consider the problem of identifying semantic relations between the components of a compound word. Earlier approaches solely rely on the lexical information obtained from the components and ignore the most crucial contextual and syntactic information useful for SaCTI. However, the SaCTI task is challenging primarily due to the implicitly encoded context-sensitive semantic relation between the compound components. Thus, we propose a novel multi-task learning architecture which incorporates the contextual information and enriches the complementary syntactic information using morphological tagging and dependency parsing as two auxiliary tasks. Experiments on the benchmark datasets for SaCTI show 6.1 points (Accuracy) and 7.7 points (F1-score) absolute gain compared to the state-of-the-art system. Further, our multi-lingual experiments demonstrate the efficacy of the proposed architecture in English and Marathi languages.",
   abbr      = {COLING '22},
-  selected  = {true}
+  selected  = {false},
+  bibtex_show = {true}
 }
 
 % =============================================================================
@@ -261,8 +324,16 @@
   doi       = "10.1145/3468264.3473113",
   pages     = "1520--1524",
   location  = "Athens, Greece",
-  abbr      = {FSE '21},
-  selected  = {true}
+  pdf       = "https://dl.acm.org/doi/pdf/10.1145/3468264.3473113",
+  arxiv     = "2107.02782",
+  slides    = "https://hrishikeshrt.github.io/publication/fse2021/slides.pdf",
+  code      = "https://github.com/hrishikeshrt/sangrahaka",
+  award     = "Best Software Award at 57th Convocation IITK",
+  award_name = "Best Software Award",
+  abstract  = "We present a web-based tool \\emph{Sangrahaka} for annotating entities and relationships from text corpora towards construction of a knowledge graph and subsequent querying using templatized natural language questions. The application is language and corpus agnostic, but can be tuned for specific needs of a language or a corpus. The application is freely available for download and installation. Besides having a user-friendly interface, it is fast, supports customization, and is fault tolerant on both client and server side. It outperforms other annotation tools in an objective evaluation metric. The framework has been successfully used in two annotation tasks.",
+  abbr      = {ESEC/FSE '21},
+  selected  = {false},
+  bibtex_show = {true}
 }
 
 % =============================================================================
@@ -279,7 +350,12 @@
   publisher = "Association for Computational Linguistics",
   url       = "https://aclanthology.org/W19-7508",
   pages     = "97--116",
-  abbr      = {ISCLS '19}
+  pdf       = "https://aclanthology.org/W19-7508.pdf",
+  arxiv     = "2310.07848",
+  slides    = "https://hrishikeshrt.github.io/publication/iscls2019/slides.pdf",
+  abstract  = "Sanskrit (\\emph{Saṃskṛta}) enjoys one of the largest and most varied literature in the whole world. Extracting the knowledge from it, however, is a challenging task due to multiple reasons including complexity of the language and paucity of standard natural language processing tools. In this paper, we target the problem of building knowledge graphs for particular types of relationships from Saṃskṛta texts. We build a natural language question-answering system in Saṃskṛta that uses the knowledge graph to answer factoid questions. We design a framework for the overall system and implement two separate instances of the system on human relationships from Mahābhārata and Rāmāyaṇa, and one instance on synonymous relationships from Bhāvaprakāśa Nighaṇṭu, a technical text from Āyurveda. We show that about 50% of the factoid questions can be answered correctly by the system. More importantly, we analyse the shortcomings of the system in detail for each step, and discuss the possible ways forward.",
+  abbr      = {ISCLS '19},
+  bibtex_show = {true}
 }
 
 @misc{terdalkar2019katapayadi,
@@ -290,5 +366,9 @@
   year    = "2019",
   address = "IIT Kharagpur, India",
   url     = "https://sanskrit.iitk.ac.in/jnanasangraha/sankhya/katapayaadi/",
-  abbr    = {ISCLS '19}
+  pdf     = "https://hrishikeshrt.github.io/publication/iscls2019demo/main.pdf",
+  slides  = "https://hrishikeshrt.github.io/publication/iscls2019demo/slides.pdf",
+  abstract = "The \\emph{Kaṭapayādi} system of encoding numbers as words by replacing each digit by a character was developed in ancient India. We present a web-based system that for conversion to and from the \\emph{Kaṭapayādi} numbering scheme. It can both decode a word into its corresponding number, and can encode a number into word(s).",
+  abbr    = {ISCLS '19},
+  bibtex_show = {true}
 }

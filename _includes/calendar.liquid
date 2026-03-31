@@ -10,12 +10,15 @@
       Show Calendar
     </button>
 
-    <div class="calendar-wrapper" id="calendar-container" style="display: none;">
+    <div class="calendar-wrapper calendar-wrapper-hidden" id="calendar-container">
       <iframe
         id="calendar-iframe"
         data-calendar-id="{{ include.calendar_id }}"
         data-timezone="{{ include.timezone | default: 'UTC' }}"
-        style="{{ include.style | default: 'border:0; width:100%; height:600px;' }}"
+        class="calendar-iframe{% if include.style %} calendar-iframe-custom{% endif %}"
+        {% if include.style %}
+          style="{{ include.style }}"
+        {% endif %}
         frameborder="0"
         scrolling="no"
       >

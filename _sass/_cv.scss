@@ -38,6 +38,24 @@ a.btncv:hover {
   text-decoration: none !important;
 }
 
+.cv-date-badge {
+  min-width: 75px;
+}
+
+.cv-entry-subtitle {
+  font-size: 0.95rem;
+}
+
+.cv-entry-subtitle-italic {
+  font-style: italic;
+}
+
+.language-item,
+.skill-item,
+.interest-item {
+  padding: 0.5rem 0;
+}
+
 /*****************************
  * CV TIME_TABLE styles
  *****************************/

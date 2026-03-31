@@ -16,7 +16,7 @@ layout: default
     </header>
   {% endunless %}
 
-  <article>
+  <article{% if page.page_class %} class="{{ page.page_class }}"{% endif %}>
     {{ content }}
   </article>
 
