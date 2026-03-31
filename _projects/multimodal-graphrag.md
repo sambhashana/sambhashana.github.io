@@ -13,4 +13,6 @@ Most RAG systems operate over text. Real-world knowledge is multimodal — docum
 
 The graph structure links text passages to associated figures and captions, captures spatial and semantic relationships between multimodal elements, and serves as the retrieval backbone for a generation system that can draw on both modalities.
 
-**Team:** Anirudh Chaitanya, Anshumaan Prakash
+**Team:** Anirudh Chaitanya
+
+**External Collaborator**: Pradeep Bolledu

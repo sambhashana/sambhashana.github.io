@@ -23,4 +23,4 @@ This extends prior empirical work on single-turn LLM graph repair toward multi-s
 
 **Team:** Narendra Devireddy, Aadi Parakh, Tathagat Rath, Yash Vardhan Singh
 
-**Related:** [LLM-Graph-Repair](https://github.com/hrishikeshrt/LLM-Graph-Repair/) · [GRADES-NDA @ SIGMOD/PODS '25](https://doi.org/10.1145/3735546.3735859)
+{% nocite terdalkar2025repair %}

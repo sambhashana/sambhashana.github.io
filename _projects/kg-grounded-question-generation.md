@@ -17,4 +17,4 @@ Building question answering resources from classical Indian knowledge, grounded 
 
 Future directions include multi-hop question generation over the graph and tighter integration with graph-based retrieval.
 
-**Team:** Triyansh Agrawal (Question Generation), Mudit Guraria (QA Dataset)
+**Team:** Triyansh Agrawal, Mudit Guraria

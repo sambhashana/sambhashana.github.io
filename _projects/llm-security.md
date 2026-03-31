@@ -14,3 +14,5 @@ LLMs can be manipulated. This project studies how and why — examining failure 
 The goal is to characterise where current models are brittle, understand the underlying causes, and evaluate whether robustness can be improved through prompting strategies or fine-tuning.
 
 **Team:** Amol Agrawal
+
+**External Collaborator**: Putrevu Venkata Sai Charan

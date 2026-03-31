@@ -108,14 +108,6 @@ students:
     github: PossiblyNeptune
     email: f20230369@hyderabad.bits-pilani.ac.in
 
-  - name: Anshumaan Prakash
-    project: Multimodal GraphRAG
-    batch: 2023
-    programme: "B.E. EEE"
-    roll: 2023A3PS0413H
-    github: prakashanshumaan2006-beep
-    email: f20230413@hyderabad.bits-pilani.ac.in
-
   - name: Mudit Guraria
     project: KG-Grounded QA for Sanskrit
     batch: 2024

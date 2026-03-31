@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Talks at Gujarat Engineering College, Rajkot
+title: Talks at STTP, Gujarat Engineering College, Rajkot
 date: 2026-02-02 11:45:00+0530
 inline: false
 related_posts: false
 ---
 
-Delivered two talks at Gujarat Engineering College, Rajkot.
+Delivered two talks (online) for Short-Term Training Program (STTP) at Gujarat Engineering College, Rajkot.
 
 ---
 

@@ -15,4 +15,6 @@ The pipeline extracts named entities and relationships using NLP, maps them to a
 
 This project builds on the graph construction pipeline started in SEM 1 ([Legal Knowledge Graph Construction](/projects/rti-kg/)).
 
-**Team:** Harshal Bhambhani, Rishabh Jangid
+**Team:** Harshal Bhambhani, Rishabh Jangid, Nikhita Anjani Ravi
+
+**External Collaborators:** Shubham Kumar Nigam, Noel Shallum
