@@ -11,35 +11,35 @@ ninja.data = [{
     },
   },{id: "nav-team",
           title: "team",
-          description: "The people behind the research.",
+          description: "the people behind the research",
           section: "Navigation",
           handler: () => {
             window.location.href = "/team/";
           },
         },{id: "nav-publications",
           title: "publications",
-          description: "Research publications by Hrishikesh Terdalkar and the Saṁbhāṣaṇa Research Group.",
+          description: "research publications by Hrishikesh Terdalkar and the research group",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
         },{id: "nav-research",
           title: "research",
-          description: "Research projects and software tools developed by the group.",
+          description: "research projects and software tools developed by the group",
           section: "Navigation",
           handler: () => {
             window.location.href = "/research/";
           },
         },{id: "nav-teaching",
           title: "teaching",
-          description: "Courses offered at BITS Pilani, Hyderabad Campus and other institutions.",
+          description: "courses offered at BITS Pilani, Hyderabad Campus and other institutions",
           section: "Navigation",
           handler: () => {
             window.location.href = "/teaching/";
           },
         },{id: "nav-join-us",
           title: "join us",
-          description: "Interested in working with us?",
+          description: "interested in working with us?",
           section: "Navigation",
           handler: () => {
             window.location.href = "/join/";
