@@ -99,24 +99,19 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/website-live/";
-            },},{id: "projects-ayurvedic-qa-dataset-construction",
-          title: 'Ayurvedic QA Dataset Construction',
-          description: "Structured question-answer dataset construction from Bhavaprakasha Nighantu grounded in an Ayurvedic knowledge graph",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/ayurvedic-qa-dataset/";
             },},{id: "projects-hallucination-in-indian-languages",
           title: 'Hallucination in Indian Languages',
           description: "Benchmarking hallucination recognition and assessment across Indian languages (BHRAM-IL)",
           section: "Projects",handler: () => {
               window.location.href = "/projects/bhram-il/";
-            },},{id: "projects-knowledge-graph-repair",
-          title: 'Knowledge Graph Repair',
+            },},{id: "projects-agentic-graph-repair",
+          title: 'Agentic Graph Repair',
           description: "LLM-driven agents for detecting and repairing inconsistencies in knowledge graphs",
           section: "Projects",handler: () => {
               window.location.href = "/projects/graph-repair/";
-            },},{id: "projects-kg-grounded-question-generation",
-          title: 'KG-Grounded Question Generation',
-          description: "Automatic question generation from Sanskrit and Ayurveda knowledge graphs for educational and retrieval settings",
+            },},{id: "projects-kg-grounded-qa-for-sanskrit",
+          title: 'KG-Grounded QA for Sanskrit',
+          description: "Question generation and QA dataset construction from Sanskrit and Ayurveda knowledge graphs",
           section: "Projects",handler: () => {
               window.location.href = "/projects/kg-grounded-question-generation/";
             },},{id: "projects-natural-language-interface-for-knowledge-graph-querying",
@@ -129,11 +124,21 @@ ninja.data = [{
           description: "Knowledge graph construction and GraphRAG querying over Right to Information Act documents",
           section: "Projects",handler: () => {
               window.location.href = "/projects/legal-graphrag/";
-            },},{id: "projects-llm-reasoning-amp-safety",
-          title: 'LLM Reasoning &amp;amp; Safety',
-          description: "Mathematical reasoning, adversarial robustness, and multi-turn consistency in LLMs",
+            },},{id: "projects-mathematical-reasoning-in-llms",
+          title: 'Mathematical Reasoning in LLMs',
+          description: "Investigating where and why LLMs fail at mathematical reasoning, and whether targeted interventions improve reliability.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/llm-capabilities/";
+              window.location.href = "/projects/llm-math/";
+            },},{id: "projects-multi-turn-llm-evaluation",
+          title: 'Multi-turn LLM Evaluation',
+          description: "Evaluating LLM consistency, instruction retention, and reasoning quality across multi-turn interactions.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/llm-multiturn/";
+            },},{id: "projects-security-and-robustness-in-llms",
+          title: 'Security and Robustness in LLMs',
+          description: "Probing LLMs for susceptibility to prompt injection, jailbreaks, and instruction-following failures.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/llm-security/";
             },},{id: "projects-explainability",
           title: 'Explainability',
           description: "Understanding what attention heads and layers causally contribute to LLM predictions",
@@ -149,8 +154,8 @@ ninja.data = [{
           description: "Intramural seed grant from BITS Pilani supporting early-stage research at the Saṁbhāṣaṇa Research Group",
           section: "Projects",handler: () => {
               window.location.href = "/projects/nfsg/";
-            },},{id: "projects-computational-poetry",
-          title: 'Computational Poetry',
+            },},{id: "projects-constrained-creative-generation",
+          title: 'Constrained Creative Generation',
           description: "Computational generation of poetry in Indian languages",
           section: "Projects",handler: () => {
               window.location.href = "/projects/poetry-generation/";
