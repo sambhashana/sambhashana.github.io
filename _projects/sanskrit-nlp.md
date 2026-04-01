@@ -11,4 +11,4 @@ related_publications: false
 
 Sanskrit has one of the most formalized grammatical traditions in history — Pāṇini's *Aṣtādhyāyī* predates modern formal linguistics by millennia — yet it remains under-resourced in modern NLP. This umbrella research thread covers language technologies for Sanskrit and other classical Indian languages, including structured knowledge representation, dataset creation, question answering, question generation, and evaluation.
 
-Current work in this area includes building knowledge graphs, question answering pipelines, and other tools for making classical texts more searchable, queryable, and usable in downstream intelligent systems.
+Current work in this area includes building knowledge graphs, question answering pipelines, and other tools for making classical texts easier to search (unstructured), query (structured), and use in downstream intelligent systems.
