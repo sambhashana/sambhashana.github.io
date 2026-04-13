@@ -14,6 +14,13 @@ related_publications: true
 The platform has been used for building and exploring Sanskrit and Ayurvedic knowledge graphs, and served as the basis for the [Natural Language Interface for Knowledge Graph Querying](/projects/kg-querying-interface/) project.
 
 
+### Future Work
+
+- LLM-assisted entity and relation suggestion during annotation
+- Collaborative annotation with multi-user conflict resolution
+- Support for additional graph backends beyond Neo4j
+- REST API for programmatic graph access and integration
+
 {% nocite terdalkar2021sangrahaka %}
 {% nocite terdalkar2023semantic %}
 {% nocite terdalkar2023ayurjnanam %}
