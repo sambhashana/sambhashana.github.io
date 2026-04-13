@@ -12,9 +12,11 @@ description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Research group at BITS Pilani, Hyderabad Campus, working on NLP, Computational Linguistics,
   Knowledge Graphs, and AI for low-resource and Indian languages.
 footer_text: >
-  <a href="https://github.com/sambhashana" target="_blank"><i class="fab fa-github"></i></a>
+  <a href="https://github.com/sambhashana" target="_blank" title="GitHub"><i class="fab fa-github fa-lg"></i></a>
+  &ensp;
+  <a href="https://www.linkedin.com/company/sambhashana/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
   &nbsp;&middot;&nbsp;
-  <a href="/brand/">Brand Assets</a>.
+  <a href="/brand/"><i class="fa-solid fa-palette fa-sm"></i> Brand Assets</a>.
 keywords: NLP, Sanskrit, Indian languages, computational linguistics, knowledge graphs, information retrieval, BITS Pilani
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: favicon.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)

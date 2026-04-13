@@ -20,6 +20,17 @@ footer.fixed-bottom {
       color: var(--global-theme-color);
       text-decoration: none;
     }
+
+    i.fab {
+      font-size: 1.1rem;
+      vertical-align: middle;
+      opacity: 0.85;
+      transition: opacity 0.2s ease;
+    }
+
+    &:hover i.fab {
+      opacity: 1;
+    }
   }
 }
 
