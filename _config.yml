@@ -16,7 +16,7 @@ footer_text: >
   &ensp;
   <a href="https://www.linkedin.com/company/sambhashana/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
   &nbsp;&middot;&nbsp;
-  <a href="/brand/"><i class="fa-solid fa-palette fa-sm"></i> Brand Assets</a>.
+  <a href="/brand/"><i class="fa-solid fa-palette fa-lg"></i> Brand Assets</a>.
 keywords: NLP, Sanskrit, Indian languages, computational linguistics, knowledge graphs, information retrieval, BITS Pilani
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: favicon.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
