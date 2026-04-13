@@ -14,7 +14,11 @@ page_class: page-about
             <img src="{{ '/assets/img/logo.color.notext.svg' | relative_url }}" alt="Sambhashana Logo" class="about-hero-logo">
             <h1 class="about-hero-title">saṁbhāṣaṇa research group</h1>
         </div>
-        <p class="text-muted">headed by <a href="https://hrishikeshrt.github.io" target="_blank"><strong>Hrishikesh Terdalkar</strong></a></p>
+        <p class="text-muted">
+          headed by <strong><a href="https://hrishikeshrt.github.io" target="_blank">Hrishikesh Terdalkar</a></strong>
+          &nbsp;&middot;&nbsp;
+          <a href="https://www.bits-pilani.ac.in/hyderabad/" target="_blank">BITS Pilani, Hyderabad Campus</a>
+        </p>
 
         <p>
             We work on natural language processing and computational linguistics, with a focus on
