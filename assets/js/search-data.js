@@ -99,6 +99,16 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/website-live/";
+            },},{id: "news-received-anrf-pm-early-career-research-grant",
+          title: 'Received ANRF PM Early Career Research Grant',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/anrf-pm-ecrg/";
+            },},{id: "projects-trustworthy-and-explainable-llms-for-indian-languages",
+          title: 'Trustworthy and Explainable LLMs for Indian Languages',
+          description: "Funded by the ANRF PM Early Career Research Grant, this project develops trustworthy and explainable LLMs for Indian languages",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/anrf-pm-ecrg/";
             },},{id: "projects-antarlekhaka",
           title: 'Antarlekhaka',
           description: "A web-based tool for multi-task natural language annotation",
