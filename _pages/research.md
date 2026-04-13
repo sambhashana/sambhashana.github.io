@@ -9,12 +9,18 @@ display_categories: [funded, research, past, tools]
 horizontal: false
 published: true
 page_class: page-research
+project_tag_filter: true
 ---
 
 Our work spans Natural Language Processing, Knowledge Graphs, Information Retrieval, and Computational Linguistics — with a focus on Indian and low-resource languages. For a broader picture of research directions and student opportunities, see our <a href="/assets/pdf/interests.pdf" target="_blank" class="research-interests-link"><i class="fa-solid fa-file-pdf"></i>research interests</a>.
 
+<!-- Tag filter bar -->
+<div id="project-tag-filter" class="project-tag-filter mb-3">
+  <button class="btn btn-sm tag-filter-btn active" data-tag="all">All</button>
+</div>
+
 <!-- pages/research.md -->
-<div class="projects">
+<div class="projects" id="projects-container">
 {% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->
   {% for category in page.display_categories %}

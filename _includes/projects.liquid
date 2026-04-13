@@ -1,4 +1,4 @@
-<div class="col">
+<div class="col project-card-wrapper" data-tags="{{ project.tags | join: ',' | downcase }}">
   {% if project.redirect %}
     {% assign project_url = project.redirect %}
   {% else %}
