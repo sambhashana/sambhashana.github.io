@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="117.191 180.82823 767.512 587.377" width="767.512" height="587.377">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="117.191 180.82823 767.512 713.276" width="767.512" height="713.276">
   <title>Saṁbhāṣaṇa Research Group - Hrishikesh Terdalkar</title>
 
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&amp;display=swap');
+    .logo-text { font-family: 'Fira Sans', 'Verdana', system-ui, sans-serif; font-weight: 400; }
+  </style>
+  
   <defs>
     <linearGradient id="orangePetal" gradientUnits="userSpaceOnUse" x1="331" y1="651" x2="262" y2="419">
       <stop offset="0" stop-color="#FC5618"/>
@@ -287,4 +292,9 @@
     <path fill="url(#bluePetal)" d="M606.434 496.195C605.888 493.283 605.911 492.142 606.414 489.261L606.434 496.195Z"/>
   </g>
   
+  <!-- Editable Text: Sambhashana -->
+  <g id="text-label">
+    <text x="512" y="870" text-anchor="middle" class="logo-text" font-size="96" letter-spacing="2" fill="url(#bluePetal)">Saṁbhāṣaṇa</text>
+  </g>
+
 </svg>
