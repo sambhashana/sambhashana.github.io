@@ -112,6 +112,14 @@
   .logo-tile a {
     font-size: 0.82rem;
   }
+
+  .logo-tile-label {
+    &.mono-black  { color: #000000; opacity: 1; }
+    &.mono-blue   { color: v.$logo-blue-dark-color; opacity: 1; }
+    &.mono-orange { color: v.$logo-orange-color; opacity: 1; }
+    &.mono-teal   { color: v.$logo-teal-color; opacity: 1; }
+    &.mono-white  { color: #ffffff; opacity: 1; }
+  }
 }
 
 .page-join {

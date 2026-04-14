@@ -9,11 +9,15 @@ page_class: page-brand
 
 ## name
 
-**Saṁbhāṣaṇa** (Sanskrit: संभाषण) means *conversation* or *dialogue* — a name chosen not just for its literal meaning, but for the deeper idea it carries: that language is the primary medium through which humans make sense of the world together. The group's work on NLP, computational linguistics, and knowledge representation is, at its core, an attempt to bring machines into this same space of meaning-making. The name also nods to the Sanskrit grammatical tradition — one of the earliest formal systems for analysing language — which informs much of our work on classical and Indian languages.
+**Saṁbhāṣaṇa** (Sanskrit: संभाषण) means *conversation* or *dialogue* — a name chosen not just for its literal meaning, but for the deeper idea it carries: that language is the primary medium through which humans make sense of the world together. The name also admits other readings: *saṃskṛtena bhāṣaṇa* (speaking in Sanskrit) and *śobhanaṃ bhāṣaṇam* (excellent speech) — each reflecting a different facet of the group's work.
 
-When diacritics are unavailable, the romanized spelling **Sambhashana** is acceptable.
+The group's work on NLP, computational linguistics, and knowledge representation is, at its core, an attempt to bring machines into this same space of meaning-making. The name also nods to the Sanskrit grammatical tradition — one of the earliest formal systems for analysing language — which informs much of our work on classical and Indian languages.
 
-The group is officially named **Saṁbhāṣaṇa Research Group** and is based at BITS Pilani, Hyderabad Campus.
+<p class="text-muted small">
+The group is officially named <strong>Saṁbhāṣaṇa Research Group</strong> and is based at BITS Pilani, Hyderabad Campus.
+<br>
+When diacritics are unavailable, the romanized spelling <strong>Sambhashana</strong> is acceptable.
+</p>
 
 ---
 
@@ -85,7 +89,7 @@ The group is officially named **Saṁbhāṣaṇa Research Group** and is based 
 <div class="logo-grid">
   <div class="logo-tile">
     <img src="{{ '/assets/img/logo.mono.black.svg' | relative_url }}" alt="Mono black logo">
-    <div class="logo-tile-label">Black</div>
+    <div class="logo-tile-label mono-black">Black</div>
     <div class="logo-tile-downloads">
       <a href="{{ '/assets/img/logo.mono.black.svg' | relative_url }}" download>SVG</a>
       &middot; <a href="{{ '/assets/img/logo/logo.mono.black.512.png' | relative_url }}" download>PNG 512</a>
@@ -93,7 +97,7 @@ The group is officially named **Saṁbhāṣaṇa Research Group** and is based 
   </div>
   <div class="logo-tile">
     <img src="{{ '/assets/img/logo.mono.blue.svg' | relative_url }}" alt="Mono blue logo">
-    <div class="logo-tile-label">Blue</div>
+    <div class="logo-tile-label mono-blue">Blue</div>
     <div class="logo-tile-downloads">
       <a href="{{ '/assets/img/logo.mono.blue.svg' | relative_url }}" download>SVG</a>
       &middot; <a href="{{ '/assets/img/logo/logo.mono.blue.512.png' | relative_url }}" download>PNG 512</a>
@@ -101,7 +105,7 @@ The group is officially named **Saṁbhāṣaṇa Research Group** and is based 
   </div>
   <div class="logo-tile">
     <img src="{{ '/assets/img/logo.mono.orange.svg' | relative_url }}" alt="Mono orange logo">
-    <div class="logo-tile-label">Orange</div>
+    <div class="logo-tile-label mono-orange">Orange</div>
     <div class="logo-tile-downloads">
       <a href="{{ '/assets/img/logo.mono.orange.svg' | relative_url }}" download>SVG</a>
       &middot; <a href="{{ '/assets/img/logo/logo.mono.orange.512.png' | relative_url }}" download>PNG 512</a>
@@ -109,7 +113,7 @@ The group is officially named **Saṁbhāṣaṇa Research Group** and is based 
   </div>
   <div class="logo-tile">
     <img src="{{ '/assets/img/logo.mono.teal.svg' | relative_url }}" alt="Mono teal logo">
-    <div class="logo-tile-label">Teal</div>
+    <div class="logo-tile-label mono-teal">Teal</div>
     <div class="logo-tile-downloads">
       <a href="{{ '/assets/img/logo.mono.teal.svg' | relative_url }}" download>SVG</a>
       &middot; <a href="{{ '/assets/img/logo/logo.mono.teal.512.png' | relative_url }}" download>PNG 512</a>
@@ -117,7 +121,7 @@ The group is officially named **Saṁbhāṣaṇa Research Group** and is based 
   </div>
   <div class="logo-tile dark-bg">
     <img src="{{ '/assets/img/logo.mono.white.svg' | relative_url }}" alt="Mono white logo">
-    <div class="logo-tile-label">White</div>
+    <div class="logo-tile-label mono-white">White</div>
     <div class="logo-tile-downloads">
       <a href="{{ '/assets/img/logo.mono.white.svg' | relative_url }}" download>SVG</a>
       &middot; <a href="{{ '/assets/img/logo/logo.mono.white.512.png' | relative_url }}" download>PNG 512</a>
