@@ -9,6 +9,10 @@ nav_order: 5
 
 {% include courses.liquid %}
 
+<a href="https://forms.gle/cYa3Yv9HNVCzjPfq6" target="_blank" class="btn btn-sm btn-outline-logo-teal rounded">
+  <i class="fa-solid fa-comment-dots"></i> Submit Teaching Feedback
+</a>
+
 <br>
 
 ### current

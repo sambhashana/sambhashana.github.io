@@ -17,4 +17,4 @@ Can we understand *why* an LLM makes a specific prediction — not just correlat
 
 Experiments on GPT-2 show that **Layer 11 (the final layer)** accounts for the dominant share of task-critical capacity; early layers (0–4) primarily encode syntactic structure; and approximately **86% of heads can be pruned** without meaningful performance loss, with importance following a bimodal distribution.
 
-**Team:** Narendra Devireddy, Parv Goyal, Sai Poorna Parikshit Dashetwar (SEM 1, 2025–26)
+**Team:** Narendra Devireddy, Parv Goyal (SEM 1, 2025–26)

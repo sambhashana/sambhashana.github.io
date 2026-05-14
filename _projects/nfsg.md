@@ -5,6 +5,7 @@ description: Intramural seed grant from BITS Pilani supporting early-stage resea
 img:
 importance: 1
 category: funded
+tags: [NLP, Indian Languages]
 related_publications: false
 ---
 
