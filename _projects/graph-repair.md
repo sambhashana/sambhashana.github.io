@@ -21,6 +21,4 @@ Early experiments used real-world datasets — a legal citation network and a pr
 
 This extends prior empirical work on single-turn LLM graph repair toward multi-step, tool-using agents capable of handling realistic repair scenarios at scale.
 
-**Team:** Narendra Devireddy, Aadi Parakh, Tathagat Rath, Yash Vardhan Singh
-
 {% nocite terdalkar2025repair %}

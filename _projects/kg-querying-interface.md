@@ -15,4 +15,3 @@ The work centered on integrating an LLM-based querying workflow into **Sangrahak
 
 The project also explored RAG-style enhancements over graph-structured data, with the longer-term goal of making curated knowledge graphs easier to access for non-technical users in research and educational settings.
 
-**Team:** Saaketh Dataram (Sem I 2025-26)

@@ -7,6 +7,10 @@
 #   batch:      year of joining BITS (e.g. 2023) — year of study is computed automatically
 #   programme:  degree programme (e.g. "B.E. CS", "B.E. EIE")
 #   roll:       BITS roll number (not displayed on website, kept for records)
+#
+# Project associations:
+#   projects:   list of project titles (must match title: in _projects/*.md exactly)
+#   past:       uses singular project: (one project per period)
 
 faculty:
   - name: Hrishikesh Terdalkar
@@ -22,10 +26,15 @@ faculty:
 
 phd:
   - name: Narendra Devireddy
+    projects:
+      - Agentic Graph Repair
+      - Explainability
     github: narendra-devireddy
     email: p20250504@hyderabad.bits-pilani.ac.in
 
   - name: Anudeep J
+    projects:
+      - Hallucination in Indian Languages
     github: AnudeepJ
     email: p20250503@hyderabad.bits-pilani.ac.in
 
@@ -37,7 +46,8 @@ masters:
 
 students:
   - name: Aadi Parakh
-    project: Agentic Graph Repair
+    projects:
+      - Agentic Graph Repair
     batch: 2023
     programme: "B.E. CS"
     roll: 2023A7PS0130H
@@ -45,7 +55,8 @@ students:
     email: f20230130@hyderabad.bits-pilani.ac.in
 
   - name: Tathagat Rath
-    project: Agentic Graph Repair
+    projects:
+      - Agentic Graph Repair
     batch: 2023
     programme: "B.E. CS"
     roll: 2023A7PS0109H
@@ -53,7 +64,8 @@ students:
     email: f20230109@hyderabad.bits-pilani.ac.in
 
   - name: Yash Vardhan Singh
-    project: Agentic Graph Repair
+    projects:
+      - Agentic Graph Repair
     batch: 2023
     programme: "B.E. ECE"
     roll: 2023AAPS1111H
@@ -61,7 +73,8 @@ students:
     email: f20231111@hyderabad.bits-pilani.ac.in
 
   - name: Omm Aditya Behera
-    project: Hallucination in Indian Languages
+    projects:
+      - Hallucination in Indian Languages
     batch: 2023
     programme: "B.E. EIE"
     roll: 2023A8PS0434H
@@ -69,7 +82,8 @@ students:
     email: f20230434@hyderabad.bits-pilani.ac.in
 
   - name: Parv Goyal
-    project: Explainability
+    projects:
+      - Explainability
     batch: 2023
     programme: "B.E. CS"
     roll: 2023A7PS0151H
@@ -77,7 +91,8 @@ students:
     email: f20230151@hyderabad.bits-pilani.ac.in
 
   - name: Anshuman Sharma
-    project: Multi-turn LLM Evaluation
+    projects:
+      - Multi-turn LLM Evaluation
     batch: 2023
     programme: "B.E. EEE"
     roll: 2023A3PS0404H
@@ -85,7 +100,8 @@ students:
     email: f20230404@hyderabad.bits-pilani.ac.in
 
   - name: J Harish Rajeshwaran
-    project: Grammar Error Correction
+    projects:
+      - Grammar Error Correction
     batch: 2023
     programme: "B.E. EEE"
     roll: 2023A3PS0393H
@@ -93,7 +109,8 @@ students:
     email: f20230393@hyderabad.bits-pilani.ac.in
 
   - name: S Ashwin Arumugam
-    project: Grammar Error Correction
+    projects:
+      - Grammar Error Correction
     batch: 2023
     programme: "B.E. ECE"
     roll: 2023AAPS0227H
@@ -101,7 +118,8 @@ students:
     email: f20230227@hyderabad.bits-pilani.ac.in
 
   - name: Anirudh Chaitanya
-    project: Multimodal GraphRAG
+    projects:
+      - Multimodal GraphRAG
     batch: 2023
     programme: "B.E. EEE"
     roll: 2023A3PS0369H
@@ -109,7 +127,8 @@ students:
     email: f20230369@hyderabad.bits-pilani.ac.in
 
   - name: Mudit Guraria
-    project: KG-Grounded QA for Sanskrit
+    projects:
+      - KG-Grounded QA for Sanskrit
     batch: 2024
     programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
     roll: 2024B3A7PS0551H
@@ -117,7 +136,8 @@ students:
     email: f20240551@hyderabad.bits-pilani.ac.in
 
   - name: Triyansh Agrawal
-    project: KG-Grounded QA for Sanskrit
+    projects:
+      - KG-Grounded QA for Sanskrit
     batch: 2024
     programme: "B.E. CS"
     roll: 2024A7PS0147H
@@ -125,7 +145,8 @@ students:
     email: f20240147@hyderabad.bits-pilani.ac.in
 
   - name: Ruchi Harge
-    project: Mathematical Reasoning in LLMs
+    projects:
+      - Mathematical Reasoning in LLMs
     batch: 2022
     programme: "Dual Degree (M.Sc. Math + B.E. CS)"
     roll: 2022B4A70942H
@@ -133,7 +154,8 @@ students:
     email: f20220942@hyderabad.bits-pilani.ac.in
 
   - name: Snehal Reddy
-    project: Mathematical Reasoning in LLMs
+    projects:
+      - Mathematical Reasoning in LLMs
     batch: 2022
     programme: "B.E. CS"
     roll: 2022A7PS0213H
@@ -141,7 +163,8 @@ students:
     email: f20220213@hyderabad.bits-pilani.ac.in
 
   - name: Asmit Mukherjee
-    project: Constrained Creative Generation
+    projects:
+      - Constrained Creative Generation
     batch: 2022
     programme: "Dual Degree (M.Sc. Physics + B.E. CS)"
     roll: 2022B5A70909H
@@ -149,7 +172,8 @@ students:
     email: f20220909@hyderabad.bits-pilani.ac.in
 
   - name: Amol Agrawal
-    project: Security and Robustness in LLMs
+    projects:
+      - Security and Robustness in LLMs
     batch: 2022
     programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
     roll: 2022B3A70612H
@@ -157,7 +181,8 @@ students:
     email: f20220612@hyderabad.bits-pilani.ac.in
 
   - name: Harshal Bhambhani
-    project: Legal GraphRAG
+    projects:
+      - Legal GraphRAG
     batch: 2022
     programme: "B.E. EEE"
     roll: 2022A3PS1809H
@@ -165,7 +190,8 @@ students:
     email: f20221809@hyderabad.bits-pilani.ac.in
 
   - name: Rishabh Jangid
-    project: Legal GraphRAG
+    projects:
+      - Legal GraphRAG
     batch: 2022
     programme: "B.E. EEE"
     roll: 2022A3PS0485H
@@ -175,19 +201,19 @@ students:
 past:
   # SEM 1, 2025-26
   - name: Kirtan Bhojani
-    project: BHRAM-IL
+    project: Hallucination in Indian Languages
     programme: "B.E. EEE"
     roll: 2023A3PS0366H
     period: "SEM 1, 2025-26"
 
   - name: Aryan Dongare
-    project: BHRAM-IL
+    project: Hallucination in Indian Languages
     programme: "B.E. ECE"
     roll: 2023AAPS0194H
     period: "SEM 1, 2025-26"
 
-
   - name: Nayonika Shrivastava
+    project: Domain-specific Knowledge Graph Construction
     programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
     roll: 2022B3A70582H
     period: "SEM 1, 2025-26"
@@ -211,20 +237,47 @@ interns:
     programme: "B. Tech. in Computer Science and MS in Computational Linguistics"
     year: 2
     email: nikhita.ravi@research.iiit.ac.in
-    project: Legal GraphRAG
+    projects:
+      - Legal GraphRAG
     github: n7khita-r
+
+  - name: Aaradhya Pathak
+    affiliation: IISER Bhopal
+    projects: []
+
+  - name: K Hasini Reddy
+    affiliation: IIIT Vadodara
+    projects: []
 
 collaborators:
   - name: Putrevu Venkata Sai Charan
     url: https://sites.google.com/view/venkatasaicharanputrevu/home
+    projects:
+      - Security and Robustness in LLMs
+
+  - name: Pradeep Bolledu
+    projects:
+      - Multimodal GraphRAG
+
+  - name: Shubham Kumar Nigam
+    projects:
+      - Legal GraphRAG
+
+  - name: Noel Shallum
+    projects:
+      - Legal GraphRAG
 
   - name: Arnab Bhattacharya
     url: https://www.cse.iitk.ac.in/users/arnabb/
+    projects:
+      - Constrained Creative Generation
 
   - name: Ganesh Ramkrishnan
     url: https://www.cse.iitb.ac.in/~ganesh/
 
   - name: Pawan Goyal
     url: https://cse.iitkgp.ac.in/~pawang/
+    projects:
+      - Constrained Creative Generation
 
   # Add more collaborators here. Each entry supports: name, affiliation, website.

@@ -18,6 +18,7 @@ layout: default
 
   <article{% if page.page_class %} class="{{ page.page_class }}"{% endif %}>
     {{ content }}
+    {% if page.collection == "projects" %}{% include project-team.liquid %}{% endif %}
   </article>
 
   {% if page.related_publications %}

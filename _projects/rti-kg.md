@@ -17,4 +17,3 @@ The Right to Information Act is a complex legal document — dense, hierarchical
 
 This work established the foundational graph construction pipeline. The project continues in the current semester under the [Legal GraphRAG](/projects/legal-graphrag/) thread, extending it with a GraphRAG querying interface and multilingual support.
 
-**Team:** Nayonika Shrivastava (SEM 1, 2025–26)

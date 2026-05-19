@@ -1,0 +1,54 @@
+{%- assign _pt_current = "" | split: "" -%}
+{%- assign _pt_past = "" | split: "" -%}
+{%- assign _pt_collabs = "" | split: "" -%}
+
+{%- for _m in site.data.team.faculty -%}
+  {%- if _m.projects contains page.title -%}{%- assign _pt_current = _pt_current | push: _m -%}{%- endif -%}
+{%- endfor -%}
+{%- for _m in site.data.team.phd -%}
+  {%- if _m.projects contains page.title -%}{%- assign _pt_current = _pt_current | push: _m -%}{%- endif -%}
+{%- endfor -%}
+{%- for _m in site.data.team.masters -%}
+  {%- if _m.projects contains page.title -%}{%- assign _pt_current = _pt_current | push: _m -%}{%- endif -%}
+{%- endfor -%}
+{%- for _m in site.data.team.students -%}
+  {%- if _m.projects contains page.title -%}{%- assign _pt_current = _pt_current | push: _m -%}{%- endif -%}
+{%- endfor -%}
+{%- for _m in site.data.team.interns -%}
+  {%- if _m.projects contains page.title -%}{%- assign _pt_current = _pt_current | push: _m -%}{%- endif -%}
+{%- endfor -%}
+{%- for _m in site.data.team.past -%}
+  {%- if _m.project == page.title -%}{%- assign _pt_past = _pt_past | push: _m -%}{%- endif -%}
+{%- endfor -%}
+{%- for _m in site.data.team.collaborators -%}
+  {%- if _m.projects contains page.title -%}{%- assign _pt_collabs = _pt_collabs | push: _m -%}{%- endif -%}
+{%- endfor -%}
+
+{%- if _pt_current.size > 0 or _pt_past.size > 0 or _pt_collabs.size > 0 -%}
+<div class="project-team">
+  {%- if _pt_current.size > 0 -%}
+  <p><strong>Team:</strong>
+    {%- for _m in _pt_current -%}
+      {%- unless forloop.first -%},{%- endunless %} {{ _m.name -}}
+    {%- endfor -%}
+  </p>
+  {%- endif -%}
+  {%- if _pt_past.size > 0 -%}
+  <p><strong>Former Contributors:</strong>
+    {%- for _m in _pt_past -%}
+      {%- unless forloop.first -%},{%- endunless %} {{ _m.name }} ({{ _m.period -}})
+    {%- endfor -%}
+  </p>
+  {%- endif -%}
+  {%- if _pt_collabs.size > 0 -%}
+  <p><strong>External Collaborators:</strong>
+    {%- for _m in _pt_collabs -%}
+      {%- unless forloop.first -%},{%- endunless %}
+      {%- if _m.url %} <a href="{{ _m.url }}" target="_blank">{{ _m.name }}</a>
+      {%- else %} {{ _m.name -}}
+      {%- endif -%}
+    {%- endfor -%}
+  </p>
+  {%- endif -%}
+</div>
+{%- endif -%}

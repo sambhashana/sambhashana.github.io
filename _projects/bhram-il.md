@@ -23,6 +23,4 @@ Key findings:
 
 The dataset, code, and leaderboard are open-sourced.
 
-**Team:** Anudeep J, Omm Aditya Behera, Kirtan Bhojani (SEM 1), Aryan Dongare (SEM 1)
-
 {% nocite terdalkar-etal-2025-bhram %}

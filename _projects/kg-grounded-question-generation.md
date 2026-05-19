@@ -16,5 +16,3 @@ Building question answering resources from classical Indian knowledge, grounded 
 **QA Dataset Construction** builds a structured question-answer dataset from *Bhavaprakasha Nighantu*, preserving domain-critical terminology (*Rasa*, *Guna*, *Virya*, *Vipaka*) so the resulting dataset is faithful to the source material and useful for downstream NLP and educational applications.
 
 Future directions include multi-hop question generation over the graph and tighter integration with graph-based retrieval.
-
-**Team:** Triyansh Agrawal, Mudit Guraria

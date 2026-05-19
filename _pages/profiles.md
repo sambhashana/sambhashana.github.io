@@ -61,10 +61,13 @@ page_class: page-team
            alt="{{ member.name }}">
       <div class="team-card-body">
         <h4>{{ member.name }}</h4>
-        {% if member.project %}
+        {% if member.projects and member.projects.size > 0 %}
           <p class="team-card-project">
-            {%- assign _proj = site.projects | where: "title", member.project | first -%}
-            {%- if _proj -%}<a href="{{ _proj.url | relative_url }}">{{ member.project }}</a>{%- else -%}{{ member.project }}{%- endif -%}
+            {%- for proj_title in member.projects -%}
+              {%- assign _proj = site.projects | where: "title", proj_title | first -%}
+              {%- if _proj -%}<a href="{{ _proj.url | relative_url }}">{{ proj_title }}</a>{%- else -%}{{ proj_title }}{%- endif -%}
+              {%- unless forloop.last -%}, {%- endunless -%}
+            {%- endfor -%}
           </p>
         {% endif %}
         <div class="team-card-links">
@@ -90,10 +93,13 @@ page_class: page-team
            alt="{{ member.name }}">
       <div class="team-card-body">
         <h4>{{ member.name }}</h4>
-        {% if member.project %}
+        {% if member.projects and member.projects.size > 0 %}
           <p class="team-card-project">
-            {%- assign _proj = site.projects | where: "title", member.project | first -%}
-            {%- if _proj -%}<a href="{{ _proj.url | relative_url }}">{{ member.project }}</a>{%- else -%}{{ member.project }}{%- endif -%}
+            {%- for proj_title in member.projects -%}
+              {%- assign _proj = site.projects | where: "title", proj_title | first -%}
+              {%- if _proj -%}<a href="{{ _proj.url | relative_url }}">{{ proj_title }}</a>{%- else -%}{{ proj_title }}{%- endif -%}
+              {%- unless forloop.last -%}, {%- endunless -%}
+            {%- endfor -%}
           </p>
         {% endif %}
         <div class="team-card-links">
@@ -140,10 +146,13 @@ page_class: page-team
             {% if member.programme and member.programme != "" %}{{ member.programme }}{% endif %}
           </p>
         {% endif %}
-        {% if member.project %}
+        {% if member.projects and member.projects.size > 0 %}
           <p class="team-card-project">
-            {%- assign _proj = site.projects | where: "title", member.project | first -%}
-            {%- if _proj -%}<a href="{{ _proj.url | relative_url }}">{{ member.project }}</a>{%- else -%}{{ member.project }}{%- endif -%}
+            {%- for proj_title in member.projects -%}
+              {%- assign _proj = site.projects | where: "title", proj_title | first -%}
+              {%- if _proj -%}<a href="{{ _proj.url | relative_url }}">{{ proj_title }}</a>{%- else -%}{{ proj_title }}{%- endif -%}
+              {%- unless forloop.last -%}, {%- endunless -%}
+            {%- endfor -%}
           </p>
         {% endif %}
         <div class="team-card-links">
@@ -185,10 +194,13 @@ page_class: page-team
             {%- if member.programme %}{{ member.programme }}{%- endif -%}
           </p>
         {% endif %}
-        {% if member.project %}
+        {% if member.projects and member.projects.size > 0 %}
           <p class="team-card-project">
-            {%- assign _proj = site.projects | where: "title", member.project | first -%}
-            {%- if _proj -%}<a href="{{ _proj.url | relative_url }}">{{ member.project }}</a>{%- else -%}{{ member.project }}{%- endif -%}
+            {%- for proj_title in member.projects -%}
+              {%- assign _proj = site.projects | where: "title", proj_title | first -%}
+              {%- if _proj -%}<a href="{{ _proj.url | relative_url }}">{{ proj_title }}</a>{%- else -%}{{ proj_title }}{%- endif -%}
+              {%- unless forloop.last -%}, {%- endunless -%}
+            {%- endfor -%}
           </p>
         {% endif %}
         <div class="team-card-links">
