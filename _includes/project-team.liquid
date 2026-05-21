@@ -1,27 +1,28 @@
+{%- assign _page_slug = page.path | split: '/' | last | remove: '.md' -%}
 {%- assign _pt_current = "" | split: "" -%}
 {%- assign _pt_past = "" | split: "" -%}
 {%- assign _pt_collabs = "" | split: "" -%}
 
 {%- for _m in site.data.team.faculty -%}
-  {%- if _m.projects contains page.title -%}{%- assign _pt_current = _pt_current | push: _m -%}{%- endif -%}
+  {%- if _m.projects contains _page_slug -%}{%- assign _pt_current = _pt_current | push: _m -%}{%- endif -%}
 {%- endfor -%}
 {%- for _m in site.data.team.phd -%}
-  {%- if _m.projects contains page.title -%}{%- assign _pt_current = _pt_current | push: _m -%}{%- endif -%}
+  {%- if _m.projects contains _page_slug -%}{%- assign _pt_current = _pt_current | push: _m -%}{%- endif -%}
 {%- endfor -%}
 {%- for _m in site.data.team.masters -%}
-  {%- if _m.projects contains page.title -%}{%- assign _pt_current = _pt_current | push: _m -%}{%- endif -%}
+  {%- if _m.projects contains _page_slug -%}{%- assign _pt_current = _pt_current | push: _m -%}{%- endif -%}
 {%- endfor -%}
 {%- for _m in site.data.team.students -%}
-  {%- if _m.projects contains page.title -%}{%- assign _pt_current = _pt_current | push: _m -%}{%- endif -%}
+  {%- if _m.projects contains _page_slug -%}{%- assign _pt_current = _pt_current | push: _m -%}{%- endif -%}
 {%- endfor -%}
 {%- for _m in site.data.team.interns -%}
-  {%- if _m.projects contains page.title -%}{%- assign _pt_current = _pt_current | push: _m -%}{%- endif -%}
+  {%- if _m.projects contains _page_slug -%}{%- assign _pt_current = _pt_current | push: _m -%}{%- endif -%}
 {%- endfor -%}
 {%- for _m in site.data.team.past -%}
-  {%- if _m.project == page.title -%}{%- assign _pt_past = _pt_past | push: _m -%}{%- endif -%}
+  {%- if _m.projects contains _page_slug -%}{%- assign _pt_past = _pt_past | push: _m -%}{%- endif -%}
 {%- endfor -%}
 {%- for _m in site.data.team.collaborators -%}
-  {%- if _m.projects contains page.title -%}{%- assign _pt_collabs = _pt_collabs | push: _m -%}{%- endif -%}
+  {%- if _m.projects contains _page_slug -%}{%- assign _pt_collabs = _pt_collabs | push: _m -%}{%- endif -%}
 {%- endfor -%}
 
 {%- if _pt_current.size > 0 or _pt_past.size > 0 or _pt_collabs.size > 0 -%}

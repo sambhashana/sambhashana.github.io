@@ -9,8 +9,8 @@
 #   roll:       BITS roll number (not displayed on website, kept for records)
 #
 # Project associations:
-#   projects:   list of project titles (must match title: in _projects/*.md exactly)
-#   past:       uses singular project: (one project per period)
+#   projects:   list of project slugs (filename stem of _projects/*.md, e.g. "bhram-il")
+#   past:       same projects: list; period: describes when they were involved
 
 faculty:
   - name: Hrishikesh Terdalkar
@@ -27,14 +27,14 @@ faculty:
 phd:
   - name: Narendra Devireddy
     projects:
-      - Agentic Graph Repair
-      - Explainability
+      - graph-repair
+      - mechanistic-interpretability
     github: narendra-devireddy
     email: p20250504@hyderabad.bits-pilani.ac.in
 
   - name: Anudeep J
     projects:
-      - Hallucination in Indian Languages
+      - bhram-il
     github: AnudeepJ
     email: p20250503@hyderabad.bits-pilani.ac.in
 
@@ -47,7 +47,7 @@ masters:
 students:
   - name: Aadi Parakh
     projects:
-      - Agentic Graph Repair
+      - graph-repair
     batch: 2023
     programme: "B.E. CS"
     roll: 2023A7PS0130H
@@ -56,7 +56,7 @@ students:
 
   - name: Tathagat Rath
     projects:
-      - Agentic Graph Repair
+      - graph-repair
     batch: 2023
     programme: "B.E. CS"
     roll: 2023A7PS0109H
@@ -65,7 +65,7 @@ students:
 
   - name: Yash Vardhan Singh
     projects:
-      - Agentic Graph Repair
+      - graph-repair
     batch: 2023
     programme: "B.E. ECE"
     roll: 2023AAPS1111H
@@ -74,7 +74,7 @@ students:
 
   - name: Omm Aditya Behera
     projects:
-      - Hallucination in Indian Languages
+      - bhram-il
     batch: 2023
     programme: "B.E. EIE"
     roll: 2023A8PS0434H
@@ -83,7 +83,7 @@ students:
 
   - name: Parv Goyal
     projects:
-      - Explainability
+      - mechanistic-interpretability
     batch: 2023
     programme: "B.E. CS"
     roll: 2023A7PS0151H
@@ -92,7 +92,7 @@ students:
 
   - name: Anshuman Sharma
     projects:
-      - Multi-turn LLM Evaluation
+      - llm-multiturn
     batch: 2023
     programme: "B.E. EEE"
     roll: 2023A3PS0404H
@@ -101,7 +101,7 @@ students:
 
   - name: J Harish Rajeshwaran
     projects:
-      - Grammar Error Correction
+      - tamil-gec
     batch: 2023
     programme: "B.E. EEE"
     roll: 2023A3PS0393H
@@ -110,7 +110,7 @@ students:
 
   - name: S Ashwin Arumugam
     projects:
-      - Grammar Error Correction
+      - tamil-gec
     batch: 2023
     programme: "B.E. ECE"
     roll: 2023AAPS0227H
@@ -119,7 +119,7 @@ students:
 
   - name: Anirudh Chaitanya
     projects:
-      - Multimodal GraphRAG
+      - multimodal-graphrag
     batch: 2023
     programme: "B.E. EEE"
     roll: 2023A3PS0369H
@@ -128,7 +128,7 @@ students:
 
   - name: Mudit Guraria
     projects:
-      - KG-Grounded QA for Sanskrit
+      - kg-grounded-question-generation
     batch: 2024
     programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
     roll: 2024B3A7PS0551H
@@ -137,7 +137,7 @@ students:
 
   - name: Triyansh Agrawal
     projects:
-      - KG-Grounded QA for Sanskrit
+      - kg-grounded-question-generation
     batch: 2024
     programme: "B.E. CS"
     roll: 2024A7PS0147H
@@ -146,7 +146,7 @@ students:
 
   - name: Ruchi Harge
     projects:
-      - Mathematical Reasoning in LLMs
+      - llm-math
     batch: 2022
     programme: "Dual Degree (M.Sc. Math + B.E. CS)"
     roll: 2022B4A70942H
@@ -155,7 +155,7 @@ students:
 
   - name: Snehal Reddy
     projects:
-      - Mathematical Reasoning in LLMs
+      - llm-math
     batch: 2022
     programme: "B.E. CS"
     roll: 2022A7PS0213H
@@ -164,7 +164,7 @@ students:
 
   - name: Asmit Mukherjee
     projects:
-      - Constrained Creative Generation
+      - poetry-generation
     batch: 2022
     programme: "Dual Degree (M.Sc. Physics + B.E. CS)"
     roll: 2022B5A70909H
@@ -173,7 +173,7 @@ students:
 
   - name: Amol Agrawal
     projects:
-      - Security and Robustness in LLMs
+      - llm-security
     batch: 2022
     programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
     roll: 2022B3A70612H
@@ -182,7 +182,7 @@ students:
 
   - name: Harshal Bhambhani
     projects:
-      - Legal GraphRAG
+      - legal-graphrag
     batch: 2022
     programme: "B.E. EEE"
     roll: 2022A3PS1809H
@@ -191,7 +191,7 @@ students:
 
   - name: Rishabh Jangid
     projects:
-      - Legal GraphRAG
+      - legal-graphrag
     batch: 2022
     programme: "B.E. EEE"
     roll: 2022A3PS0485H
@@ -201,31 +201,36 @@ students:
 past:
   # SEM 1, 2025-26
   - name: Kirtan Bhojani
-    project: Hallucination in Indian Languages
+    projects:
+      - bhram-il
     programme: "B.E. EEE"
     roll: 2023A3PS0366H
     period: "SEM 1, 2025-26"
 
   - name: Aryan Dongare
-    project: Hallucination in Indian Languages
+    projects:
+      - bhram-il
     programme: "B.E. ECE"
     roll: 2023AAPS0194H
     period: "SEM 1, 2025-26"
 
   - name: Nayonika Shrivastava
-    project: Domain-specific Knowledge Graph Construction
+    projects:
+      - rti-kg
     programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
     roll: 2022B3A70582H
     period: "SEM 1, 2025-26"
 
   - name: Saaketh Dataram
-    project: Natural Language Interface for Knowledge Graph Querying
+    projects:
+      - kg-querying-interface
     programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
     roll: 2022B3A70452H
     period: "SEM 1, 2025-26"
 
   - name: Prince
-    project: Agentic Graph Repair
+    projects:
+      - graph-repair
     programme: "B.E. CS"
     roll: 2023A7PS0115H
     github: prince721773
@@ -238,7 +243,7 @@ interns:
     year: 2
     email: nikhita.ravi@research.iiit.ac.in
     projects:
-      - Legal GraphRAG
+      - legal-graphrag
     github: n7khita-r
 
   - name: Aaradhya Pathak
@@ -259,24 +264,24 @@ collaborators:
   - name: Putrevu Venkata Sai Charan
     url: https://sites.google.com/view/venkatasaicharanputrevu/home
     projects:
-      - Security and Robustness in LLMs
+      - llm-security
 
   - name: Pradeep Bolledu
     projects:
-      - Multimodal GraphRAG
+      - multimodal-graphrag
 
   - name: Shubham Kumar Nigam
     projects:
-      - Legal GraphRAG
+      - legal-graphrag
 
   - name: Noel Shallum
     projects:
-      - Legal GraphRAG
+      - legal-graphrag
 
   - name: Arnab Bhattacharya
     url: https://www.cse.iitk.ac.in/users/arnabb/
     projects:
-      - Constrained Creative Generation
+      - poetry-generation
 
   - name: Ganesh Ramkrishnan
     url: https://www.cse.iitb.ac.in/~ganesh/
@@ -284,6 +289,4 @@ collaborators:
   - name: Pawan Goyal
     url: https://cse.iitkgp.ac.in/~pawang/
     projects:
-      - Constrained Creative Generation
-
-  # Add more collaborators here. Each entry supports: name, affiliation, website.
+      - poetry-generation

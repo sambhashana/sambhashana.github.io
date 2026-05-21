@@ -63,9 +63,10 @@ page_class: page-team
         <h4>{{ member.name }}</h4>
         {% if member.projects and member.projects.size > 0 %}
           <p class="team-card-project">
-            {%- for proj_title in member.projects -%}
-              {%- assign _proj = site.projects | where: "title", proj_title | first -%}
-              {%- if _proj -%}<a href="{{ _proj.url | relative_url }}">{{ proj_title }}</a>{%- else -%}{{ proj_title }}{%- endif -%}
+            {%- for proj_slug in member.projects -%}
+              {%- assign _proj_path = "_projects/" | append: proj_slug | append: ".md" -%}
+              {%- assign _proj = site.projects | where: "path", _proj_path | first -%}
+              {%- if _proj -%}<a href="{{ _proj.url | relative_url }}">{{ _proj.title }}</a>{%- else -%}{{ proj_slug }}{%- endif -%}
               {%- unless forloop.last -%}, {%- endunless -%}
             {%- endfor -%}
           </p>
@@ -95,9 +96,10 @@ page_class: page-team
         <h4>{{ member.name }}</h4>
         {% if member.projects and member.projects.size > 0 %}
           <p class="team-card-project">
-            {%- for proj_title in member.projects -%}
-              {%- assign _proj = site.projects | where: "title", proj_title | first -%}
-              {%- if _proj -%}<a href="{{ _proj.url | relative_url }}">{{ proj_title }}</a>{%- else -%}{{ proj_title }}{%- endif -%}
+            {%- for proj_slug in member.projects -%}
+              {%- assign _proj_path = "_projects/" | append: proj_slug | append: ".md" -%}
+              {%- assign _proj = site.projects | where: "path", _proj_path | first -%}
+              {%- if _proj -%}<a href="{{ _proj.url | relative_url }}">{{ _proj.title }}</a>{%- else -%}{{ proj_slug }}{%- endif -%}
               {%- unless forloop.last -%}, {%- endunless -%}
             {%- endfor -%}
           </p>
@@ -148,9 +150,10 @@ page_class: page-team
         {% endif %}
         {% if member.projects and member.projects.size > 0 %}
           <p class="team-card-project">
-            {%- for proj_title in member.projects -%}
-              {%- assign _proj = site.projects | where: "title", proj_title | first -%}
-              {%- if _proj -%}<a href="{{ _proj.url | relative_url }}">{{ proj_title }}</a>{%- else -%}{{ proj_title }}{%- endif -%}
+            {%- for proj_slug in member.projects -%}
+              {%- assign _proj_path = "_projects/" | append: proj_slug | append: ".md" -%}
+              {%- assign _proj = site.projects | where: "path", _proj_path | first -%}
+              {%- if _proj -%}<a href="{{ _proj.url | relative_url }}">{{ _proj.title }}</a>{%- else -%}{{ proj_slug }}{%- endif -%}
               {%- unless forloop.last -%}, {%- endunless -%}
             {%- endfor -%}
           </p>
@@ -196,9 +199,10 @@ page_class: page-team
         {% endif %}
         {% if member.projects and member.projects.size > 0 %}
           <p class="team-card-project">
-            {%- for proj_title in member.projects -%}
-              {%- assign _proj = site.projects | where: "title", proj_title | first -%}
-              {%- if _proj -%}<a href="{{ _proj.url | relative_url }}">{{ proj_title }}</a>{%- else -%}{{ proj_title }}{%- endif -%}
+            {%- for proj_slug in member.projects -%}
+              {%- assign _proj_path = "_projects/" | append: proj_slug | append: ".md" -%}
+              {%- assign _proj = site.projects | where: "path", _proj_path | first -%}
+              {%- if _proj -%}<a href="{{ _proj.url | relative_url }}">{{ _proj.title }}</a>{%- else -%}{{ proj_slug }}{%- endif -%}
               {%- unless forloop.last -%}, {%- endunless -%}
             {%- endfor -%}
           </p>
