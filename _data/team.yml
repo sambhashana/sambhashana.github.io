@@ -243,10 +243,16 @@ interns:
 
   - name: Aaradhya Pathak
     affiliation: IISER Bhopal
+    programme: "B.S."
+    year: 3
+    email: aaradhya23@iiserb.ac.in
     projects: []
 
   - name: K Hasini Reddy
     affiliation: IIIT Vadodara
+    programme: "B. Tech. CSE"
+    year: 3
+    email: kandula.hasini009@gmail.com
     projects: []
 
 collaborators:
