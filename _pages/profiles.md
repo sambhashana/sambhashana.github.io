@@ -242,7 +242,9 @@ page_class: page-team
           {% endif %}
         </td>
         <td class="former-members-programme">{{ member.programme }}</td>
-        <td class="former-members-period">{{ member.period }}</td>
+        <td class="former-members-period">
+          {%- if member.period.first -%}{{ member.period | join: ", " }}{%- else -%}{{ member.period }}{%- endif -%}
+        </td>
       </tr>
       {% endfor %}
     </tbody>

@@ -37,7 +37,7 @@
   {%- if _pt_past.size > 0 -%}
   <p><strong>Former Contributors:</strong>
     {%- for _m in _pt_past -%}
-      {%- unless forloop.first -%},{%- endunless %} {{ _m.name }} ({{ _m.period -}})
+      {%- unless forloop.first -%},{%- endunless %} {{ _m.name }} ({%- if _m.period.first -%}{{ _m.period | join: ", " }}{%- else -%}{{ _m.period }}{%- endif -%})
     {%- endfor -%}
   </p>
   {%- endif -%}

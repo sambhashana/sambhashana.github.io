@@ -10,7 +10,7 @@
 #
 # Project associations:
 #   projects:   list of project slugs (filename stem of _projects/*.md, e.g. "bhram-il")
-#   past:       same projects: list; period: describes when they were involved
+#   past:       same projects: list; period: string or list of strings (for disjoint periods)
 
 faculty:
   - name: Hrishikesh Terdalkar
