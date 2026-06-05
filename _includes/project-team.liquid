@@ -1,6 +1,7 @@
 {%- assign _page_slug = page.path | split: '/' | last | remove: '.md' -%}
 {%- assign _pt_current = "" | split: "" -%}
 {%- assign _pt_past = "" | split: "" -%}
+{%- assign _pt_past_periods = "" | split: "" -%}
 {%- assign _pt_collabs = "" | split: "" -%}
 
 {%- for _m in site.data.team.faculty -%}
@@ -18,9 +19,27 @@
 {%- for _m in site.data.team.interns -%}
   {%- if _m.projects contains _page_slug -%}{%- assign _pt_current = _pt_current | push: _m -%}{%- endif -%}
 {%- endfor -%}
+
 {%- for _m in site.data.team.past -%}
-  {%- if _m.projects contains _page_slug -%}{%- assign _pt_past = _pt_past | push: _m -%}{%- endif -%}
+  {%- if _m.stints -%}
+    {%- for stint in _m.stints -%}
+      {%- if stint.projects contains _page_slug -%}
+        {%- if stint.period.first -%}{%- assign _pstr = stint.period | join: ", " -%}
+        {%- else -%}{%- assign _pstr = stint.period -%}{%- endif -%}
+        {%- assign _pt_past = _pt_past | push: _m -%}
+        {%- assign _pt_past_periods = _pt_past_periods | push: _pstr -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- else -%}
+    {%- if _m.projects contains _page_slug -%}
+      {%- if _m.period.first -%}{%- assign _pstr = _m.period | join: ", " -%}
+      {%- else -%}{%- assign _pstr = _m.period -%}{%- endif -%}
+      {%- assign _pt_past = _pt_past | push: _m -%}
+      {%- assign _pt_past_periods = _pt_past_periods | push: _pstr -%}
+    {%- endif -%}
+  {%- endif -%}
 {%- endfor -%}
+
 {%- for _m in site.data.team.collaborators -%}
   {%- if _m.projects contains _page_slug -%}{%- assign _pt_collabs = _pt_collabs | push: _m -%}{%- endif -%}
 {%- endfor -%}
@@ -37,7 +56,7 @@
   {%- if _pt_past.size > 0 -%}
   <p><strong>Former Contributors:</strong>
     {%- for _m in _pt_past -%}
-      {%- unless forloop.first -%},{%- endunless %} {{ _m.name }} ({%- if _m.period.first -%}{{ _m.period | join: ", " }}{%- else -%}{{ _m.period }}{%- endif -%})
+      {%- unless forloop.first -%},{%- endunless %} {{ _m.name }} ({{ _pt_past_periods[forloop.index0] -}})
     {%- endfor -%}
   </p>
   {%- endif -%}

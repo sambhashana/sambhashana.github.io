@@ -243,7 +243,19 @@ page_class: page-team
         </td>
         <td class="former-members-programme">{{ member.programme }}</td>
         <td class="former-members-period">
-          {%- if member.period.first -%}{{ member.period | join: ", " }}{%- else -%}{{ member.period }}{%- endif -%}
+          {%- if member.stints -%}
+            {%- assign _all_periods = "" | split: "" -%}
+            {%- for stint in member.stints -%}
+              {%- if stint.period.first -%}{%- assign _p = stint.period | join: ", " -%}
+              {%- else -%}{%- assign _p = stint.period -%}{%- endif -%}
+              {%- assign _all_periods = _all_periods | push: _p -%}
+            {%- endfor -%}
+            {{- _all_periods | join: "; " -}}
+          {%- elsif member.period.first -%}
+            {{- member.period | join: ", " -}}
+          {%- else -%}
+            {{- member.period -}}
+          {%- endif -%}
         </td>
       </tr>
       {% endfor %}

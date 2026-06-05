@@ -10,7 +10,8 @@
 #
 # Project associations:
 #   projects:   list of project slugs (filename stem of _projects/*.md, e.g. "bhram-il")
-#   past:       same projects: list; period: string or list of strings (for disjoint periods)
+#   past:       flat form:  projects: [...] + period: "..." (or list for disjoint periods)
+#               tuple form: stints: [{projects: [...], period: "..."}, ...] (different projects per period)
 
 faculty:
   - name: Hrishikesh Terdalkar
