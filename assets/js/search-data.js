@@ -25,7 +25,7 @@ ninja.data = [{
           },
         },{id: "nav-publications",
           title: "publications",
-          description: "research publications by Hrishikesh Terdalkar and the research group",
+          description: "research publications by Hrishikesh Terdalkar and Saṁbhāṣaṇa Lab",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
@@ -104,6 +104,21 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/anrf-pm-ecrg/";
+            },},{id: "news-invited-panelist-at-summersaas-ai-hackathon-2026",
+          title: 'Invited Panelist at SummerSaaS AI Hackathon 2026',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/summersaas-panel-2026/";
+            },},{id: "news-resource-person-at-first-summer-school-on-sanskrit-computational-linguistics",
+          title: 'Resource Person at First Summer School on Sanskrit Computational Linguistics',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/mahe-scl-2026/";
+            },},{id: "news-joining-iiit-hyderabad-as-assistant-professor",
+          title: 'Joining IIIT Hyderabad as Assistant Professor',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/iiit-hyderabad-join/";
             },},{id: "projects-trustworthy-and-explainable-llms-for-indian-languages",
           title: 'Trustworthy and Explainable LLMs for Indian Languages',
           description: "Funded by the ANRF PM Early Career Research Grant, this project develops trustworthy and explainable LLMs for Indian languages",
