@@ -114,11 +114,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/mahe-scl-2026/";
-            },},{id: "news-joining-iiit-hyderabad-as-assistant-professor",
-          title: 'Joining IIIT Hyderabad as Assistant Professor',
+            },},{id: "news-moving-to-iiit-hyderabad",
+          title: 'Moving to IIIT Hyderabad',
           description: "",
           section: "News",handler: () => {
-              window.location.href = "/news/iiit-hyderabad-join/";
+              window.location.href = "/news/upcoming-move-to-iiit-hyderabad/";
             },},{id: "projects-trustworthy-and-explainable-llms-for-indian-languages",
           title: 'Trustworthy and Explainable LLMs for Indian Languages',
           description: "Funded by the ANRF PM Early Career Research Grant, this project develops trustworthy and explainable LLMs for Indian languages",
