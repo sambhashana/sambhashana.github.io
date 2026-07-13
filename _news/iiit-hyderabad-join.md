@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Joining IIIT Hyderabad as Assistant Professor"
-date: 2026-07-13 09:00:00+0530
+date: 2026-07-12 09:00:00+0530
 inline: false
 related_posts: false
 ---
