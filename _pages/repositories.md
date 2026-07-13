@@ -2,7 +2,7 @@
 layout: page
 permalink: /repositories/
 title: repositories
-description: GitHub profiles and repositories from the Saṁbhāṣaṇa Research Group.
+description: GitHub profiles and repositories from Saṁbhāṣaṇa Lab.
 nav: false
 nav_order: 4
 published: false

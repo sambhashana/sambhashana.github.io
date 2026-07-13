@@ -6,4 +6,4 @@ inline: false
 related_posts: false
 ---
 
-The Saṁbhāṣaṇa Research Group website is now officially live. Thank you Aadi Parakh for the help in setting it up.
+The Saṁbhāṣaṇa Lab website is now officially live. Thank you Aadi Parakh for the help in setting it up.

@@ -6,4 +6,4 @@ inline: false
 related_posts: false
 ---
 
-The Saṁbhāṣaṇa Research Group is established at BITS Pilani, Hyderabad Campus, focusing on NLP for Indian and low-resource languages, knowledge graphs, and LLM evaluation.
+Saṁbhāṣaṇa Lab is established at BITS Pilani, Hyderabad Campus, focusing on NLP for Indian and low-resource languages, knowledge graphs, and LLM evaluation.

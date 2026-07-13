@@ -2,7 +2,7 @@
 layout: page
 title: brand assets
 permalink: /brand/
-description: logos and brand assets for the saṁbhāṣaṇa research group
+description: logos and brand assets for saṁbhāṣaṇa lab
 nav: false
 page_class: page-brand
 ---
@@ -14,7 +14,7 @@ page_class: page-brand
 The group's work on NLP, computational linguistics, and knowledge representation is, at its core, an attempt to bring machines into this same space of meaning-making. The name also nods to the Sanskrit grammatical tradition — one of the earliest formal systems for analysing language — which informs much of our work on classical and Indian languages.
 
 <p class="text-muted small">
-The group is officially named <strong>Saṁbhāṣaṇa Research Group</strong> and is based at BITS Pilani, Hyderabad Campus.
+The lab is officially named <strong>Saṁbhāṣaṇa Lab</strong> and is based at IIIT Hyderabad.
 <br>
 When diacritics are unavailable, the romanized spelling <strong>Sambhashana</strong> is acceptable.
 </p>

@@ -10,7 +10,7 @@ page_class: page-join
 ---
 
 
-We are always looking for motivated students to join the Saṁbhāṣaṇa Research Group. We work on NLP, computational linguistics, knowledge graphs, and AI — with a focus on Indian and low-resource languages.
+We are always looking for motivated students to join the Saṁbhāṣaṇa Lab. We work on NLP, computational linguistics, knowledge graphs, and AI — with a focus on Indian and low-resource languages.
 
 <br>
 

@@ -2,10 +2,10 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Saṁbhāṣaṇa Research Group
+title: Saṁbhāṣaṇa Lab
 first_name: Saṁbhāṣaṇa
-middle_name: Research
-last_name: Group
+middle_name:
+last_name: Lab
 contact_note: >
   The best way to reach us is by email. For prospective students, please fill out the application form on the Join Us page.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
@@ -96,7 +96,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: Saṁbhāṣaṇa Blog
-blog_description: Updates and posts from the Saṁbhāṣaṇa Research Group
+blog_description: Updates and posts from Saṁbhāṣaṇa Lab
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
