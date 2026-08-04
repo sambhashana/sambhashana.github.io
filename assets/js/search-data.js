@@ -119,6 +119,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/upcoming-move-to-iiit-hyderabad/";
+            },},{id: "news-joined-iiit-hyderabad-as-assistant-professor",
+          title: 'Joined IIIT Hyderabad as Assistant Professor',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/iiit-hyderabad-joined/";
             },},{id: "projects-trustworthy-and-explainable-llms-for-indian-languages",
           title: 'Trustworthy and Explainable LLMs for Indian Languages',
           description: "Funded by the ANRF PM Early Career Research Grant, this project develops trustworthy and explainable LLMs for Indian languages",
@@ -229,7 +234,7 @@ ninja.data = [{
         title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%68%72%69%73%68%69%6B%65%73%68.%72%74@%68%79%64%65%72%61%62%61%64.%62%69%74%73-%70%69%6C%61%6E%69.%61%63.%69%6E", "_blank");
+          window.open("mailto:%68%72%69%73%68%69%6B%65%73%68%72%74@%69%69%69%74.%61%63.%69%6E", "_blank");
         },
       },{
         id: 'social-github',
