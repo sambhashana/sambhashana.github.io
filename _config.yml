@@ -9,7 +9,7 @@ last_name: Lab
 contact_note: >
   The best way to reach us is by email. For prospective students, please fill out the application form on the Join Us page.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Research group at BITS Pilani, Hyderabad Campus, working on NLP, Computational Linguistics,
+  Research group at IIIT Hyderabad, working on NLP, Computational Linguistics,
   Knowledge Graphs, and AI for low-resource and Indian languages.
 footer_text: >
   <a href="https://github.com/sambhashana" target="_blank" title="GitHub"><i class="fab fa-github fa-lg"></i></a>

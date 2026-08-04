@@ -18,11 +18,11 @@ We are always looking for motivated students to join the Saṁbhāṣaṇa Lab. 
 
 ---
 
-**PhD Students** — We accept PhD students through the BITS Pilani admissions process. If you are interested in working with us, please apply through the official BITS PhD admissions portal and mention our group in your statement of purpose.
+**PhD Students** — We accept PhD students through the IIIT Hyderabad admissions process. If you are interested in working with us, please apply through the [official IIIT Hyderabad PhD admissions portal](https://www.iiit.ac.in/admissions/) and mention our lab in your statement of purpose.
 
-**Master Students** — BITS Master students interested in dissertation or project work with our group are welcome to reach out after reviewing our ongoing projects.
+**Master Students** — IIIT students interested in dissertation or project work with the lab are welcome to reach out after reviewing our ongoing projects.
 
-**Student Researchers** — BITS undergraduate and postgraduate students can join as student researchers (typically semester-long or year-long engagements). We expect a genuine interest in research and the ability to commit time consistently.
+**Student Researchers** — IIIT students can join as student researchers (typically semester-long or year-long engagements). We expect a genuine interest in research and the ability to commit time consistently.
 
 **Interns** — Students from other institutions interested in a research internship are also welcome to apply through the same process below. While some internships may be funded, not all positions can be supported financially; applicants willing to consider unpaid internships are also encouraged to apply.
 

@@ -17,7 +17,7 @@ page_class: page-about
         <p class="text-muted">
           headed by <strong><a href="https://hrishikeshrt.github.io" target="_blank">Hrishikesh Terdalkar</a></strong>
           &nbsp;&middot;&nbsp;
-          <a href="https://www.bits-pilani.ac.in/hyderabad/" target="_blank">BITS Pilani, Hyderabad Campus</a>
+          <a href="https://iiit.ac.in" target="_blank">IIIT Hyderabad</a>
         </p>
 
         <p>
