@@ -70,7 +70,7 @@ There are two steps — both are required:
   <i class="fa-solid fa-arrow-up-right-from-square"></i> Fill out the Application Form
 </a>
 
-**Step 2.** Send an email to <a href="mailto:hrishikesh.rt@hyderabad.bits-pilani.ac.in">`hrishikesh.rt@hyderabad.bits-pilani.ac.in`</a> with:
+**Step 2.** Send an email to <a href="mailto:hrishikeshrt@iiit.ac.in">`hrishikeshrt@iiit.ac.in`</a> with:
 - Subject: `[Application] <Your Name>`
 - A brief note on why you want to work with us and which project area interests you
 - Your CV attached
