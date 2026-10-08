@@ -4,7 +4,7 @@
       <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
         <img src="{{ '/assets/img/logo.color.notext.svg' | relative_url }}" width="34" height="34" alt="logo" class="d-inline-block align-top mr-1">
         {% if site.first_name and site.first_name != '' %}
-          <span>{{- site.first_name -}}</span>
+          <span>{{- site.first_name | downcase -}}</span>
         {% elsif site.title == 'blank' %}
           {% if site.middle_name %}
             {{- site.middle_name -}}

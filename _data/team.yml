@@ -1,4 +1,4 @@
-# Team data for Sambhashana Lab.
+# Team data for Sambhashana Research Group.
 # Gravatar images are loaded automatically from the email address — no hash needed.
 # Team members can register at https://gravatar.com using their BITS email to set a photo.
 # If no Gravatar is registered, a default silhouette is shown.
@@ -15,7 +15,7 @@
 
 faculty:
   - name: Hrishikesh Terdalkar
-    role: Assistant Professor, IIIT Hyderabad
+    role: Head of Research Group · Assistant Professor, IIIT Hyderabad
     description: Language technologies for low-resource and Indian languages, Sanskrit NLP, Knowledge Graphs, AI.
     github: hrishikeshrt
     scholar: k9aGwEgAAAAJ
@@ -27,6 +27,7 @@ faculty:
 
 phd:
   - name: Narendra Devireddy
+    affiliation: BITS Pilani, Hyderabad Campus
     projects:
       - graph-repair
       - mechanistic-interpretability
@@ -34,6 +35,7 @@ phd:
     email: p20250504@hyderabad.bits-pilani.ac.in
 
   - name: Anudeep J
+    affiliation: BITS Pilani, Hyderabad Campus
     projects:
       - bhram-il
     github: AnudeepJ
@@ -41,12 +43,16 @@ phd:
 
 masters:
   - name: Lakshman Chinthala
+    affiliation: BITS Pilani, Hyderabad Campus
     roll: 2025H1030038H
     github: Lakshman-Ch-maker
     email: h20250038@hyderabad.bits-pilani.ac.in
 
 students:
   - name: Aadi Parakh
+    # Preserve these completed semesters when moving to former members.
+    period: ["SEM 1, 2025-26", "SEM 2, 2025-26"]
+    affiliation: BITS Pilani, Hyderabad Campus
     projects:
       - graph-repair
     batch: 2023
@@ -56,6 +62,9 @@ students:
     email: f20230130@hyderabad.bits-pilani.ac.in
 
   - name: Tathagat Rath
+    # Preserve these completed semesters when moving to former members.
+    period: ["SEM 1, 2025-26", "SEM 2, 2025-26"]
+    affiliation: BITS Pilani, Hyderabad Campus
     projects:
       - graph-repair
     batch: 2023
@@ -65,6 +74,9 @@ students:
     email: f20230109@hyderabad.bits-pilani.ac.in
 
   - name: Yash Vardhan Singh
+    # Preserve these completed semesters when moving to former members.
+    period: ["SEM 1, 2025-26", "SEM 2, 2025-26"]
+    affiliation: BITS Pilani, Hyderabad Campus
     projects:
       - graph-repair
     batch: 2023
@@ -73,79 +85,8 @@ students:
     github: bigbugsmaller
     email: f20231111@hyderabad.bits-pilani.ac.in
 
-  - name: Omm Aditya Behera
-    projects:
-      - bhram-il
-    batch: 2023
-    programme: "B.E. EIE"
-    roll: 2023A8PS0434H
-    github: Omm-dev404
-    email: f20230434@hyderabad.bits-pilani.ac.in
-
-  - name: Parv Goyal
-    projects:
-      - mechanistic-interpretability
-    batch: 2023
-    programme: "B.E. CS"
-    roll: 2023A7PS0151H
-    github: ParvG2005
-    email: f20230151@hyderabad.bits-pilani.ac.in
-
-  - name: Anshuman Sharma
-    projects:
-      - llm-multiturn
-    batch: 2023
-    programme: "B.E. EEE"
-    roll: 2023A3PS0404H
-    github: AnshumanSharma250
-    email: f20230404@hyderabad.bits-pilani.ac.in
-
-  - name: J Harish Rajeshwaran
-    projects:
-      - tamil-gec
-    batch: 2023
-    programme: "B.E. EEE"
-    roll: 2023A3PS0393H
-    github: jharishr
-    email: f20230393@hyderabad.bits-pilani.ac.in
-
-  - name: S Ashwin Arumugam
-    projects:
-      - tamil-gec
-    batch: 2023
-    programme: "B.E. ECE"
-    roll: 2023AAPS0227H
-    github: Ashwin-Arumugam
-    email: f20230227@hyderabad.bits-pilani.ac.in
-
-  - name: Anirudh Chaitanya
-    projects:
-      - multimodal-graphrag
-    batch: 2023
-    programme: "B.E. EEE"
-    roll: 2023A3PS0369H
-    github: PossiblyNeptune
-    email: f20230369@hyderabad.bits-pilani.ac.in
-
-  - name: Mudit Guraria
-    projects:
-      - kg-grounded-question-generation
-    batch: 2024
-    programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
-    roll: 2024B3A7PS0551H
-    github: DeadMouse-OS
-    email: f20240551@hyderabad.bits-pilani.ac.in
-
-  - name: Triyansh Agrawal
-    projects:
-      - kg-grounded-question-generation
-    batch: 2024
-    programme: "B.E. CS"
-    roll: 2024A7PS0147H
-    github: TA619
-    email: f20240147@hyderabad.bits-pilani.ac.in
-
   - name: Ruchi Harge
+    affiliation: BITS Pilani, Hyderabad Campus
     projects:
       - llm-math
     batch: 2022
@@ -154,90 +95,6 @@ students:
     github: ruchiharge
     email: f20220942@hyderabad.bits-pilani.ac.in
 
-  - name: Snehal Reddy
-    projects:
-      - llm-math
-    batch: 2022
-    programme: "B.E. CS"
-    roll: 2022A7PS0213H
-    github: Snehalreddy987
-    email: f20220213@hyderabad.bits-pilani.ac.in
-
-  - name: Asmit Mukherjee
-    projects:
-      - poetry-generation
-    batch: 2022
-    programme: "Dual Degree (M.Sc. Physics + B.E. CS)"
-    roll: 2022B5A70909H
-    github: asmit-mukherjee
-    email: f20220909@hyderabad.bits-pilani.ac.in
-
-  - name: Amol Agrawal
-    projects:
-      - llm-security
-    batch: 2022
-    programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
-    roll: 2022B3A70612H
-    github: Amol-Agrawal
-    email: f20220612@hyderabad.bits-pilani.ac.in
-
-  - name: Harshal Bhambhani
-    projects:
-      - legal-graphrag
-    batch: 2022
-    programme: "B.E. EEE"
-    roll: 2022A3PS1809H
-    github: Harshaaalll
-    email: f20221809@hyderabad.bits-pilani.ac.in
-
-  - name: Rishabh Jangid
-    projects:
-      - legal-graphrag
-    batch: 2022
-    programme: "B.E. EEE"
-    roll: 2022A3PS0485H
-    github: rishcx
-    email: f20220485@hyderabad.bits-pilani.ac.in
-
-past:
-  # SEM 1, 2025-26
-  - name: Kirtan Bhojani
-    projects:
-      - bhram-il
-    programme: "B.E. EEE"
-    roll: 2023A3PS0366H
-    period: "SEM 1, 2025-26"
-
-  - name: Aryan Dongare
-    projects:
-      - bhram-il
-    programme: "B.E. ECE"
-    roll: 2023AAPS0194H
-    period: "SEM 1, 2025-26"
-
-  - name: Nayonika Shrivastava
-    projects:
-      - rti-kg
-    programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
-    roll: 2022B3A70582H
-    period: "SEM 1, 2025-26"
-
-  - name: Saaketh Dataram
-    projects:
-      - kg-querying-interface
-    programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
-    roll: 2022B3A70452H
-    period: "SEM 1, 2025-26"
-
-  - name: Prince
-    projects:
-      - graph-repair
-    programme: "B.E. CS"
-    roll: 2023A7PS0115H
-    github: prince721773
-    period: "SEM 1, 2025-26"
-
-interns:
   - name: Nikhita Anjani Ravi
     affiliation: IIIT Hyderabad
     programme: "B. Tech. in Computer Science and MS in Computational Linguistics"
@@ -247,7 +104,162 @@ interns:
       - legal-graphrag
     github: n7khita-r
 
+  - name: Aryan Dalmia
+    affiliation: BITS Pilani, Hyderabad Campus
+    year: 4
+    programme: "B.E. CS"
+    roll: RCR0101
+    projects:
+      - kg-grounded-question-generation
+
+past:
+  # SEM 2, 2025-26
+  - name: Omm Aditya Behera
+    roles: [Project student]
+    projects:
+      - bhram-il
+    batch: 2023
+    programme: "B.E. EIE"
+    roll: 2023A8PS0434H
+    github: Omm-dev404
+    email: f20230434@hyderabad.bits-pilani.ac.in
+    period: ["SEM 1, 2025-26", "SEM 2, 2025-26"]
+
+  - name: Parv Goyal
+    roles: [Project student]
+    projects:
+      - mechanistic-interpretability
+    batch: 2023
+    programme: "B.E. CS"
+    roll: 2023A7PS0151H
+    github: ParvG2005
+    email: f20230151@hyderabad.bits-pilani.ac.in
+    period: ["SEM 1, 2025-26", "SEM 2, 2025-26"]
+
+  - name: Anshuman Sharma
+    roles: [Project student]
+    projects:
+      - llm-multiturn
+    batch: 2023
+    programme: "B.E. EEE"
+    roll: 2023A3PS0404H
+    github: AnshumanSharma250
+    email: f20230404@hyderabad.bits-pilani.ac.in
+    period: "SEM 2, 2025-26"
+
+  - name: J Harish Rajeshwaran
+    roles: [Project student]
+    projects:
+      - tamil-gec
+    batch: 2023
+    programme: "B.E. EEE"
+    roll: 2023A3PS0393H
+    github: jharishr
+    email: f20230393@hyderabad.bits-pilani.ac.in
+    period: "SEM 2, 2025-26"
+
+  - name: S Ashwin Arumugam
+    roles: [Project student]
+    projects:
+      - tamil-gec
+    batch: 2023
+    programme: "B.E. ECE"
+    roll: 2023AAPS0227H
+    github: Ashwin-Arumugam
+    email: f20230227@hyderabad.bits-pilani.ac.in
+    period: "SEM 2, 2025-26"
+
+  - name: Anirudh Chaitanya
+    roles: [Project student]
+    projects:
+      - multimodal-graphrag
+    batch: 2023
+    programme: "B.E. EEE"
+    roll: 2023A3PS0369H
+    github: PossiblyNeptune
+    email: f20230369@hyderabad.bits-pilani.ac.in
+    period: "SEM 2, 2025-26"
+
+  - name: Mudit Guraria
+    roles: [Project student]
+    projects:
+      - kg-grounded-question-generation
+    batch: 2024
+    programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
+    roll: 2024B3A7PS0551H
+    github: DeadMouse-OS
+    email: f20240551@hyderabad.bits-pilani.ac.in
+    period: "SEM 2, 2025-26"
+
+  - name: Triyansh Agrawal
+    roles: [Project student]
+    projects:
+      - kg-grounded-question-generation
+    batch: 2024
+    programme: "B.E. CS"
+    roll: 2024A7PS0147H
+    github: TA619
+    email: f20240147@hyderabad.bits-pilani.ac.in
+    period: "SEM 2, 2025-26"
+
+  - name: Snehal Reddy
+    roles: [Project student]
+    projects:
+      - llm-math
+    batch: 2022
+    programme: "B.E. CS"
+    roll: 2022A7PS0213H
+    github: Snehalreddy987
+    email: f20220213@hyderabad.bits-pilani.ac.in
+    period: "SEM 2, 2025-26"
+
+  - name: Asmit Mukherjee
+    roles: [Project student]
+    projects:
+      - poetry-generation
+    batch: 2022
+    programme: "Dual Degree (M.Sc. Physics + B.E. CS)"
+    roll: 2022B5A70909H
+    github: asmit-mukherjee
+    email: f20220909@hyderabad.bits-pilani.ac.in
+    period: "SEM 2, 2025-26"
+
+  - name: Amol Agrawal
+    roles: [Project student]
+    projects:
+      - llm-security
+    batch: 2022
+    programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
+    roll: 2022B3A70612H
+    github: Amol-Agrawal
+    email: f20220612@hyderabad.bits-pilani.ac.in
+    period: "SEM 2, 2025-26"
+
+  - name: Harshal Bhambhani
+    roles: [Project student]
+    projects:
+      - legal-graphrag
+    batch: 2022
+    programme: "B.E. EEE"
+    roll: 2022A3PS1809H
+    github: Harshaaalll
+    email: f20221809@hyderabad.bits-pilani.ac.in
+    period: "SEM 2, 2025-26"
+
+  - name: Rishabh Jangid
+    roles: [Project student]
+    projects:
+      - legal-graphrag
+    batch: 2022
+    programme: "B.E. EEE"
+    roll: 2022A3PS0485H
+    github: rishcx
+    email: f20220485@hyderabad.bits-pilani.ac.in
+    period: "SEM 2, 2025-26"
+
+  # Completed internships; dates not yet recorded.
   - name: Aaradhya Pathak
+    roles: [Intern]
     affiliation: IISER Bhopal
     programme: "B.S."
     year: 3
@@ -255,11 +267,58 @@ interns:
     projects: []
 
   - name: K Hasini Reddy
+    roles: [Intern]
     affiliation: IIIT Vadodara
     programme: "B. Tech. CSE"
     year: 3
     email: kandula.hasini009@gmail.com
     projects: []
+
+  # SEM 1, 2025-26
+  - name: Kirtan Bhojani
+    roles: [Project student]
+    projects:
+      - bhram-il
+    programme: "B.E. EEE"
+    roll: 2023A3PS0366H
+    period: "SEM 1, 2025-26"
+
+  - name: Aryan Dongare
+    roles: [Project student]
+    projects:
+      - bhram-il
+    programme: "B.E. ECE"
+    roll: 2023AAPS0194H
+    period: "SEM 1, 2025-26"
+
+  - name: Nayonika Shrivastava
+    roles: [Project student]
+    projects:
+      - rti-kg
+    programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
+    roll: 2022B3A70582H
+    period: "SEM 1, 2025-26"
+
+  - name: Saaketh Dataram
+    roles: [Project student]
+    projects:
+      - kg-querying-interface
+    programme: "Dual Degree (M.Sc. Econ + B.E. CS)"
+    roll: 2022B3A70452H
+    period: "SEM 1, 2025-26"
+
+  - name: Prince
+    roles: [Project student]
+    projects:
+      - graph-repair
+    programme: "B.E. CS"
+    roll: 2023A7PS0115H
+    github: prince721773
+    period: "SEM 1, 2025-26"
+
+interns:
+  - name: Krishnapriya P S
+    affiliation: IIIT Hyderabad
 
 collaborators:
   - name: Putrevu Venkata Sai Charan

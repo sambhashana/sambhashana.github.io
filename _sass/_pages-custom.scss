@@ -274,6 +274,48 @@
     opacity: 1;
   }
 
+  .team-role-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--global-text-color-light);
+
+    > span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+  }
+
+  .team-role-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.5rem;
+    padding: 0.1rem 0.4rem;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .team-role-project {
+    color: var(--global-theme-color);
+  }
+
+  .team-role-intern {
+    color: var(--global-text-color);
+  }
+
+  .former-members-roles {
+    padding: 0.3rem 0.6rem;
+    white-space: nowrap;
+    width: 1%;
+  }
+
   .former-members-table {
     width: 100%;
     border-collapse: collapse;
@@ -293,6 +335,7 @@
     padding: 0.3rem 0.6rem 0.3rem 0;
   }
 
+  .former-members-roles-head,
   .former-members-programme-head {
     text-align: left;
     padding: 0.3rem 0.6rem;
@@ -350,4 +393,20 @@
 .blog-card-image {
   object-fit: cover;
   height: 90%;
+}
+
+.anvaya-photo-crop {
+  overflow: hidden;
+  aspect-ratio: 1230 / 570;
+
+  figure {
+    margin: 0;
+  }
+
+  img {
+    display: block;
+    width: 104.065%;
+    max-width: none;
+    margin-top: -31.707%;
+  }
 }

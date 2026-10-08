@@ -10,7 +10,7 @@ page_class: page-join
 ---
 
 
-We are always looking for motivated students to join the Saṁbhāṣaṇa Lab. We work on NLP, computational linguistics, knowledge graphs, and AI — with a focus on Indian and low-resource languages.
+We are always looking for motivated students to join the Saṁbhāṣaṇa Research Group. We work on NLP, computational linguistics, knowledge graphs, and AI — with a focus on Indian and low-resource languages.
 
 <br>
 
@@ -18,9 +18,9 @@ We are always looking for motivated students to join the Saṁbhāṣaṇa Lab. 
 
 ---
 
-**PhD Students** — We accept PhD students through the IIIT Hyderabad admissions process. If you are interested in working with us, please apply through the [official IIIT Hyderabad PhD admissions portal](https://www.iiit.ac.in/admissions/) and mention our lab in your statement of purpose.
+**PhD Students** — We accept PhD students through the IIIT Hyderabad admissions process. If you are interested in working with us, please apply through the [official IIIT Hyderabad PhD admissions portal](https://www.iiit.ac.in/admissions/) and mention our research group in your statement of purpose.
 
-**Master Students** — IIIT students interested in dissertation or project work with the lab are welcome to reach out after reviewing our ongoing projects.
+**Master Students** — IIIT students interested in dissertation or project work with the research group are welcome to reach out after reviewing our ongoing projects.
 
 **Student Researchers** — IIIT students can join as student researchers (typically semester-long or year-long engagements). We expect a genuine interest in research and the ability to commit time consistently.
 

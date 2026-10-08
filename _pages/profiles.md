@@ -61,6 +61,7 @@ page_class: page-team
            alt="{{ member.name }}">
       <div class="team-card-body">
         <h4>{{ member.name }}</h4>
+        {% if member.affiliation %}<p class="team-card-role">{{ member.affiliation }}</p>{% endif %}
         {% if member.projects and member.projects.size > 0 %}
           <p class="team-card-project">
             {%- for proj_slug in member.projects -%}
@@ -94,6 +95,7 @@ page_class: page-team
            alt="{{ member.name }}">
       <div class="team-card-body">
         <h4>{{ member.name }}</h4>
+        {% if member.affiliation %}<p class="team-card-role">{{ member.affiliation }}</p>{% endif %}
         {% if member.projects and member.projects.size > 0 %}
           <p class="team-card-project">
             {%- for proj_slug in member.projects -%}
@@ -127,8 +129,9 @@ page_class: page-team
            alt="{{ member.name }}">
       <div class="team-card-body">
         <h4>{{ member.name }}</h4>
+        {% if member.affiliation %}<p class="team-card-role">{{ member.affiliation }}</p>{% endif %}
         {% if member.role %}<p class="team-card-role">{{ member.role }}</p>{% endif %}
-        {% if member.batch or member.programme %}
+        {% if member.batch or member.year or member.programme %}
           <p class="team-card-meta">
             {% if member.batch %}
               {%- assign site_month = site.time | date: '%-m' | plus: 0 -%}
@@ -143,8 +146,14 @@ page_class: page-team
               {%- elsif yr == 3 -%}3rd Year
               {%- else -%}{{ yr }}th Year
               {%- endif -%}
+            {% elsif member.year %}
+              {%- if member.year == 1 -%}1st Year
+              {%- elsif member.year == 2 -%}2nd Year
+              {%- elsif member.year == 3 -%}3rd Year
+              {%- else -%}{{ member.year }}th Year
+              {%- endif -%}
             {% endif %}
-            {% if member.batch and member.programme and member.programme != "" %} · {% endif %}
+            {% if member.batch or member.year %}{% if member.programme and member.programme != "" %} · {% endif %}{% endif %}
             {% if member.programme and member.programme != "" %}{{ member.programme }}{% endif %}
           </p>
         {% endif %}
@@ -227,6 +236,7 @@ page_class: page-team
     <thead>
       <tr class="former-members-head-row">
         <th class="former-members-name-head">name</th>
+        <th class="former-members-roles-head">role(s)</th>
         <th class="former-members-programme-head">programme</th>
         <th class="former-members-period-head">period</th>
       </tr>
@@ -241,6 +251,18 @@ page_class: page-team
             {{ member.name }}
           {% endif %}
         </td>
+        <td class="former-members-roles">
+          {% for role in member.roles %}
+            {% case role %}
+              {% when "Project student" %}
+                <span class="team-role-pill team-role-project" title="Project student" aria-label="Project student">P</span>
+              {% when "Intern" %}
+                <span class="team-role-pill team-role-intern" title="Intern" aria-label="Intern">I</span>
+              {% else %}
+                <span class="team-role-pill" title="{{ role | escape }}" aria-label="{{ role | escape }}">{{ role | escape }}</span>
+            {% endcase %}
+          {% endfor %}
+        </td>
         <td class="former-members-programme">{{ member.programme }}</td>
         <td class="former-members-period">
           {%- if member.stints -%}
@@ -254,13 +276,17 @@ page_class: page-team
           {%- elsif member.period.first -%}
             {{- member.period | join: ", " -}}
           {%- else -%}
-            {{- member.period -}}
+            {{- member.period | default: "—" -}}
           {%- endif -%}
         </td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
+  <div class="team-role-legend" aria-label="Role legend">
+    <span><span class="team-role-pill team-role-project" aria-hidden="true">P</span> Project student</span>
+    <span><span class="team-role-pill team-role-intern" aria-hidden="true">I</span> Intern</span>
+  </div>
 </div>
 {% endif %}
 

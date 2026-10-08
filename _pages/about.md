@@ -12,7 +12,7 @@ page_class: page-about
     <div class="col-sm-8">
         <div class="about-hero">
             <img src="{{ '/assets/img/logo.color.notext.svg' | relative_url }}" alt="Sambhashana Logo" class="about-hero-logo">
-            <h1 class="about-hero-title">saṁbhāṣaṇa lab</h1>
+            <h1 class="about-hero-title">saṁbhāṣaṇa research group</h1>
         </div>
         <p class="text-muted">
           headed by <strong><a href="https://hrishikeshrt.github.io" target="_blank">Hrishikesh Terdalkar</a></strong>
