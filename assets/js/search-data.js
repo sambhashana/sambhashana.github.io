@@ -25,14 +25,14 @@ ninja.data = [{
           },
         },{id: "nav-publications",
           title: "publications",
-          description: "research publications by Hrishikesh Terdalkar and Saṁbhāṣaṇa Lab",
+          description: "research publications by Hrishikesh Terdalkar and Saṁbhāṣaṇa Research Group",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
         },{id: "nav-teaching",
           title: "teaching",
-          description: "courses offered at BITS Pilani, Hyderabad Campus and other institutions",
+          description: "courses offered at IIIT Hyderabad, BITS Pilani, and other institutions",
           section: "Navigation",
           handler: () => {
             window.location.href = "/teaching/";
@@ -94,6 +94,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/guest_lecture/";
+            },},{id: "news-invited-talk-at-iit-roorkee",
+          title: 'Invited Talk at IIT Roorkee',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/iit-roorkee-talk/";
             },},{id: "news-group-website-is-live",
           title: 'Group Website is Live!',
           description: "",
@@ -109,6 +114,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/summersaas-panel-2026/";
+            },},{id: "news-invited-talk-at-vsit-mumbai",
+          title: 'Invited Talk at VSIT Mumbai',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/vsit-iks-talk/";
             },},{id: "news-resource-person-at-first-summer-school-on-sanskrit-computational-linguistics",
           title: 'Resource Person at First Summer School on Sanskrit Computational Linguistics',
           description: "",
@@ -124,6 +134,21 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/iiit-hyderabad-joined/";
+            },},{id: "news-invited-talk-at-anvaya-2026-c-dac-bengaluru",
+          title: 'Invited Talk at ANVAYA 2026, C-DAC Bengaluru',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/anvaya-2026-invited-talk/";
+            },},{id: "news-invited-talk-at-central-sanskrit-university-nashik",
+          title: 'Invited Talk at Central Sanskrit University, Nashik',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/csu-nashik-talk/";
+            },},{id: "news-invited-session-on-ayurveda-research-at-iiit-hyderabad",
+          title: 'Invited Session on Ayurveda Research at IIIT Hyderabad',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/sdm-ayurveda-talk/";
             },},{id: "projects-trustworthy-and-explainable-llms-for-indian-languages",
           title: 'Trustworthy and Explainable LLMs for Indian Languages',
           description: "Funded by the ANRF PM Early Career Research Grant, this project develops trustworthy and explainable LLMs for Indian languages",
@@ -151,7 +176,7 @@ ninja.data = [{
               window.location.href = "/projects/jnanasangraha/";
             },},{id: "projects-kg-grounded-qa-for-sanskrit",
           title: 'KG-Grounded QA for Sanskrit',
-          description: "Question generation and QA dataset construction from Sanskrit and Ayurveda knowledge graphs",
+          description: "Natural language question answering over the Bhāvaprakāśanighaṇṭu knowledge graph, extending Saṅgrāhaka",
           section: "Projects",handler: () => {
               window.location.href = "/projects/kg-grounded-question-generation/";
             },},{id: "projects-natural-language-interface-for-knowledge-graph-querying",
