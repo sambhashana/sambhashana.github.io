@@ -34,8 +34,8 @@
   <circle cx="1030" cy="520" r="150" fill="#ffffff" opacity="0.2"/>
   <circle cx="170" cy="530" r="130" fill="#ffffff" opacity="0.22"/>
 
-  <rect x="72" y="68" width="325" height="34" rx="17" fill="#ffffff" opacity="0.88"/>
-  <text x="94" y="91" fill="#2c4c58" font-family="'Avenir Next', 'Helvetica Neue', sans-serif" font-size="19" font-weight="600" letter-spacing="0.3">BITS Pilani, Hyderabad Campus</text>
+  <rect x="72" y="68" width="250" height="34" rx="17" fill="#ffffff" opacity="0.88"/>
+  <text x="94" y="91" fill="#2c4c58" font-family="'Avenir Next', 'Helvetica Neue', sans-serif" font-size="19" font-weight="600" letter-spacing="0.3">LTRC, IIIT Hyderabad</text>
 
   <rect x="72" y="144" width="186" height="186" rx="42" fill="#ffffff" filter="url(#softShadow)"/>
   <rect x="72" y="144" width="186" height="186" rx="42" fill="none" stroke="#d9d0c1" stroke-width="2"/>
