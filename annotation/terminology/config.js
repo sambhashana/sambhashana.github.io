@@ -1,0 +1,5 @@
+// Only public connection details belong here. Never use a service-role or secret key.
+window.STUDY_CONFIG = {
+  supabaseUrl: 'https://npzvzzxwsyowkxcmhjko.supabase.co',
+  publishableKey: 'sb_publishable_31hsFO7Qr-fNkPYQVuDl0Q_sZTTP7CO'
+};

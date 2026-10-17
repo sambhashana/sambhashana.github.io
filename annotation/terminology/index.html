@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sambhāśaṇa · Term evaluation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header><a class="brand" href="https://sambhashana.github.io/">Sambhāśaṇa <span>Research Group</span></a><button id="logout" hidden>Sign out</button></header>
+  <main>
+    <div id="notice" role="status" aria-live="polite"></div>
+    <section id="login" class="panel">
+      <p class="eyebrow">Research participation</p><h1>Term evaluation</h1>
+      <p>Sign in with the account provided by the study organizer. Your ratings and progress are saved to your account.</p>
+      <form id="login-form"><label>Email<input name="email" type="email" autocomplete="username" required></label>
+        <label>Password<input name="password" type="password" autocomplete="current-password" required></label><button class="primary">Sign in</button></form>
+      <p class="muted">Need access or help? Use the contact details on the <a href="https://sambhashana.github.io/">group website</a>.</p>
+    </section>
+    <section id="profile" class="panel" hidden>
+      <p class="eyebrow">Before you begin</p><h1>About this study</h1>
+      <p>You will see a concept definition and distinct proposed terms. Rate each term independently for Accuracy and Understandability. Everyone receives the same two questions, and you may choose “Cannot judge” whenever needed.</p>
+      <p>Participation is voluntary. You may stop at any time. Your coded ratings may be analysed and reported in research publications; your name and email will not be published with them. Contact the organizer through the group website with questions or to request withdrawal.</p>
+      <p>Each concept has several distinct terms to rate. You can take breaks and resume later. The organizer will provide the task-specific time estimate and compensation information before you participate.</p>
+      <p><strong>Accuracy:</strong> How well does the term express the concept in the definition? <strong>Understandability:</strong> How easy would it be for a learner with basic Sanskrit knowledge to understand the term when introduced with this definition? Rate each from 1 (very poor) to 5 (very good), or choose “Cannot judge”.</p>
+      <form id="profile-form"><label>Sanskrit proficiency<select name="proficiency" required><option value="">Choose</option><option value="none">None</option><option value="basic">Basic</option><option value="intermediate">Intermediate</option><option value="advanced">Advanced</option><option value="expert">Expert</option></select></label>
+        <label>Can you read Devanagari?<select name="devanagari" required><option value="">Choose</option><option value="no">No</option><option value="some">Some</option><option value="yes">Yes</option></select></label>
+        <label class="check"><input name="consent" type="checkbox" required>I have read the study information and agree to the research use of my coded ratings.</label><button class="primary">Save and begin</button></form>
+    </section>
+    <section id="study" hidden>
+      <div class="study-bar"><p id="participant"></p><p id="progress"></p></div>
+      <progress id="progress-bar" value="0" max="1" aria-label="Completed questions"></progress>
+      <details><summary>Instructions and rating guide</summary><p>1 = very poor · 2 = poor · 3 = moderate · 4 = good · 5 = very good. These are perceived judgments with the definition visible, not a test of unaided understanding.</p><p>Accuracy: how well does the term express the concept in the definition? Understandability: how easy would it be for a learner with basic Sanskrit knowledge to understand the term when introduced with this definition? Use “Cannot judge” when your Sanskrit knowledge is insufficient. You are not being asked whether you personally would use the term. Open the ⓘ explanations by click, tap or keyboard. Rate terms independently.</p></details>
+      <div class="toolbar"><button id="refresh">Reload saved progress</button><button id="download">Download my ratings</button></div>
+      <form id="rating-form"><article class="panel"><p class="eyebrow" id="question-position"></p><h1 id="concept"></h1><p id="definition"></p>
+        <fieldset id="familiarity"><legend>How familiar are you with this concept?</legend>
+          <div class="radio-choices">
+            <label class="radio-choice"><input type="radio" name="familiarity" value="0" required>Never encountered it</label>
+            <label class="radio-choice"><input type="radio" name="familiarity" value="1" required>Know a little</label>
+            <label class="radio-choice"><input type="radio" name="familiarity" value="2" required>Know it well</label>
+            <label class="radio-choice"><input type="radio" name="familiarity" value="3" required>Work or study in this area</label>
+            <label class="radio-choice"><input type="radio" name="familiarity" value="NA" required>Prefer not to say</label>
+          </div>
+        </fieldset>
+        <aside class="concept-rating-guide" aria-label="Rating guide">
+          <p id="scale-legend"><strong>Scale:</strong> 1 Very poor · 2 Poor · 3 Moderate · 4 Good · 5 Very good · Cannot judge</p>
+          <p id="criterion-accuracy"><strong>Accuracy:</strong> How well does the term express the concept in the definition?</p>
+          <p id="criterion-understandability"><strong>Understandability:</strong> How easy would the term be for a learner with basic Sanskrit knowledge to understand when introduced with this definition?</p>
+        </aside>
+        <div id="options"></div><label>Comments (optional)<textarea id="comment" maxlength="2000" rows="3"></textarea></label>
+        <div class="navigation"><button id="previous" type="button">Previous</button><button id="save-draft" type="button">Save draft</button><button class="primary" id="submit">Save and next</button></div><p id="save-status" role="status" aria-live="polite"></p>
+      </article></form>
+      <section id="empty" class="panel" hidden><h1>No assigned questions yet</h1><p>Please contact the study organizer.</p></section>
+    </section>
+  </main>
+  <footer>Independent judgments. Progress saved to your account.</footer>
+  <script src="config.js"></script><script type="module" src="app.mjs"></script>
+</body></html>
