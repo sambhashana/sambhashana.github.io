@@ -1,4 +1,4 @@
-import {StudyAPI} from './api.mjs';
+import {StudyAPI} from './api.mjs?v=2';
 const $ = id => document.getElementById(id);
 function optionLabel(index){let label='',n=index+1;while(n){n--;label=String.fromCharCode(65+n%26)+label;n=Math.floor(n/26);}return label;}
 const criteria = {accuracy:'Accuracy',understandability:'Understandability'};
