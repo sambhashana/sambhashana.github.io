@@ -22,8 +22,23 @@
       <p>Participation is voluntary. You may stop at any time. Your coded ratings may be analysed and reported in research publications; your name and email will not be published with them. Contact the organizer through the group website with questions or to request withdrawal.</p>
       <p>Each concept has several distinct terms to rate. You can take breaks and resume later. The organizer will provide the task-specific time estimate and compensation information before you participate.</p>
       <p><strong>Accuracy:</strong> How well does the term express the concept in the definition? <strong>Understandability:</strong> How easy would it be for a learner with basic Sanskrit knowledge to understand the term when introduced with this definition? Rate each from 1 (very poor) to 5 (very good), or choose “Cannot judge”.</p>
-      <form id="profile-form"><label>Sanskrit proficiency<select name="proficiency" required><option value="">Choose</option><option value="none">None</option><option value="basic">Basic</option><option value="intermediate">Intermediate</option><option value="advanced">Advanced</option><option value="expert">Expert</option></select></label>
-        <label>Can you read Devanagari?<select name="devanagari" required><option value="">Choose</option><option value="no">No</option><option value="some">Some</option><option value="yes">Yes</option></select></label>
+      <form id="profile-form">
+        <fieldset><legend>Sanskrit proficiency</legend>
+          <div class="radio-choices">
+            <label class="radio-choice"><input type="radio" name="proficiency" value="none" required>None</label>
+            <label class="radio-choice"><input type="radio" name="proficiency" value="basic" required>Basic</label>
+            <label class="radio-choice"><input type="radio" name="proficiency" value="intermediate" required>Intermediate</label>
+            <label class="radio-choice"><input type="radio" name="proficiency" value="advanced" required>Advanced</label>
+            <label class="radio-choice"><input type="radio" name="proficiency" value="expert" required>Expert</label>
+          </div>
+        </fieldset>
+        <fieldset><legend>Can you read Devanagari?</legend>
+          <div class="radio-choices">
+            <label class="radio-choice"><input type="radio" name="devanagari" value="no" required>No</label>
+            <label class="radio-choice"><input type="radio" name="devanagari" value="some" required>Some</label>
+            <label class="radio-choice"><input type="radio" name="devanagari" value="yes" required>Yes</label>
+          </div>
+        </fieldset>
         <label class="check"><input name="consent" type="checkbox" required>I have read the study information and agree to the research use of my coded ratings.</label><button class="primary">Save and begin</button></form>
     </section>
     <section id="study" hidden>
