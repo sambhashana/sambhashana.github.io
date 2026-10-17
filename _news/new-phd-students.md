@@ -6,4 +6,4 @@ inline: false
 related_posts: false
 ---
 
-A warm welcome to [Narendra Devireddy](https://github.com/narendra-devireddy) and [Anudeep J](https://github.com/AnudeepJ), who join the group as our first PhD students this semester!
+Saṁbhāṣaṇa Research Group welcomed [Narendra Devireddy](https://github.com/narendra-devireddy) and [Anudeep J](https://github.com/AnudeepJ), who joined as the group’s first PhD students.

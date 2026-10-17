@@ -6,4 +6,4 @@ inline: false
 related_posts: false
 ---
 
-Conducted two hands-on sessions on Python as part of the Python Bootcamp organized by AGSRD, BITS Pilani and INYAS-INSA at BITS Pilani, Hyderabad Campus. The sessions engaged students and professionals from diverse backgrounds, exploring both foundational and applied dimensions of Python for research and data analysis.
+Hrishikesh Terdalkar conducted two hands-on sessions on Python as part of the Python Bootcamp organized by AGSRD, BITS Pilani and INYAS-INSA at BITS Pilani, Hyderabad Campus. The sessions engaged students and professionals from diverse backgrounds, exploring both foundational and applied dimensions of Python for research and data analysis.

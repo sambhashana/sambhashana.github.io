@@ -4,7 +4,7 @@ title: join us
 permalink: /join/
 description: interested in working with us?
 nav: true
-nav_order: 6
+nav_order: 7
 discord_widget: true
 page_class: page-join
 ---
@@ -26,6 +26,15 @@ We are always looking for motivated students to join the Saṁbhāṣaṇa Resea
 
 **Interns** — Students from other institutions interested in a research internship are also welcome to apply through the same process below. While some internships may be funded, not all positions can be supported financially; applicants willing to consider unpaid internships are also encouraged to apply.
 
+<br>
+
+### annotation and evaluation tasks
+
+---
+
+We welcome people from different backgrounds and experience levels to register for current or future research annotation and evaluation tasks. Registration does not commit you to participate. Instructions, expected time commitment, and compensation details will be shared before you decide on each task.
+
+[[ read the open call and register your interest ]]({{ '/annotation/' | relative_url }})
 <br>
 
 ### research areas

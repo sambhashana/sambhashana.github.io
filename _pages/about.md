@@ -94,6 +94,12 @@ page_class: page-about
         <a href="{{ '/news/' | relative_url }}" class="about-news-link">see all news →</a>
 
         <div class="mt-5 p-3 rounded about-join-card">
+            <h4>open call for annotators</h4>
+            <p class="small">Interested in research annotation and evaluation? People from all backgrounds and experience levels are welcome.</p>
+            <a href="{{ '/annotation/' | relative_url }}" class="btn btn-sm btn-outline-sambhashana-blue">Read the call &amp; register</a>
+        </div>
+
+        <div class="mt-5 p-3 rounded about-join-card">
             <h4>join the team!</h4>
             <p class="small">We are looking for motivated PhD, Master, and undergraduate students.</p>
             <a href="{{ '/join/' | relative_url }}" class="btn btn-sm btn-outline-sambhashana-blue">More Info</a>

@@ -6,7 +6,7 @@ inline: false
 related_posts: false
 ---
 
-Delivered two talks (online) for Short-Term Training Program (STTP) at Gujarat Engineering College, Rajkot.
+Hrishikesh Terdalkar delivered two online talks for the Short-Term Training Program (STTP) at Gujarat Engineering College, Rajkot.
 
 ---
 

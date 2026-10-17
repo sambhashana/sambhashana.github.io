@@ -72,7 +72,7 @@
   {% endif %}
   <link rel="shortcut icon" href="{{ _icon_url }}">
 {% endif %}
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url | bust_css_cache }}">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url | bust_site_css_cache }}">
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
 {% if site.enable_darkmode %}

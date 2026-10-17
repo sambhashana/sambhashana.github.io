@@ -6,4 +6,4 @@ inline: false
 related_posts: false
 ---
 
-Co-organized the [1st BHASHA Workshop](https://bhasha-workshop.github.io) on Benchmarks, Harmonization, Annotation, and Standardization for Human-Centric AI in Indian Languages, co-located with IJCNLP–AACL 2025 at IIT Bombay. The workshop featured 11 research papers, 6 shared task papers (IndicGEC and IndicWG), and was attended by 50 participants.
+Hrishikesh Terdalkar co-organized the [1st BHASHA Workshop](https://bhasha-workshop.github.io) on Benchmarks, Harmonization, Annotation, and Standardization for Human-Centric AI in Indian Languages, co-located with IJCNLP–AACL 2025 at IIT Bombay. The workshop featured 11 research papers, 6 shared task papers (IndicGEC and IndicWG), and was attended by 50 participants.

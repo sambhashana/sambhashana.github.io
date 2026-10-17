@@ -1,6 +1,79 @@
 @use "variables" as v;
 @use "sass:color";
 
+.page-annotation .annotation-footnote {
+  color: #999;
+
+  em {
+    color: inherit;
+  }
+}
+
+html[data-theme="dark"] .page-annotation .annotation-footnote {
+  color: #bbb;
+}
+
+.annotation-languages {
+  margin-bottom: 1.5rem;
+
+  a[aria-current="true"] {
+    font-weight: 700;
+    text-decoration: underline;
+  }
+}
+
+.page-annotation section[lang] {
+  display: flow-root;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 12px;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  margin-bottom: 1.5rem;
+
+  &[hidden] {
+    display: none;
+  }
+
+  .transliteration-toggle {
+    float: right;
+    margin: 0 0 0.5rem 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 1rem;
+    background: var(--global-bg-color);
+    color: var(--global-text-color);
+    font-size: 0.8rem;
+    direction: ltr;
+    cursor: pointer;
+
+    &[aria-pressed="true"] {
+      border-color: var(--global-theme-color);
+      color: var(--global-theme-color);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+  }
+
+  &.translation-draft {
+    background-color: rgba(128, 128, 128, 0.07);
+  }
+
+  &[dir="rtl"] {
+    text-align: right;
+  }
+
+  > h2 {
+    margin-top: 0;
+    scroll-margin-top: 6rem;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
 .page-about {
   .news-sidebar .news-title {
     color: v.$sambhashana-blue-color;

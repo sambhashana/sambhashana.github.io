@@ -6,4 +6,4 @@ inline: false
 related_posts: false
 ---
 
-Co-organized the 1st *Graph Mining with LLMs* workshop at BITS Pilani, Hyderabad, under [APPCAIR](https://appcair.bits-pilani.ac.in) and the Institution's Innovation Council (IIC). The event featured talks by Prof. Sayan Ranu (IIT Delhi) and Prof. Soumen Chakrabarti (IIT Bombay), along with hands-on sessions, and was attended by ~40 participants in person.
+Hrishikesh Terdalkar co-organized the 1st *Graph Mining with LLMs* workshop at BITS Pilani, Hyderabad, under [APPCAIR](https://appcair.bits-pilani.ac.in) and the Institution's Innovation Council (IIC). The event featured talks by Prof. Sayan Ranu (IIT Delhi) and Prof. Soumen Chakrabarti (IIT Bombay), along with hands-on sessions, and was attended by ~40 participants in person.
