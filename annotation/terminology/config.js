@@ -1,0 +1,1 @@
+window.STUDY_CONFIG={supabaseUrl:"https://npzvzzxwsyowkxcmhjko.supabase.co",publishableKey:"sb_publishable_31hsFO7Qr-fNkPYQVuDl0Q_sZTTP7CO"};
