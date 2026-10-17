@@ -1,6 +1,6 @@
 // Small Supabase Auth/PostgREST client; no administrator credentials are used.
 export class StudyAPI {
-  constructor(config, storage = globalThis.localStorage, request = globalThis.fetch) {
+  constructor(config, storage = globalThis.localStorage, request = globalThis.fetch.bind(globalThis)) {
     this.url = (config.supabaseUrl || '').replace(/\/$/, '');
     this.key = config.publishableKey || '';
     this.storage = storage;
