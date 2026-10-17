@@ -37,6 +37,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
+        },{id: "nav-annotation",
+          title: "annotation",
+          description: "open call for annotators — register your interest in research annotation and evaluation tasks.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/annotation/";
+          },
         },{id: "nav-join-us",
           title: "join us",
           description: "interested in working with us?",
@@ -59,8 +66,8 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/python-bootcamp/";
-            },},{id: "news-full-paper-bhram-il-accepted-at-bhasha-2025",
-          title: 'Full paper BHRAM-IL Accepted at BHASHA 2025',
+            },},{id: "news-bhram-il-accepted-as-a-full-paper-at-bhasha-2025",
+          title: 'BHRAM-IL Accepted as a Full Paper at BHASHA 2025',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/bhram-il-acceptance/";
@@ -149,6 +156,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/sdm-ayurveda-talk/";
+            },},{id: "news-bharatgen-consortium-workshop-at-iit-bombay",
+          title: 'BharatGen Consortium Workshop at IIT Bombay',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/bharatgen-consortium-workshop-2026/";
             },},{id: "projects-trustworthy-and-explainable-llms-for-indian-languages",
           title: 'Trustworthy and Explainable LLMs for Indian Languages',
           description: "Funded by the ANRF PM Early Career Research Grant, this project develops trustworthy and explainable LLMs for Indian languages",
