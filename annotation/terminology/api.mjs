@@ -56,6 +56,17 @@ export class StudyAPI {
     try { if (this.session) await this.send('/auth/v1/logout', {method:'POST'}); }
     finally { this.remember(null); }
   }
+  async currentUser() {
+    const user = await this.send('/auth/v1/user');
+    this.remember({...this.session, user});
+    return user;
+  }
+  async changePassword(password) {
+    const user = await this.send('/auth/v1/user', {method:'PUT',
+      body:{password, data:{study_password_changed:true}}});
+    this.remember({...this.session, user});
+    return user;
+  }
   query(table, select) { return this.send('/rest/v1/' + table + '?select=' + encodeURIComponent(select)); }
   rpc(name, body) { return this.send('/rest/v1/rpc/' + name, {method:'POST', body}); }
 }
