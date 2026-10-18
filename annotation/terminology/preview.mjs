@@ -9,6 +9,7 @@ export async function previewAPI(){
   if(table==='participants')return [{code:'LOCAL-PREVIEW',active:true,consented_at:state.consented?'preview':null}];
   if(table==='assignments')return assignments;if(table==='ratings')return state.ratings;throw new Error('Unknown preview table');
  },async rpc(name,p){
+  if(name==='study_capabilities')return {admin:false,manager:false,annotator:true,study_id:'terminology'};
   if(name==='save_participant_profile'){state.consented=p.p_consent;persist();return {};}
   const old=state.ratings.find(r=>r.task_id===p.p_task_id);
   if((old?.revision||0)!==p.p_expected_revision)throw new Error('Preview changed in another tab. Reload saved progress.');

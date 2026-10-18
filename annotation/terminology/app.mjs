@@ -1,12 +1,20 @@
 import {StudyAPI} from './api.mjs?v=3';
+import {ManagementView} from './management.mjs';
 const $ = id => document.getElementById(id);
 function optionLabel(index){let label='',n=index+1;while(n){n--;label=String.fromCharCode(65+n%26)+label;n=Math.floor(n/26);}return label;}
 const criteria = {accuracy:'Accuracy',understandability:'Understandability'};
-const explanations={accuracy:'How well does this term express the concept given in the definition?',understandability:'How easy would this term be for a learner with basic Sanskrit knowledge to understand when introduced with the definition?'};
 const values = [['','Choose'],['NA','Cannot judge'],['1','1 — Very poor'],['2','2 — Poor'],['3','3 — Moderate'],['4','4 — Good'],['5','5 — Very good']];
 let api, assignments=[], ratings=new Map(), current=0, profile, dirty=false, timer, queue=Promise.resolve(), conflict=false, pendingSaves=0;
+let workspace=null,access={},management;
 function notice(message='') { $('notice').textContent=message; }
-function page(name) { for (const id of ['login','password','profile','study']) $(id).hidden=id!==name; $('logout').hidden=name==='login'; }
+function page(name) {
+  for (const id of ['login','password','profile','study','dashboard','accounts']) $(id).hidden=id!==name;
+  $('logout').hidden=name==='login';
+  $('workspace-nav').hidden=['login','password','profile'].includes(name);
+  $('change-password').hidden=['login','password'].includes(name);
+  for(const [id,destination] of [['nav-evaluate','evaluate'],['nav-progress','dashboard'],['nav-accounts','accounts']])
+    $(id).setAttribute('aria-current',workspace===destination?'page':'false');
+}
 function report(error) { notice(error.message || 'Unable to save. Please check your connection and try again.'); }
 function progress() {
   const done=assignments.filter(a=>ratings.get(a.task_id)?.status==='submitted').length;
@@ -20,7 +28,9 @@ function render() {
   if (!assignments.length) return;
   const assignment=assignments[current], task=assignment.annotation_tasks;
   const saved=ratings.get(assignment.task_id) || {};
-  $('question-position').textContent=`Concept ${current+1} of ${assignments.length}${assignment.batch===2?' · Optional additional work':''} · ${task.domain.replaceAll('_',' ')}`;
+  const section=assignments.filter(a=>a.batch===assignment.batch);
+  const position=section.findIndex(a=>a.task_id===assignment.task_id)+1;
+  $('question-position').textContent=`${assignment.batch===2?'Optional concept':'Concept'} ${position} of ${section.length} · ${task.domain.replaceAll('_',' ')}`;
   $('concept').textContent=task.concept;$('definition').textContent=task.definition;
   for (const input of $('familiarity').querySelectorAll('input[type=radio]')) input.checked=input.value===saved.familiarity;
   $('comment').value=saved.comment || '';
@@ -28,10 +38,10 @@ function render() {
   $('options').replaceChildren();
   assignment.option_order.forEach((oid,index)=>{
     const option=byId.get(oid);
-    if (!option) throw new Error('This question is not configured correctly. Please contact the organizer.');
+    if (!option) throw new Error('The terms for this concept could not be loaded. Please contact the organizer.');
     const fieldset=document.createElement('fieldset'), legend=document.createElement('legend');
     legend.textContent=`${optionLabel(index)}. ${option.devanagari} `;
-    const iast=document.createElement('span');iast.className='iast';iast.textContent=option.iast?`(${option.iast})`:'Transliteration pending review';legend.append(iast);fieldset.append(legend);
+    const iast=document.createElement('span');iast.className='iast';iast.textContent=option.iast?`(${option.iast})`:'';legend.append(iast);fieldset.append(legend);
     const grid=document.createElement('div');grid.className='criteria';
     Object.entries(criteria).forEach(([key,title])=>{
       const group=document.createElement('fieldset');group.className='rating-row';
@@ -53,7 +63,7 @@ function render() {
   });
   $('previous').disabled=current===0;
   $('submit').textContent=current===assignments.length-1?'Save response':'Save and next';
-  $('save-status').textContent=saved.status==='submitted'?'Response submitted. You may revise your own ratings.':saved.revision?'Saved draft.':'Not yet saved.';
+  $('save-status').textContent=saved.status==='submitted'?'Ratings submitted. You can return to edit them.':saved.revision?'Saved draft.':'Not yet saved.';
   dirty=false;progress();
 }
 async function load() {
@@ -62,9 +72,22 @@ async function load() {
     const user=await api.currentUser();
     if(!user.user_metadata?.study_password_changed) { $('password-cancel').hidden=true;page('password');return; }
   }
+  access=await api.rpc('study_capabilities',{});
+  $('nav-evaluate').hidden=!access.annotator;
+  $('nav-progress').hidden=!(access.admin||access.manager);
+  $('nav-accounts').hidden=!access.admin;
+  if(!workspace)workspace=(access.admin||access.manager)?'dashboard':'evaluate';
+  if(workspace==='accounts'&&!access.admin)workspace='evaluate';
+  if(workspace==='dashboard'&&!(access.admin||access.manager))workspace='evaluate';
+  if(['dashboard','accounts'].includes(workspace)){
+    management ||= new ManagementView(api,report);
+    page(workspace);
+    if(workspace==='dashboard')await management.showProgress();else await management.showAccounts();
+    return;
+  }
   const profiles=await api.query('participants','code,active,proficiency,devanagari,consented_at');
   profile=profiles[0];
-  if (!profile?.active) throw new Error('There is no active study assignment for this account. Please contact the organizer.');
+  if (!profile?.active) throw new Error('This account does not have access to the study. Please contact the organizer.');
   if (!profile.consented_at) { page('profile');return; }
   const [tasks,responses]=await Promise.all([
     api.query('assignments','task_id,batch,position,option_order,annotation_tasks(concept,definition,domain,options)'),
@@ -108,6 +131,9 @@ function save(status='draft') {
   queue=operation;return operation;
 }
 async function move(index) { if (await save('draft')===false) return;current=index;render();window.scrollTo({top:0,behavior:'smooth'}); }
+for(const [id,destination] of [['nav-evaluate','evaluate'],['nav-progress','dashboard'],['nav-accounts','accounts']]){
+  $(id).addEventListener('click',async()=>{if(await save('draft')===false)return;workspace=destination;try{await load();}catch(error){report(error);}});
+}
 $('login-form').addEventListener('submit',async event=>{
   event.preventDefault();notice();const button=event.submitter || event.target.querySelector('button');button.disabled=true;
   try { const data=new FormData(event.target);await api.signIn(data.get('email'),data.get('password'));event.target.reset();await load(); }
@@ -118,7 +144,7 @@ $('password-form').addEventListener('submit',async event=>{
   const data=new FormData(event.target);
   if(data.get('password')!==data.get('confirm-password')) { notice('The two passwords do not match.');return; }
   const button=event.submitter || event.target.querySelector('button');button.disabled=true;
-  try {await api.changePassword(data.get('password'));event.target.reset();await load();notice('Your password has been changed. Use your new password next time you sign in.');}
+  try {await api.changePassword(data.get('password'));event.target.reset();await load();notice('Password changed. Use your new password next time you sign in.');}
   catch(error){report(error);}finally{button.disabled=false;}
 });
 $('change-password').addEventListener('click',async()=>{if(await save('draft')===false)return;notice();$('password-cancel').hidden=false;page('password');});
@@ -131,13 +157,13 @@ $('profile-form').addEventListener('submit',async event=>{
 $('rating-form').addEventListener('input',()=>{dirty=true;clearTimeout(timer);$('save-status').textContent='Unsaved changes…';timer=setTimeout(()=>save('draft'),800);});
 $('rating-form').addEventListener('submit',async event=>{
   event.preventDefault();$('submit').disabled=true;
-  try {if(await save('submitted')) {if(current<assignments.length-1){const reachedTarget=assignments[current].batch===1 && assignments[current+1].batch===2 && assignments.filter(a=>a.batch===1).every(a=>ratings.get(a.task_id)?.status==='submitted');current++;render();if(reachedTarget)notice('You have completed your 100-concept target. Thank you. You may sign out now; the remaining concepts are optional.');window.scrollTo({top:0,behavior:'smooth'});}else notice('Your response is saved. You may take a break or return to review earlier questions.');}}
+  try {if(await save('submitted')) {if(current<assignments.length-1){const reachedTarget=assignments[current].batch===1 && assignments[current+1].batch===2 && assignments.filter(a=>a.batch===1).every(a=>ratings.get(a.task_id)?.status==='submitted');current++;render();if(reachedTarget)notice('You have completed 100 concepts. Thank you for your time. You can sign out or continue with the optional concepts.');window.scrollTo({top:0,behavior:'smooth'});}else notice('You have completed all assigned concepts. Your ratings are saved.');}}
   finally{$('submit').disabled=false;}
 });
 $('save-draft').addEventListener('click',()=>save('draft'));
 $('previous').addEventListener('click',()=>move(current-1));
 $('refresh').addEventListener('click',async()=>{if(dirty && !confirm('Reloading replaces unsaved edits with the saved response. Continue?'))return;clearTimeout(timer);await queue;try{await load();}catch(error){report(error);}});
-$('logout').addEventListener('click',async()=>{if(!conflict && await save('draft')===false)return;clearTimeout(timer);try{await api.signOut();}catch(_){/* Local sign-out still completes. */}assignments=[];ratings.clear();page('login');notice('Signed out on this device.');});
+$('logout').addEventListener('click',async()=>{if(!conflict && await save('draft')===false)return;clearTimeout(timer);try{await api.signOut();}catch(_){/* Local sign-out still completes. */}assignments=[];ratings.clear();management?.clear();workspace=null;access={};page('login');notice('Signed out on this device.');});
 $('download').addEventListener('click',()=>{
   const responses=new Map(ratings);
   if(dirty && assignments.length){const draft=collect();responses.set(draft.task_id,{...draft,status:'unsaved_local_draft'});}
