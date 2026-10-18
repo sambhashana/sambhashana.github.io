@@ -16,11 +16,21 @@
         <label>Password<input name="password" type="password" autocomplete="current-password" required></label><button class="primary">Sign in</button></form>
       <p class="muted">Need access or help? Use the contact details on the <a href="https://sambhashana.github.io/">group website</a>.</p>
     </section>
+    <section id="password" class="panel" hidden>
+      <p class="eyebrow">Your account</p><h1>Choose your password</h1>
+      <p>Replace the starter password with a password of your own. Use at least 8 characters. Your ratings and progress will stay with your account.</p>
+      <form id="password-form">
+        <label>New password<input name="password" type="password" autocomplete="new-password" minlength="8" required></label>
+        <label>Confirm new password<input name="confirm-password" type="password" autocomplete="new-password" minlength="8" required></label>
+        <button class="primary">Save password and continue</button>
+        <button id="password-cancel" type="button" hidden>Cancel</button>
+      </form>
+    </section>
     <section id="profile" class="panel" hidden>
       <p class="eyebrow">Before you begin</p><h1>About this study</h1>
       <p>You will see a concept definition and distinct proposed terms. Rate each term independently for Accuracy and Understandability. Everyone receives the same two questions, and you may choose “Cannot judge” whenever needed.</p>
       <p>Participation is voluntary. You may stop at any time. Your coded ratings may be analysed and reported in research publications; your name and email will not be published with them. Contact the organizer through the group website with questions or to request withdrawal.</p>
-      <p>Each concept has several distinct terms to rate. You can take breaks and resume later. The organizer will provide the task-specific time estimate and compensation information before you participate.</p>
+      <p>This is an unpaid, voluntary task. We request completion of your first 100 assigned concepts, across as many sessions as you need. Each concept requires two ratings for every suggested term. Allow several hours in total; an initial planning estimate is 5–10 hours, which has not yet been measured. You may stop at any time. The remaining concepts are optional. Your progress is saved so you can resume later.</p>
       <p><strong>Accuracy:</strong> How well does the term express the concept in the definition? <strong>Understandability:</strong> How easy would it be for a learner with basic Sanskrit knowledge to understand the term when introduced with this definition? Rate each from 1 (very poor) to 5 (very good), or choose “Cannot judge”.</p>
       <form id="profile-form">
         <fieldset><legend>Sanskrit proficiency</legend>
@@ -44,8 +54,9 @@
     <section id="study" hidden>
       <div class="study-bar"><p id="participant"></p><p id="progress"></p></div>
       <progress id="progress-bar" value="0" max="1" aria-label="Completed questions"></progress>
-      <details><summary>Instructions and rating guide</summary><p>1 = very poor · 2 = poor · 3 = moderate · 4 = good · 5 = very good. These are perceived judgments with the definition visible, not a test of unaided understanding.</p><p>Accuracy: how well does the term express the concept in the definition? Understandability: how easy would it be for a learner with basic Sanskrit knowledge to understand the term when introduced with this definition? Use “Cannot judge” when your Sanskrit knowledge is insufficient. You are not being asked whether you personally would use the term. Open the ⓘ explanations by click, tap or keyboard. Rate terms independently.</p></details>
-      <div class="toolbar"><button id="refresh">Reload saved progress</button><button id="download">Download my ratings</button></div>
+      <p>This is an unpaid, voluntary task. Your target is the first 100 assigned concepts; further concepts are optional. Allow several hours across multiple sessions (initial estimate: 5–10 hours, not yet measured). You may stop at any time and resume later.</p>
+      <details><summary>Instructions and rating guide</summary><p>1 = very poor · 2 = poor · 3 = moderate · 4 = good · 5 = very good. These are perceived judgments with the definition visible, not a test of unaided understanding.</p><p>Accuracy: how well does the term express the concept in the definition? Understandability: how easy would it be for a learner with basic Sanskrit knowledge to understand the term when introduced with this definition? Use “Cannot judge” when your Sanskrit knowledge is insufficient. You are not being asked whether you personally would use the term. Rate terms independently.</p></details>
+      <div class="toolbar"><button id="refresh">Reload saved progress</button><button id="download">Download my ratings</button><button id="change-password">Change password</button></div>
       <form id="rating-form"><article class="panel"><p class="eyebrow" id="question-position"></p><h1 id="concept"></h1><p id="definition"></p>
         <fieldset id="familiarity"><legend>How familiar are you with this concept?</legend>
           <div class="radio-choices">
@@ -68,5 +79,5 @@
     </section>
   </main>
   <footer>Independent judgments. Progress saved to your account.</footer>
-  <script src="config.js"></script><script type="module" src="app.mjs?v=2"></script>
+  <script src="config.js"></script><script type="module" src="app.mjs?v=3"></script>
 </body></html>

@@ -1,4 +1,4 @@
-import {StudyAPI} from './api.mjs?v=2';
+import {StudyAPI} from './api.mjs?v=3';
 const $ = id => document.getElementById(id);
 function optionLabel(index){let label='',n=index+1;while(n){n--;label=String.fromCharCode(65+n%26)+label;n=Math.floor(n/26);}return label;}
 const criteria = {accuracy:'Accuracy',understandability:'Understandability'};
@@ -6,19 +6,21 @@ const explanations={accuracy:'How well does this term express the concept given 
 const values = [['','Choose'],['NA','Cannot judge'],['1','1 — Very poor'],['2','2 — Poor'],['3','3 — Moderate'],['4','4 — Good'],['5','5 — Very good']];
 let api, assignments=[], ratings=new Map(), current=0, profile, dirty=false, timer, queue=Promise.resolve(), conflict=false, pendingSaves=0;
 function notice(message='') { $('notice').textContent=message; }
-function page(name) { for (const id of ['login','profile','study']) $(id).hidden=id!==name; $('logout').hidden=name==='login'; }
+function page(name) { for (const id of ['login','password','profile','study']) $(id).hidden=id!==name; $('logout').hidden=name==='login'; }
 function report(error) { notice(error.message || 'Unable to save. Please check your connection and try again.'); }
 function progress() {
   const done=assignments.filter(a=>ratings.get(a.task_id)?.status==='submitted').length;
-  $('progress').textContent=`${done} of ${assignments.length} questions completed`;
-  $('progress-bar').max=Math.max(1,assignments.length);$('progress-bar').value=done;
+  const core=assignments.filter(a=>a.batch===1);
+  const coreDone=core.filter(a=>ratings.get(a.task_id)?.status==='submitted').length;
+  $('progress').textContent=`${coreDone} of ${core.length} target concepts completed` + (done>coreDone?` · ${done-coreDone} additional concepts completed`:'');
+  $('progress-bar').max=Math.max(1,core.length);$('progress-bar').value=coreDone;
 }
 function render() {
   $('rating-form').hidden=!assignments.length;$('empty').hidden=!!assignments.length;
   if (!assignments.length) return;
   const assignment=assignments[current], task=assignment.annotation_tasks;
   const saved=ratings.get(assignment.task_id) || {};
-  $('question-position').textContent=`Concept ${current+1} of ${assignments.length} · ${task.domain.replaceAll('_',' ')}`;
+  $('question-position').textContent=`Concept ${current+1} of ${assignments.length}${assignment.batch===2?' · Optional additional work':''} · ${task.domain.replaceAll('_',' ')}`;
   $('concept').textContent=task.concept;$('definition').textContent=task.definition;
   for (const input of $('familiarity').querySelectorAll('input[type=radio]')) input.checked=input.value===saved.familiarity;
   $('comment').value=saved.comment || '';
@@ -56,6 +58,10 @@ function render() {
 }
 async function load() {
   notice();
+  if(api.currentUser) {
+    const user=await api.currentUser();
+    if(!user.user_metadata?.study_password_changed) { $('password-cancel').hidden=true;page('password');return; }
+  }
   const profiles=await api.query('participants','code,active,proficiency,devanagari,consented_at');
   profile=profiles[0];
   if (!profile?.active) throw new Error('There is no active study assignment for this account. Please contact the organizer.');
@@ -107,6 +113,16 @@ $('login-form').addEventListener('submit',async event=>{
   try { const data=new FormData(event.target);await api.signIn(data.get('email'),data.get('password'));event.target.reset();await load(); }
   catch(error) {report(error);}finally{button.disabled=false;}
 });
+$('password-form').addEventListener('submit',async event=>{
+  event.preventDefault();notice();
+  const data=new FormData(event.target);
+  if(data.get('password')!==data.get('confirm-password')) { notice('The two passwords do not match.');return; }
+  const button=event.submitter || event.target.querySelector('button');button.disabled=true;
+  try {await api.changePassword(data.get('password'));event.target.reset();await load();notice('Your password has been changed. Use your new password next time you sign in.');}
+  catch(error){report(error);}finally{button.disabled=false;}
+});
+$('change-password').addEventListener('click',async()=>{if(await save('draft')===false)return;notice();$('password-cancel').hidden=false;page('password');});
+$('password-cancel').addEventListener('click',async()=>{ $('password-form').reset();try{await load();}catch(error){report(error);} });
 $('profile-form').addEventListener('submit',async event=>{
   event.preventDefault();const button=event.submitter || event.target.querySelector('button');button.disabled=true;
   try {const data=new FormData(event.target);await api.rpc('save_participant_profile',{p_proficiency:data.get('proficiency'),p_devanagari:data.get('devanagari'),p_consent:data.get('consent')==='on'});await load();}
@@ -115,7 +131,7 @@ $('profile-form').addEventListener('submit',async event=>{
 $('rating-form').addEventListener('input',()=>{dirty=true;clearTimeout(timer);$('save-status').textContent='Unsaved changes…';timer=setTimeout(()=>save('draft'),800);});
 $('rating-form').addEventListener('submit',async event=>{
   event.preventDefault();$('submit').disabled=true;
-  try {if(await save('submitted')) {if(current<assignments.length-1){current++;render();window.scrollTo({top:0,behavior:'smooth'});}else notice('Your response is saved. You may take a break or return to review earlier questions.');}}
+  try {if(await save('submitted')) {if(current<assignments.length-1){const reachedTarget=assignments[current].batch===1 && assignments[current+1].batch===2 && assignments.filter(a=>a.batch===1).every(a=>ratings.get(a.task_id)?.status==='submitted');current++;render();if(reachedTarget)notice('You have completed your 100-concept target. Thank you. You may sign out now; the remaining concepts are optional.');window.scrollTo({top:0,behavior:'smooth'});}else notice('Your response is saved. You may take a break or return to review earlier questions.');}}
   finally{$('submit').disabled=false;}
 });
 $('save-draft').addEventListener('click',()=>save('draft'));
