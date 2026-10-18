@@ -6,19 +6,23 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header><a class="brand" href="https://sambhashana.github.io/">Sambhāśaṇa <span>Research Group</span></a><button id="logout" hidden>Sign out</button></header>
+  <header><a class="brand" href="https://sambhashana.github.io/">Sambhāśaṇa <span>Research Group</span></a>
+    <div class="account-actions"><nav id="workspace-nav" aria-label="Task navigation" hidden>
+      <button id="nav-evaluate" hidden>Evaluate terms</button><button id="nav-progress" hidden>Progress</button><button id="nav-accounts" hidden>Accounts</button>
+    </nav><button id="change-password" hidden>Change password</button><button id="logout" hidden>Sign out</button></div>
+  </header>
   <main>
     <div id="notice" role="status" aria-live="polite"></div>
     <section id="login" class="panel">
-      <p class="eyebrow">Research participation</p><h1>Term evaluation</h1>
-      <p>Sign in with the account provided by the study organizer. Your ratings and progress are saved to your account.</p>
+      <h1>Term evaluation</h1>
+      <p>Sign in with the email address you registered. For your first sign-in, use the starter password in the invitation email. You will then choose your own password.</p>
       <form id="login-form"><label>Email<input name="email" type="email" autocomplete="username" required></label>
         <label>Password<input name="password" type="password" autocomplete="current-password" required></label><button class="primary">Sign in</button></form>
-      <p class="muted">Need access or help? Use the contact details on the <a href="https://sambhashana.github.io/">group website</a>.</p>
+      <p class="muted">For help, contact the organizer through the <a href="https://sambhashana.github.io/">group website</a>.</p>
     </section>
     <section id="password" class="panel" hidden>
-      <p class="eyebrow">Your account</p><h1>Choose your password</h1>
-      <p>Replace the starter password with a password of your own. Use at least 8 characters. Your ratings and progress will stay with your account.</p>
+      <h1>Choose your password</h1>
+      <p>Choose a password with at least 8 characters. Use this password for future sign-ins.</p>
       <form id="password-form">
         <label>New password<input name="password" type="password" autocomplete="new-password" minlength="8" required></label>
         <label>Confirm new password<input name="confirm-password" type="password" autocomplete="new-password" minlength="8" required></label>
@@ -27,11 +31,19 @@
       </form>
     </section>
     <section id="profile" class="panel" hidden>
-      <p class="eyebrow">Before you begin</p><h1>About this study</h1>
-      <p>You will see a concept definition and distinct proposed terms. Rate each term independently for Accuracy and Understandability. Everyone receives the same two questions, and you may choose “Cannot judge” whenever needed.</p>
-      <p>Participation is voluntary. You may stop at any time. Your coded ratings may be analysed and reported in research publications; your name and email will not be published with them. Contact the organizer through the group website with questions or to request withdrawal.</p>
-      <p>This is an unpaid, voluntary task. We request completion of your first 100 assigned concepts, across as many sessions as you need. Each concept requires two ratings for every suggested term. Allow several hours in total; an initial planning estimate is 5–10 hours, which has not yet been measured. You may stop at any time. The remaining concepts are optional. Your progress is saved so you can resume later.</p>
-      <p><strong>Accuracy:</strong> How well does the term express the concept in the definition? <strong>Understandability:</strong> How easy would it be for a learner with basic Sanskrit knowledge to understand the term when introduced with this definition? Rate each from 1 (very poor) to 5 (very good), or choose “Cannot judge”.</p>
+      <h1>Before you begin</h1>
+      <p>This study evaluates Sanskrit-based technical terminology. For each concept, you will see an English definition and a list of proposed Sanskrit terms.</p>
+      <ol>
+        <li>Read the definition and indicate how familiar you are with the concept.</li>
+        <li>Rate every proposed term for <strong>Accuracy</strong> and <strong>Understandability</strong>, using the definitions below. Rate similar spellings separately.</li>
+        <li>Use <strong>Cannot judge</strong> for either rating if you cannot assess it. You can give one rating and choose Cannot judge for the other.</li>
+        <li>Select <strong>Save and next</strong> after completing the ratings for a concept. You can take breaks and resume later.</li>
+      </ol>
+      <p><strong>Accuracy:</strong> How well does the term express the concept in the definition?</p>
+      <p><strong>Understandability:</strong> How easy would the term be for a learner with basic Sanskrit knowledge to understand when introduced with this definition?</p>
+      <p>Use 1 (very poor), 2 (poor), 3 (moderate), 4 (good), or 5 (very good). Give the same score to more than one term if appropriate.</p>
+      <p>We ask you to complete <strong>100 concepts</strong>. Further concepts are optional. This task is <strong>unpaid and voluntary</strong>; you may stop at any time. We estimate 5–10 hours for 100 concepts, spread across several sessions.</p>
+      <p>We will use your ratings for research and may report them in publications under a participant ID. Your name and email will not be published with your ratings. For questions or to request withdrawal, contact the organizer through the <a href="https://sambhashana.github.io/">group website</a>.</p>
       <form id="profile-form">
         <fieldset><legend>Sanskrit proficiency</legend>
           <div class="radio-choices">
@@ -49,14 +61,25 @@
             <label class="radio-choice"><input type="radio" name="devanagari" value="yes" required>Yes</label>
           </div>
         </fieldset>
-        <label class="check"><input name="consent" type="checkbox" required>I have read the study information and agree to the research use of my coded ratings.</label><button class="primary">Save and begin</button></form>
+        <label class="check"><input name="consent" type="checkbox" required>I have read the study information and agree to participate and to the use of my ratings for research.</label><button class="primary">Begin evaluation</button></form>
     </section>
     <section id="study" hidden>
       <div class="study-bar"><p id="participant"></p><p id="progress"></p></div>
-      <progress id="progress-bar" value="0" max="1" aria-label="Completed questions"></progress>
-      <p>This is an unpaid, voluntary task. Your target is the first 100 assigned concepts; further concepts are optional. Allow several hours across multiple sessions (initial estimate: 5–10 hours, not yet measured). You may stop at any time and resume later.</p>
-      <details><summary>Instructions and rating guide</summary><p>1 = very poor · 2 = poor · 3 = moderate · 4 = good · 5 = very good. These are perceived judgments with the definition visible, not a test of unaided understanding.</p><p>Accuracy: how well does the term express the concept in the definition? Understandability: how easy would it be for a learner with basic Sanskrit knowledge to understand the term when introduced with this definition? Use “Cannot judge” when your Sanskrit knowledge is insufficient. You are not being asked whether you personally would use the term. Rate terms independently.</p></details>
-      <div class="toolbar"><button id="refresh">Reload saved progress</button><button id="download">Download my ratings</button><button id="change-password">Change password</button></div>
+      <progress id="progress-bar" value="0" max="1" aria-label="Completed target concepts"></progress>
+      <p>Please complete 100 concepts. Further concepts are optional. You can stop and resume later.</p>
+      <details><summary>Instructions and rating guide</summary>
+        <ol>
+          <li>Read the definition and indicate how familiar you are with the concept.</li>
+          <li>Rate every term for Accuracy and Understandability. Give each term its own ratings, including terms with similar spellings. More than one term may receive the same score.</li>
+          <li>Use Cannot judge for either rating if you cannot assess it.</li>
+          <li>Select Save and next to submit the concept and continue. To pause partway through a concept, select Save draft and wait for Draft saved before signing out.</li>
+        </ol>
+        <p><strong>Accuracy:</strong> How well does the term express the concept in the definition?</p>
+        <p><strong>Understandability:</strong> How easy would the term be for a learner with basic Sanskrit knowledge to understand when introduced with this definition?</p>
+        <p>1 = very poor · 2 = poor · 3 = moderate · 4 = good · 5 = very good.</p>
+        <p>This task is unpaid and voluntary. You may stop at any time.</p>
+      </details>
+      <div class="toolbar"><button id="refresh">Reload saved progress</button><button id="download">Download my ratings</button></div>
       <form id="rating-form"><article class="panel"><p class="eyebrow" id="question-position"></p><h1 id="concept"></h1><p id="definition"></p>
         <fieldset id="familiarity"><legend>How familiar are you with this concept?</legend>
           <div class="radio-choices">
@@ -72,12 +95,44 @@
           <p id="criterion-accuracy"><strong>Accuracy:</strong> How well does the term express the concept in the definition?</p>
           <p id="criterion-understandability"><strong>Understandability:</strong> How easy would the term be for a learner with basic Sanskrit knowledge to understand when introduced with this definition?</p>
         </aside>
-        <div id="options"></div><label>Comments (optional)<textarea id="comment" maxlength="2000" rows="3"></textarea></label>
+        <div id="options"></div><label>Comments or alternative term (optional)<textarea id="comment" maxlength="2000" rows="3" placeholder="You may explain a rating or suggest another term for this concept."></textarea></label>
         <div class="navigation"><button id="previous" type="button">Previous</button><button id="save-draft" type="button">Save draft</button><button class="primary" id="submit">Save and next</button></div><p id="save-status" role="status" aria-live="polite"></p>
       </article></form>
-      <section id="empty" class="panel" hidden><h1>No assigned questions yet</h1><p>Please contact the study organizer.</p></section>
+      <section id="empty" class="panel" hidden><h1>No concepts assigned yet</h1><p>Please contact the organizer.</p></section>
+    </section>
+    <section id="dashboard" hidden>
+      <h1>Rating progress</h1>
+      <p>Sanskrit terminology evaluation</p>
+      <div class="summary-cards">
+        <div><strong id="total-concepts">—</strong><span>Concepts</span></div>
+        <div><strong id="total-terms">—</strong><span>Distinct terms</span></div>
+        <div><strong id="total-annotators">—</strong><span>Assigned annotators</span></div>
+        <div><strong id="submitted-concepts">—</strong><span>Concept evaluations submitted</span></div>
+      </div>
+      <div class="toolbar"><button id="dashboard-refresh">Refresh counts</button><button id="download-counts">Download counts</button></div>
+      <p id="dashboard-status" role="status"></p>
+      <section class="panel"><h2>Evaluations per term</h2>
+        <p>Number of terms with 0, 1, 2, 3, 4, or at least 5 submitted evaluations.</p>
+        <div id="coverage-chart" aria-label="Number of terms by submitted evaluations"></div>
+      </section>
+      <section class="panel"><h2>Term counts</h2>
+        <p>Counts include submitted concepts only. “Cannot judge” responses are listed separately. A term produced by several models is counted once per annotator.</p>
+        <div class="dashboard-filters">
+          <label>Find a concept or term<input id="progress-search" type="search"></label>
+          <label>Domain<select id="progress-domain"><option value="">All domains</option></select></label>
+          <label class="check"><input id="progress-unrated" type="checkbox">Only terms with no submitted evaluations</label>
+        </div>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Concept</th><th scope="col">Term</th><th scope="col">Evaluations</th><th scope="col">Accuracy</th><th scope="col">Understandability</th><th scope="col">Assigned in first 100</th></tr></thead><tbody id="term-counts"></tbody></table></div>
+        <div class="toolbar"><button id="terms-previous">Previous</button><p id="terms-page" role="status"></p><button id="terms-next">Next</button></div>
+      </section>
+    </section>
+    <section id="accounts" hidden>
+      <h1>Accounts</h1>
+      <p>Manager access applies to this terminology task. Managers can view rating counts. Only administrators can grant or remove manager access.</p>
+      <button id="accounts-refresh">Refresh accounts</button><p id="accounts-status" role="status"></p>
+      <div class="table-scroll"><table><thead><tr><th scope="col">Account</th><th scope="col">Email</th><th scope="col">Status</th><th scope="col">Manager access</th><th scope="col">Target concepts completed</th></tr></thead><tbody id="account-rows"></tbody></table></div>
     </section>
   </main>
-  <footer>Independent judgments. Progress saved to your account.</footer>
-  <script src="config.js"></script><script type="module" src="app.mjs?v=3"></script>
+  <footer>Progress saved to your account.</footer>
+  <script src="config.js"></script><script type="module" src="app.mjs?v=4"></script>
 </body></html>
