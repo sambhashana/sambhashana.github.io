@@ -28,7 +28,9 @@ export class StudyAPI {
     const response = await this.request(this.url + path, {method, headers, body: body === undefined ? undefined : JSON.stringify(body)});
     const text = await response.text();
     let value;
-    try { value = text ? JSON.parse(text) : null; } catch (_) { throw new Error('The server returned an unreadable response. Please try again.'); }
+    try { value = text ? JSON.parse(text) : null; } catch (_) {
+      const error=new Error('The server returned an unreadable response. Please try again.');error.code='BAD_RESPONSE';throw error;
+    }
     if (!response.ok) {
       const error = new Error(value?.message || value?.msg || value?.error_description || 'Unable to connect to the study.');
       error.code = value?.code;
@@ -48,7 +50,11 @@ export class StudyAPI {
       this.refreshing = this.send('/auth/v1/token?grant_type=refresh_token', {method:'POST', authenticated:false,
         body:{refresh_token:this.session.refresh_token}}).then(data => {
           this.remember({...data, expires_at:data.expires_at || Math.floor(Date.now()/1000) + data.expires_in});
-        }).catch(error => { this.remember(null); throw error; }).finally(() => { this.refreshing = null; });
+        }).catch(error => {
+          // A dropped connection does not mean the refresh token was rejected.
+          if(error.status===400||error.status===401)this.remember(null);
+          throw error;
+        }).finally(() => { this.refreshing = null; });
     }
     await this.refreshing;
   }
@@ -68,5 +74,54 @@ export class StudyAPI {
     return user;
   }
   query(table, select) { return this.send('/rest/v1/' + table + '?select=' + encodeURIComponent(select)); }
+  async readRating(taskId) {
+    const select='task_id,answers,familiarity,comment,status,revision,updated_at';
+    const rows=await this.send('/rest/v1/ratings?select='+encodeURIComponent(select)+'&task_id=eq.'+encodeURIComponent(taskId));
+    return rows[0]||null;
+  }
   rpc(name, body) { return this.send('/rest/v1/rpc/' + name, {method:'POST', body}); }
+}
+
+const canonical=value=>JSON.stringify(value&&typeof value==='object'&&!Array.isArray(value)
+  ?Object.keys(value).sort().map(key=>[key,canonical(value[key])])
+  :Array.isArray(value)?value.map(canonical):value);
+export function sameRating(row,body){
+  return canonical(row.answers)===canonical(body.p_answers)&&
+    (row.familiarity??null)===(body.p_familiarity??null)&&(row.comment||'')===(body.p_comment||'');
+}
+
+export async function saveRating(api,body){
+  const request={...body};
+  for(let attempt=0;attempt<3;attempt++){
+    try{
+      const saved=await api.rpc('save_study_rating',request);
+      if(!Number.isInteger(saved?.revision)||saved.revision<1){const error=new Error('Save confirmation was unreadable.');error.code='BAD_RESPONSE';throw error;}
+      return {...saved,status:request.p_status};
+    }
+    catch(error){
+      const conflict=['PT409','40001'].includes(error.code);
+      const uncertain=error instanceof TypeError||error.name==='AbortError'||error.status>=500||error.code==='BAD_RESPONSE';
+      if(!conflict&&!uncertain)throw error;
+      let row;
+      try{row=api.readRating?await api.readRating(request.p_task_id):
+        (await api.query('ratings','task_id,answers,familiarity,comment,status,revision,updated_at')).find(r=>r.task_id===request.p_task_id);}
+      catch(_){
+        const unconfirmed=new Error('Could not confirm the save. Your ratings are still on this page. Check your connection and try saving again.');
+        unconfirmed.code='SAVE_UNCONFIRMED';throw unconfirmed;
+      }
+      if(row&&sameRating(row,request)){
+        if(row.status===request.p_status||row.status==='submitted'&&request.p_status==='draft')
+          return {revision:row.revision,updated_at:row.updated_at,status:row.status,reconciled:true};
+        // Identical answers already saved as a draft: only change its submission state.
+        request.p_expected_revision=row.revision;
+      }else if((row?.revision||0)!==request.p_expected_revision){
+        const changed=new Error('This response changed in another session. Reload saved progress before editing.');
+        changed.code='PT409';throw changed;
+      }
+      if(attempt===2){
+        const unconfirmed=new Error('Could not confirm the save. Keep this page open and try saving again.');
+        unconfirmed.code='SAVE_UNCONFIRMED';throw unconfirmed;
+      }
+    }
+  }
 }

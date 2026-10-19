@@ -43,7 +43,7 @@
       <p><strong>Understandability:</strong> How easy would the term be for a learner with basic Sanskrit knowledge to understand when introduced with this definition?</p>
       <p>Use 1 (very poor), 2 (poor), 3 (moderate), 4 (good), or 5 (very good). All terms for a concept may receive low scores, high scores, or the same score. Rate each term separately; you do not need to rank the terms or use every score on the scale.</p>
       <p>We ask you to complete <strong>100 concepts</strong>. Further concepts are optional. This task is <strong>unpaid and voluntary</strong>; you may stop at any time. We estimate 5–10 hours for 100 concepts, spread across several sessions.</p>
-      <p><strong>Acknowledgment:</strong> Participants who complete ratings for at least 100 concepts will be eligible for acknowledgment in resulting publications or project materials, with their permission. Contributions below this threshold will not qualify for acknowledgment.</p>
+      <p><strong>Acknowledgment:</strong> Participants who complete ratings for at least 100 concepts will be eligible for acknowledgment in resulting publications or project materials, with their permission. Contributions below this threshold may not qualify for acknowledgment.</p>
       <p>We will use your ratings for research and may report them in publications under a participant ID. Your name and email will not be published with your ratings. For questions or to request withdrawal, contact the organizer through the <a href="https://sambhashana.github.io/">group website</a>.</p>
       <form id="profile-form">
         <fieldset><legend>Sanskrit proficiency</legend>
@@ -67,6 +67,7 @@
     <section id="study" hidden>
       <div class="study-bar"><p id="participant"></p><p id="progress"></p></div>
       <progress id="progress-bar" value="0" max="1" aria-label="Completed target concepts"></progress>
+      <p id="deferred-progress" role="status"></p>
       <p>Please complete 100 concepts. Further concepts are optional. You can stop and resume later.</p>
       <details><summary>Instructions and rating guide</summary>
         <ol>
@@ -74,14 +75,15 @@
           <li>Rate every term for Accuracy and Understandability, including terms with similar spellings. All terms for a concept may receive low scores, high scores, or the same score. You do not need to rank the terms or use every score on the scale.</li>
           <li>Use Cannot judge for either rating if you cannot assess it.</li>
           <li>Select Save and next to submit the concept and continue. To pause partway through a concept, select Save draft and wait for Draft saved before signing out.</li>
+          <li>Use Come back later to save a draft and move the concept to the end of all 289 concepts. It remains unfinished and still belongs to its original target or optional set. The deferred order is remembered in this browser only.</li>
         </ol>
         <p><strong>Accuracy:</strong> How well does the term express the concept in the definition?</p>
         <p><strong>Understandability:</strong> How easy would the term be for a learner with basic Sanskrit knowledge to understand when introduced with this definition?</p>
         <p>1 = very poor · 2 = poor · 3 = moderate · 4 = good · 5 = very good.</p>
         <p>This task is unpaid and voluntary. You may stop at any time.</p>
-        <p><strong>Acknowledgment:</strong> Completing ratings for at least 100 concepts is required for acknowledgment in resulting publications or project materials. Your permission will be sought before naming you.</p>
+        <p><strong>Acknowledgment:</strong> Participants who complete ratings for at least 100 concepts will be eligible for acknowledgment in resulting publications or project materials. Contributions below this threshold may not qualify. Your permission will be sought before naming you.</p>
       </details>
-      <div class="toolbar"><button id="refresh">Reload saved progress</button><button id="download">Download my ratings</button></div>
+      <div class="toolbar"><button id="refresh">Reload saved progress</button><button id="review-deferred" disabled>Review deferred concepts</button><button id="download">Download my ratings</button></div>
       <form id="rating-form"><article class="panel"><p class="eyebrow" id="question-position"></p><h1 id="concept"></h1><p id="definition"></p>
         <fieldset id="familiarity"><legend>How familiar are you with this concept?</legend>
           <div class="radio-choices">
@@ -95,11 +97,12 @@
         <aside class="concept-rating-guide" aria-label="Rating guide">
           <p id="scale-legend"><strong>Scale:</strong> 1 Very poor · 2 Poor · 3 Moderate · 4 Good · 5 Very good · Cannot judge</p>
           <p>All terms may receive low scores, high scores, or the same score. Rate each term separately.</p>
+          <p>Similar spellings are shown together. “Copy ratings from above” fills unanswered ratings only. You can change any copied score.</p>
           <p id="criterion-accuracy"><strong>Accuracy:</strong> How well does the term express the concept in the definition?</p>
           <p id="criterion-understandability"><strong>Understandability:</strong> How easy would the term be for a learner with basic Sanskrit knowledge to understand when introduced with this definition?</p>
         </aside>
         <div id="options"></div><label>Comments or alternative term (optional)<textarea id="comment" maxlength="2000" rows="3" placeholder="You may explain a rating or suggest another term for this concept."></textarea></label>
-        <div class="navigation"><button id="previous" type="button">Previous</button><button id="save-draft" type="button">Save draft</button><button class="primary" id="submit">Save and next</button></div><p id="save-status" role="status" aria-live="polite"></p>
+        <div class="navigation"><button id="previous" type="button">Previous</button><button id="defer" type="button">Come back later</button><button id="save-draft" type="button">Save draft</button><button class="primary" id="submit">Save and next</button></div><p id="save-status" role="status" aria-live="polite"></p>
       </article></form>
       <section id="empty" class="panel" hidden><h1>No concepts assigned yet</h1><p>Please contact the organizer.</p></section>
     </section>
@@ -137,5 +140,5 @@
     </section>
   </main>
   <footer>Progress saved to your account.</footer>
-  <script src="config.js"></script><script type="module" src="app.mjs?v=4"></script>
+  <script src="config.js"></script><script type="module" src="app.mjs?v=5"></script>
 </body></html>
