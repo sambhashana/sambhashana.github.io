@@ -5,7 +5,7 @@ export async function previewAPI(){
  let state=JSON.parse(localStorage.getItem(key)||'{"ratings":[],"consented":false}');
  const persist=()=>localStorage.setItem(key,JSON.stringify(state));
  const assignments=data.tasks.map((task,index)=>({task_id:task.id,batch:1,position:index,option_order:task.options.map(o=>o.id),annotation_tasks:task}));
- return {session:true,async query(table){
+ return {session:true,userKey:'preview:'+data.study_id,async query(table){
   if(table==='participants')return [{code:'LOCAL-PREVIEW',active:true,consented_at:state.consented?'preview':null}];
   if(table==='assignments')return assignments;if(table==='ratings')return state.ratings;throw new Error('Unknown preview table');
  },async rpc(name,p){

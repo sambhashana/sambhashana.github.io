@@ -1,11 +1,13 @@
-import {StudyAPI} from './api.mjs?v=3';
+import {StudyAPI,saveRating} from './api.mjs?v=4';
+import {groupOptions,copyUnanswered} from './term-groups.mjs';
 import {ManagementView} from './management.mjs';
+import {orderWithDeferred,deferToEnd,nextUnfinished,deferredKey,readDeferred,writeDeferred} from './study-queue.mjs';
 const $ = id => document.getElementById(id);
 function optionLabel(index){let label='',n=index+1;while(n){n--;label=String.fromCharCode(65+n%26)+label;n=Math.floor(n/26);}return label;}
 const criteria = {accuracy:'Accuracy',understandability:'Understandability'};
 const values = [['','Choose'],['NA','Cannot judge'],['1','1 — Very poor'],['2','2 — Poor'],['3','3 — Moderate'],['4','4 — Good'],['5','5 — Very good']];
 let api, assignments=[], ratings=new Map(), current=0, profile, dirty=false, timer, queue=Promise.resolve(), conflict=false, pendingSaves=0;
-let workspace=null,access={},management;
+let workspace=null,access={},management,deferred=[],deferredStorageKey='',navigating=false,saveNotice='';
 function notice(message='') { $('notice').textContent=message; }
 function page(name) {
   for (const id of ['login','password','profile','study','dashboard','accounts']) $(id).hidden=id!==name;
@@ -22,49 +24,79 @@ function progress() {
   const coreDone=core.filter(a=>ratings.get(a.task_id)?.status==='submitted').length;
   $('progress').textContent=`${coreDone} of ${core.length} target concepts completed` + (done>coreDone?` · ${done-coreDone} additional concepts completed`:'');
   $('progress-bar').max=Math.max(1,core.length);$('progress-bar').value=coreDone;
+  const postponed=assignments.filter(a=>deferred.includes(a.task_id)&&ratings.get(a.task_id)?.status!=='submitted');
+  const targetDeferred=postponed.filter(a=>a.batch===1).length;
+  $('deferred-progress').textContent=postponed.length?`${postponed.length} ${postponed.length===1?'concept':'concepts'} deferred, including ${targetDeferred} target ${targetDeferred===1?'concept':'concepts'}.`:'';
+  $('review-deferred').disabled=navigating||!postponed.length;
 }
 function render() {
   $('rating-form').hidden=!assignments.length;$('empty').hidden=!!assignments.length;
   if (!assignments.length) return;
   const assignment=assignments[current], task=assignment.annotation_tasks;
   const saved=ratings.get(assignment.task_id) || {};
-  const section=assignments.filter(a=>a.batch===assignment.batch);
-  const position=section.findIndex(a=>a.task_id===assignment.task_id)+1;
-  $('question-position').textContent=`${assignment.batch===2?'Optional concept':'Concept'} ${position} of ${section.length} · ${task.domain.replaceAll('_',' ')}`;
+  $('question-position').textContent=`Concept ${current+1} of ${assignments.length} · ${assignment.batch===2?'Optional concept':'Target concept'} · ${task.domain.replaceAll('_',' ')}`;
   $('concept').textContent=task.concept;$('definition').textContent=task.definition;
   for (const input of $('familiarity').querySelectorAll('input[type=radio]')) input.checked=input.value===saved.familiarity;
   $('comment').value=saved.comment || '';
   const byId=new Map(task.options.map(option=>[option.id,option]));
   $('options').replaceChildren();
-  assignment.option_order.forEach((oid,index)=>{
-    const option=byId.get(oid);
-    if (!option) throw new Error('The terms for this concept could not be loaded. Please contact the organizer.');
-    const fieldset=document.createElement('fieldset'), legend=document.createElement('legend');
-    legend.textContent=`${optionLabel(index)}. ${option.devanagari} `;
-    const iast=document.createElement('span');iast.className='iast';iast.textContent=option.iast?`(${option.iast})`:'';legend.append(iast);fieldset.append(legend);
-    const grid=document.createElement('div');grid.className='criteria';
-    Object.entries(criteria).forEach(([key,title])=>{
-      const group=document.createElement('fieldset');group.className='rating-row';
-      const heading=document.createElement('legend');heading.textContent=title;group.append(heading);
-      group.setAttribute('aria-describedby',`criterion-${key} scale-legend`);
-      const choices=document.createElement('div');choices.className='radio-choices';
-      values.filter(([value])=>value).forEach(([value])=>{
-        const label=document.createElement('label');label.className='radio-choice';
-        const input=document.createElement('input');input.type='radio';input.name=`rating-${oid}-${key}`;
-        input.value=value;input.required=true;input.dataset.option=oid;input.dataset.criterion=key;
-        input.checked=saved.answers?.[oid]?.[key]===value;
-        input.setAttribute('aria-label',`${optionLabel(index)}: ${title}: ${value==='NA'?'Cannot judge':value}`);
-        const caption=document.createElement('span');caption.textContent=value==='NA'?'Cannot judge':value;
-        label.append(input,caption);choices.append(label);
+  const groups=groupOptions(task.options,assignment.option_order);
+  let index=0;
+  for(const members of groups){
+    const container=document.createElement('section');container.className='spelling-group';
+    if(members.length>1){
+      container.classList.add('has-variants');
+      const heading=document.createElement('p');heading.className='group-label';heading.textContent='Similar spellings';container.append(heading);
+    }
+    members.forEach((oid,memberIndex)=>{
+      const option=byId.get(oid),label=optionLabel(index++);
+      if(!option)throw new Error('The terms for this concept could not be loaded. Please contact the organizer.');
+      const fieldset=document.createElement('fieldset'),legend=document.createElement('legend');fieldset.className='term-card';
+      legend.id='term-'+oid;legend.textContent=`${label}. ${option.devanagari} `;
+      if(option.iast){const iast=document.createElement('span');iast.className='iast';iast.textContent=`(${option.iast})`;legend.append(iast);}
+      fieldset.append(legend);
+      const grid=document.createElement('div');grid.className='criteria';
+      Object.entries(criteria).forEach(([key,title])=>{
+        const group=document.createElement('div');group.className='rating-row';group.setAttribute('role','radiogroup');
+        const heading=document.createElement('span');heading.className='criterion-label';heading.id=`label-${oid}-${key}`;heading.textContent=title;group.append(heading);
+        group.setAttribute('aria-labelledby',`${legend.id} ${heading.id}`);
+        group.setAttribute('aria-describedby',`criterion-${key} scale-legend`);
+        const choices=document.createElement('div');choices.className='radio-choices';
+        values.filter(([value])=>value).forEach(([value])=>{
+          const choice=document.createElement('label');choice.className='radio-choice';
+          const input=document.createElement('input');input.type='radio';input.name=`rating-${oid}-${key}`;
+          input.value=value;input.required=true;input.dataset.option=oid;input.dataset.criterion=key;
+          input.checked=saved.answers?.[oid]?.[key]===value;
+          input.setAttribute('aria-label',`${label}: ${title}: ${value==='NA'?'Cannot judge':value}`);
+          const caption=document.createElement('span');caption.textContent=value==='NA'?'Cannot judge':value;
+          choice.append(input,caption);choices.append(choice);
+        });
+        group.append(choices);grid.append(group);
       });
-      group.append(choices);grid.append(group);
+      fieldset.append(grid);
+      if(memberIndex>0){
+        const copy=document.createElement('button');copy.type='button';copy.className='copy-ratings';
+        copy.textContent='Copy ratings from above';copy.dataset.copyFrom=members[memberIndex-1];copy.dataset.copyTo=oid;
+        copy.setAttribute('aria-label',`Copy unanswered ratings from ${byId.get(members[memberIndex-1]).devanagari} to ${option.devanagari}`);
+        copy.addEventListener('click',()=>{
+          const result=copyUnanswered(collect().answers,copy.dataset.copyFrom,oid);
+          if(!result.copied.length)return;
+          for(const key of result.copied){
+            const value=result.answers[oid][key];
+            $('options').querySelector(`input[data-option="${oid}"][data-criterion="${key}"][value="${value}"]`).checked=true;
+          }
+          $('rating-form').dispatchEvent(new Event('input',{bubbles:true}));
+        });
+        fieldset.append(copy);
+      }
+      container.append(fieldset);
     });
-    fieldset.append(grid);$('options').append(fieldset);
-  });
-  $('previous').disabled=current===0;
-  $('submit').textContent=current===assignments.length-1?'Save response':'Save and next';
+    $('options').append(container);
+  }
+  updateCopyButtons();
+  $('submit').textContent='Save and next';
   $('save-status').textContent=saved.status==='submitted'?'Ratings submitted. You can return to edit them.':saved.revision?'Saved draft.':'Not yet saved.';
-  dirty=false;progress();
+  dirty=false;progress();updateControls();
 }
 async function load() {
   notice();
@@ -95,7 +127,11 @@ async function load() {
   ]);
   assignments=tasks.sort((a,b)=>a.batch-b.batch || a.position-b.position);
   ratings=new Map(responses.map(r=>[r.task_id,r]));
-  const firstPending=assignments.findIndex(a=>ratings.get(a.task_id)?.status!=='submitted');
+  const userId=api.session?.user?.id||api.userKey||profile.code;
+  deferredStorageKey=deferredKey(api.url||'preview',userId,access.study_id||'terminology');
+  deferred=readDeferred(globalThis.localStorage,deferredStorageKey).filter(id=>assignments.some(a=>a.task_id===id));
+  assignments=orderWithDeferred(assignments,deferred);
+  const firstPending=nextUnfinished(assignments,ratings);
   current=Math.max(0,firstPending);conflict=false;dirty=false;
   $('participant').textContent=`Participant ${profile.code}`;
   page('study');render();
@@ -107,6 +143,13 @@ function collect() {
   }
   return {task_id:assignments[current].task_id,answers,familiarity:$('familiarity').querySelector('input:checked')?.value || null,comment:$('comment').value};
 }
+function updateCopyButtons(){
+  for(const button of $('options').querySelectorAll('[data-copy-from]')){
+    const source=$('options').querySelectorAll(`input[data-option="${button.dataset.copyFrom}"]:checked`).length;
+    const destination=$('options').querySelectorAll(`input[data-option="${button.dataset.copyTo}"]:checked`).length;
+    button.disabled=navigating||source<2||destination===2;
+  }
+}
 function save(status='draft') {
   clearTimeout(timer);
   if (!assignments.length) return Promise.resolve(true);
@@ -117,23 +160,61 @@ function save(status='draft') {
     if (conflict) return false;
     const previous=ratings.get(snapshot.task_id);
     // Autosaving an edited submitted response creates a draft until explicitly submitted again.
-    const saved=await api.rpc('save_study_rating',{p_task_id:snapshot.task_id,p_answers:snapshot.answers,
+    const saved=await saveRating(api,{p_task_id:snapshot.task_id,p_answers:snapshot.answers,
       p_familiarity:snapshot.familiarity,p_comment:snapshot.comment,p_status:status,
       p_expected_revision:previous?.revision || 0});
-    ratings.set(snapshot.task_id,{...snapshot,...saved,status});
-    if (assignments[current]?.task_id===snapshot.task_id) $('save-status').textContent=status==='submitted'?'Response saved.':'Draft saved.';
-    progress();return true;
+    ratings.set(snapshot.task_id,{...snapshot,...saved});
+    if(assignments[current]?.task_id===snapshot.task_id&&!dirty)$('save-status').textContent=saved.status==='submitted'?'Response saved.':'Draft saved.';
+    if(saveNotice&&$('notice').textContent===saveNotice)notice();saveNotice='';progress();return true;
   }).catch(error=>{
     dirty=true;
     if (error.code==='PT409' || error.code==='40001') { conflict=true;error.message='This response changed in another session. Download your current ratings if needed, then reload saved progress before editing.'; }
-    $('save-status').textContent='Not saved. Keep this page open and retry.';report(error);return false;
+    $('save-status').textContent=error.code==='SAVE_UNCONFIRMED'?'Save not confirmed. Keep this page open and try saving again.':'Not saved. Keep this page open and retry.';report(error);saveNotice=$('notice').textContent;return false;
   }).finally(()=>{pendingSaves--;});
   queue=operation;return operation;
 }
-async function move(index) { if (await save('draft')===false) return;current=index;render();window.scrollTo({top:0,behavior:'smooth'}); }
-for(const [id,destination] of [['nav-evaluate','evaluate'],['nav-progress','dashboard'],['nav-accounts','accounts']]){
-  $(id).addEventListener('click',async()=>{if(await save('draft')===false)return;workspace=destination;try{await load();}catch(error){report(error);}});
+function updateControls(){
+  $('previous').disabled=navigating||current===0;
+  $('submit').disabled=navigating;
+  $('defer').disabled=navigating||!assignments.length||(!dirty&&ratings.get(assignments[current]?.task_id)?.status==='submitted');
+  updateCopyButtons();progress();
 }
+async function navigate(action){
+  if(navigating)return;
+  navigating=true;
+  const controls=[...document.querySelectorAll('#rating-form input,#rating-form textarea,#rating-form button,#workspace-nav button,#refresh,#download,#change-password,#logout,#review-deferred')].map(node=>[node,node.disabled]);
+  for(const [node] of controls)node.disabled=true;
+  try{await action();}catch(error){report(error);}
+  finally{
+    navigating=false;
+    for(const [node,disabled] of controls)if(node.isConnected)node.disabled=disabled;
+    updateControls();
+  }
+}
+async function move(index){
+  if(index<0||index>=assignments.length)return;
+  await navigate(async()=>{if(await save('draft')===false)return;current=index;render();window.scrollTo({top:0,behavior:'smooth'});});
+}
+for(const [id,destination] of [['nav-evaluate','evaluate'],['nav-progress','dashboard'],['nav-accounts','accounts']]){
+  $(id).addEventListener('click',()=>navigate(async()=>{if(await save('draft')===false)return;workspace=destination;await load();}));
+}
+$('defer').addEventListener('click',()=>navigate(async()=>{
+  const id=assignments[current].task_id,start=current;
+  if(await save('draft')===false)return;
+  deferred=deferToEnd(deferred,id);
+  const remembered=writeDeferred(globalThis.localStorage,deferredStorageKey,deferred);
+  assignments=orderWithDeferred(assignments,deferred);
+  const next=nextUnfinished(assignments,ratings,start,id);
+  current=next<0?assignments.findIndex(a=>a.task_id===id):next;
+  render();
+  notice((next<0?'This is your last unfinished concept. It is at the end of the queue.':'Concept moved to the end of the queue.')+
+    (remembered?'':' This browser could not remember the new order.'));
+  window.scrollTo({top:0,behavior:'smooth'});
+}));
+$('review-deferred').addEventListener('click',()=>{
+  const index=assignments.findIndex(a=>deferred.includes(a.task_id)&&ratings.get(a.task_id)?.status!=='submitted');
+  if(index>=0)move(index);
+});
 $('login-form').addEventListener('submit',async event=>{
   event.preventDefault();notice();const button=event.submitter || event.target.querySelector('button');button.disabled=true;
   try { const data=new FormData(event.target);await api.signIn(data.get('email'),data.get('password'));event.target.reset();await load(); }
@@ -154,16 +235,23 @@ $('profile-form').addEventListener('submit',async event=>{
   try {const data=new FormData(event.target);await api.rpc('save_participant_profile',{p_proficiency:data.get('proficiency'),p_devanagari:data.get('devanagari'),p_consent:data.get('consent')==='on'});await load();}
   catch(error){report(error);}finally{button.disabled=false;}
 });
-$('rating-form').addEventListener('input',()=>{dirty=true;clearTimeout(timer);$('save-status').textContent='Unsaved changes…';timer=setTimeout(()=>save('draft'),800);});
-$('rating-form').addEventListener('submit',async event=>{
-  event.preventDefault();$('submit').disabled=true;
-  try {if(await save('submitted')) {if(current<assignments.length-1){const reachedTarget=assignments[current].batch===1 && assignments[current+1].batch===2 && assignments.filter(a=>a.batch===1).every(a=>ratings.get(a.task_id)?.status==='submitted');current++;render();if(reachedTarget)notice('You have completed 100 concepts. Thank you for your time. You can sign out or continue with the optional concepts.');window.scrollTo({top:0,behavior:'smooth'});}else notice('You have completed all assigned concepts. Your ratings are saved.');}}
-  finally{$('submit').disabled=false;}
+$('rating-form').addEventListener('input',()=>{dirty=true;updateControls();clearTimeout(timer);$('save-status').textContent='Unsaved changes…';timer=setTimeout(()=>save('draft'),800);});
+$('rating-form').addEventListener('submit',event=>{
+  event.preventDefault();
+  navigate(async()=>{
+    const targetWasComplete=assignments.filter(a=>a.batch===1).every(a=>ratings.get(a.task_id)?.status==='submitted');
+    if(await save('submitted')===false)return;
+    const targetComplete=assignments.filter(a=>a.batch===1).every(a=>ratings.get(a.task_id)?.status==='submitted');
+    const next=nextUnfinished(assignments,ratings,current+1);
+    if(next>=0){current=next;render();window.scrollTo({top:0,behavior:'smooth'});}
+    else notice('You have completed all assigned concepts. Your ratings are saved.');
+    if(!targetWasComplete&&targetComplete)notice('You have completed 100 target concepts. Thank you for your time. Any remaining concepts are optional.');
+  });
 });
-$('save-draft').addEventListener('click',()=>save('draft'));
+$('save-draft').addEventListener('click',()=>navigate(()=>save('draft')));
 $('previous').addEventListener('click',()=>move(current-1));
-$('refresh').addEventListener('click',async()=>{if(dirty && !confirm('Reloading replaces unsaved edits with the saved response. Continue?'))return;clearTimeout(timer);await queue;try{await load();}catch(error){report(error);}});
-$('logout').addEventListener('click',async()=>{if(!conflict && await save('draft')===false)return;clearTimeout(timer);try{await api.signOut();}catch(_){/* Local sign-out still completes. */}assignments=[];ratings.clear();management?.clear();workspace=null;access={};page('login');notice('Signed out on this device.');});
+$('refresh').addEventListener('click',()=>navigate(async()=>{if(dirty&&!confirm('Reloading replaces unsaved edits with the saved response. Continue?'))return;clearTimeout(timer);await queue;await load();}));
+$('logout').addEventListener('click',()=>navigate(async()=>{if(!conflict && await save('draft')===false)return;clearTimeout(timer);try{await api.signOut();}catch(_){/* Local sign-out still completes. */}assignments=[];ratings.clear();management?.clear();workspace=null;access={};page('login');deferred=[];deferredStorageKey='';notice('Signed out on this device.');}));
 $('download').addEventListener('click',()=>{
   const responses=new Map(ratings);
   if(dirty && assignments.length){const draft=collect();responses.set(draft.task_id,{...draft,status:'unsaved_local_draft'});}

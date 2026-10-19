@@ -33,3 +33,11 @@ th,td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid #d
 th{background:#eaf0e9;font-weight:650}td small{display:block;color:#5e6c65;margin-top:3px}
 td .check{margin:0;white-space:nowrap}
 @media(max-width:700px){header{align-items:flex-start;gap:18px;flex-direction:column}.account-actions button{padding:7px 10px;font-size:.85rem}.coverage-row{grid-template-columns:75px 1fr 55px}}
+.spelling-group{margin:16px 0}
+.spelling-group.has-variants{border-left:3px solid #aec7b8;padding-left:14px}
+.group-label{font-size:.85rem;font-weight:650;color:#526c5e;margin:0 0 4px}
+#options .term-card{margin:12px 0;padding:12px 14px}
+.criteria .rating-row{display:flex;align-items:center;gap:12px;margin:8px 0}
+.criterion-label{flex:0 0 155px;font-size:.92rem;font-weight:600}
+.copy-ratings{font-size:.85rem;padding:6px 12px;margin:6px 0 0 167px}
+@media(max-width:700px){.criteria .rating-row{display:block}.criterion-label{display:block;margin-bottom:5px}.copy-ratings{margin-left:0}.spelling-group.has-variants{padding-left:8px}}
