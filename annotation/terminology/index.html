@@ -75,7 +75,7 @@
           <li>Rate every term for Accuracy and Understandability, including terms with similar spellings. All terms for a concept may receive low scores, high scores, or the same score. You do not need to rank the terms or use every score on the scale.</li>
           <li>Use Cannot judge for either rating if you cannot assess it.</li>
           <li>Select Save and next to submit the concept and continue. To pause partway through a concept, select Save draft and wait for Draft saved before signing out.</li>
-          <li>Use Come back later to save a draft and move the concept to the end of all 289 concepts. It remains unfinished and still belongs to its original target or optional set. The deferred order is remembered in this browser only.</li>
+          <li>Use Skip this concept to save a draft and move the concept to the end of all 289 concepts. It remains unfinished and still belongs to its original target or optional set. The deferred order is remembered in this browser only.</li>
         </ol>
         <p><strong>Accuracy:</strong> How well does the term express the concept in the definition?</p>
         <p><strong>Understandability:</strong> How easy would the term be for a learner with basic Sanskrit knowledge to understand when introduced with this definition?</p>
@@ -102,7 +102,9 @@
           <p id="criterion-understandability"><strong>Understandability:</strong> How easy would the term be for a learner with basic Sanskrit knowledge to understand when introduced with this definition?</p>
         </aside>
         <div id="options"></div><label>Comments or alternative term (optional)<textarea id="comment" maxlength="2000" rows="3" placeholder="You may explain a rating or suggest another term for this concept."></textarea></label>
-        <div class="navigation"><button id="previous" type="button">Previous</button><button id="defer" type="button">Come back later</button><button id="save-draft" type="button">Save draft</button><button class="primary" id="submit">Save and next</button></div><p id="save-status" role="status" aria-live="polite"></p>
+        <div class="navigation"><button id="previous" type="button">Previous</button><button id="defer" type="button" aria-describedby="skip-help">Skip this concept</button><button id="save-draft" type="button">Save draft</button><button class="primary" id="submit">Save and next</button></div>
+        <p id="skip-help">Skipping saves your draft and moves this concept to the end of all 289 concepts. It remains unfinished.</p>
+        <p id="save-status" role="status" aria-live="polite"></p>
       </article></form>
       <section id="empty" class="panel" hidden><h1>No concepts assigned yet</h1><p>Please contact the organizer.</p></section>
     </section>
