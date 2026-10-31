@@ -1,4 +1,5 @@
 import {StudyAPI,saveRating} from './api.mjs?v=4';
+import {isDemoEmail,hasDemoSession,demoAPI} from './demo.mjs';
 import {groupOptions,copyUnanswered} from './term-groups.mjs';
 import {ManagementView} from './management.mjs';
 import {orderWithDeferred,deferToEnd,nextUnfinished,deferredKey,readDeferred,writeDeferred} from './study-queue.mjs';
@@ -10,10 +11,14 @@ let api, assignments=[], ratings=new Map(), current=0, profile, dirty=false, tim
 let workspace=null,access={},management,deferred=[],deferredStorageKey='',navigating=false,saveNotice='';
 function notice(message='') { $('notice').textContent=message; }
 function page(name) {
+  const demo=Boolean(api?.isDemo&&name!=='login');
+  $('demo-notice').hidden=!demo;
+  $('progress-footer').textContent=demo?'Demo progress saved in this browser.':'Progress saved to your account.';
+  $('target-instruction').textContent=demo?'You can try any number of concepts in this demonstration.':'Please complete 100 concepts. Further concepts are optional. You can stop and resume later.';
   for (const id of ['login','password','profile','study','dashboard','accounts']) $(id).hidden=id!==name;
   $('logout').hidden=name==='login';
   $('workspace-nav').hidden=['login','password','profile'].includes(name);
-  $('change-password').hidden=['login','password'].includes(name);
+  $('change-password').hidden=demo||['login','password'].includes(name);
   for(const [id,destination] of [['nav-evaluate','evaluate'],['nav-progress','dashboard'],['nav-accounts','accounts']])
     $(id).setAttribute('aria-current',workspace===destination?'page':'false');
 }
@@ -217,7 +222,12 @@ $('review-deferred').addEventListener('click',()=>{
 });
 $('login-form').addEventListener('submit',async event=>{
   event.preventDefault();notice();const button=event.submitter || event.target.querySelector('button');button.disabled=true;
-  try { const data=new FormData(event.target);await api.signIn(data.get('email'),data.get('password'));event.target.reset();await load(); }
+  try {
+    const data=new FormData(event.target);
+    if(isDemoEmail(data.get('email')))api=await demoAPI({email:data.get('email'),password:data.get('password')});
+    else {api=new StudyAPI(window.STUDY_CONFIG || {});await api.signIn(data.get('email'),data.get('password'));}
+    workspace=null;event.target.reset();await load();
+  }
   catch(error) {report(error);}finally{button.disabled=false;}
 });
 $('password-form').addEventListener('submit',async event=>{
@@ -264,6 +274,7 @@ try {
     const module=await import('./preview.mjs');api=await module.previewAPI();
     notice('Local pilot preview: ratings are saved only in this browser.');
     await load();
-  } else {api=new StudyAPI(window.STUDY_CONFIG || {});if(api.session)await load();}
+  } else if(hasDemoSession()){api=await demoAPI({restore:true});await load();}
+  else {api=new StudyAPI(window.STUDY_CONFIG || {});if(api.session)await load();}
 }
 catch(error){report(error);if(!api){for(const control of $('login-form').elements)control.disabled=true;}else page('login');}
